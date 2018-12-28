@@ -971,7 +971,7 @@ return{top:e,left:n}},isElementInViewport:function(e,n){var i=this.docElem.scrol
 this.docElem==t.document.documentElement&&(i=t.pageYOffset)
 var o=i+this.getViewportH(),r=e.offsetHeight,s=this.getOffset(e).top,a=s+r,n=n||0
 return s+r*n<=o&&a>=i||"fixed"==(e.currentStyle?e.currentStyle:t.getComputedStyle(e,null)).position},extend:function(t,e){for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n])
-return t}},e}(window),$("#banner").css({height:$(window).height()})
+return t}},e}(window)
 var siteNav=jQuery(".top-fixed"),topStatic=jQuery(".has-fixed-menu"),mainNav=jQuery(".main-navigation"),menuSecond=jQuery(".menu-style2")
 jQuery(window).scroll(function(){"use strict"
 jQuery(this).scrollTop()>$("#banner").height()?(siteNav.addClass("navbar-fixed-top"),siteNav.removeClass("navbar-static-top"),topStatic.addClass("menu-margin")):(siteNav.addClass("navbar-static-top"),siteNav.removeClass("navbar-fixed-top"),topStatic.removeClass("menu-margin"))}),$(window).width()<966&&(mainNav.removeClass("top-fixed"),mainNav.addClass("side-static"),menuSecond.removeClass("container")),jQuery(".menu-switch").click(function(){"use strict"
