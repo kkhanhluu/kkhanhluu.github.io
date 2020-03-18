@@ -1,0 +1,37 @@
+.about {
+  font-family: 'Calibre';
+  h4 {
+    font-family: 'SF Mono';
+    font-weight: normal;
+    color: var(--purple);
+  }
+
+  h1 {
+    font-size: 80px;
+    color: var(--lightestSlate);
+    margin: 2rem 0;
+  }
+
+  h2 {
+    font-size: 65px;
+    color: var(--lightSlate);
+    margin: -1.5rem 0;
+  }
+
+  p {
+    color: var(--lightSlate);
+    margin: 4rem 0;
+    max-width: 400px;
+    line-height: 1.6rem;
+  }
+
+  .contact {
+    border: 1px solid var(--purple);
+    border-radius: 3px;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1.45rem 1.75rem;
+    color: var(--purple);
+    font-family: 'SF Mono';
+  }
+}
