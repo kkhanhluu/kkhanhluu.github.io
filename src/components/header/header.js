@@ -1,7 +1,7 @@
 import { Link } from 'preact-router/match';
 import { Fragment } from 'preact';
 
-import style from './style.scss';
+import style from './header.scss';
 import GlobalFonts from '../../fonts/fonts';
 
 const Header = () => (

@@ -1,37 +1,98 @@
 .about {
+  padding: 150px 0;
   font-family: 'Calibre';
-  h4 {
-    font-family: 'SF Mono';
-    font-weight: normal;
-    color: var(--purple);
-  }
 
-  h1 {
-    font-size: 80px;
+  h3 {
+    font-size: var(--fontSizesH3);
     color: var(--lightestSlate);
-    margin: 2rem 0;
+    position: relative;
+
+    span {
+      font-family: 'SF Mono';
+      font-size: var(--fontSizesXL);
+      color: var(--purple);
+    }
+
+    &:after {
+      content: '';
+      width: 300px;
+      height: 1px;
+      background-color: var(--mediumGrey);
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 200px;
+    }
   }
 
-  h2 {
-    font-size: 65px;
-    color: var(--lightSlate);
-    margin: -1.5rem 0;
-  }
+  .body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-  p {
-    color: var(--lightSlate);
-    margin: 4rem 0;
-    max-width: 400px;
-    line-height: 1.6rem;
-  }
+    .aboutText {
+      font-size: var(--fontSizesXL);
+      color: var(--lightSlate);
+      width: 60%;
 
-  .contact {
-    border: 1px solid var(--purple);
-    border-radius: 3px;
-    background-color: transparent;
-    text-decoration: none;
-    padding: 1.45rem 1.75rem;
-    color: var(--purple);
-    font-family: 'SF Mono';
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        overflow: hidden;
+        padding: 0px;
+        margin: 20px 0px 0px;
+        list-style: none;
+
+        li {
+          position: relative;
+          font-family: 'SF Mono';
+          margin-bottom: 10px;
+          padding-left: 20px;
+          font-size: var(--fontSizesSmish);
+          &:after {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-size: var(--fontSizesSmish);
+            line-height: 12px;
+          }
+        }
+      }
+    }
+
+    .profile {
+      width: 35%;
+      height: fit-content;
+      position: relative;
+
+      img {
+        display: block;
+        width: 120%;
+        border-radius: 3px;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        border: 2px solid var(--purple);
+        border-radius: 5px;
+        top: 20px;
+        left: 20px;
+        z-index: -1;
+        width: 120%;
+        height: 100%;
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &:after {
+          top: 10px;
+          left: 10px;
+        }
+      }
+    }
   }
 }
