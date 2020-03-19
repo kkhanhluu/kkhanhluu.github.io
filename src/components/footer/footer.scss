@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--darkNavy);
+  color: var(--slate);
+  text-align: center;
+  font-size: var(--fontSizesSM);
+  padding: 23px;
+  font-family: 'SF Mono';
+
+  .inspired {
+    font-size: 10px;
+    margin-top: 1rem;
+    a {
+      color: var(--slate);
+      text-decoration: none;
+    }
+  }
+}

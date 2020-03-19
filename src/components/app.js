@@ -2,6 +2,7 @@ import { Component } from 'preact';
 import { Router } from 'preact-router';
 
 import Header from './header/header';
+import Footer from './footer/footer';
 import EmailSide from './emailSide/emailSide';
 import IconSide from './iconSide/iconSide';
 
@@ -27,6 +28,7 @@ export default class App extends Component {
 
         <EmailSide />
         <IconSide />
+        <Footer />
       </div>
     );
   }
