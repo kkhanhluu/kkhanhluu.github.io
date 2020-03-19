@@ -1,6 +1,8 @@
 import style from './home.scss';
 import Intro from '../../components/intro/intro';
 import About from '../../components/about/about';
+import Jobs from '../../components/jobs/jobs';
+import Contact from '../../components/contact/contact';
 
 const Home = () => (
   <main class={style.main}>
@@ -20,6 +22,8 @@ const Home = () => (
         'Azure'
       ]}
     />
+    <Jobs />
+    <Contact />
   </main>
 );
 
