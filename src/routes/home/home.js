@@ -3,6 +3,7 @@ import Intro from '../../components/intro/intro';
 import About from '../../components/about/about';
 import Jobs from '../../components/jobs/jobs';
 import Contact from '../../components/contact/contact';
+import Projects from '../../components/projects/projects';
 
 const Home = () => (
   <main class={style.main}>
@@ -23,6 +24,7 @@ const Home = () => (
       ]}
     />
     <Jobs />
+    <Projects />
     <Contact />
   </main>
 );
