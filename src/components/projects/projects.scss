@@ -32,7 +32,7 @@
     gap: 10px;
     text-align: center;
     margin-bottom: 10rem;
-    min-height: 350px;
+    min-height: 370px;
 
     .projectInformation {
       grid-row: 1 / -1;
@@ -85,10 +85,12 @@
         }
       }
     }
+
     .information-0 {
       grid-column: 7 / -1;
       text-align: right;
     }
+
     .information-1 {
       grid-column: 1 / 7;
       text-align: left;
@@ -101,7 +103,15 @@
           margin-right: 20px;
         }
       }
+
+      .projectLinks {
+        a {
+          margin-left: 0 !important;
+          margin-right: 20px;
+        }
+      }
     }
+
     .information-2 {
       grid-column: 7 / -1;
       text-align: right;
@@ -123,14 +133,17 @@
         }
       }
     }
+
     .linkWrapper-0 {
       grid-column: 1 / 8;
       text-align: left;
     }
+
     .linkWrapper-1 {
       grid-column: 6 / -1;
       text-align: right;
     }
+
     .linkWrapper-2 {
       grid-column: 1 / 8;
       text-align: left;

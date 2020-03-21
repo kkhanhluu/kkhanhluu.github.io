@@ -1,0 +1,70 @@
+.otherProjects {
+  max-width: 1000px;
+  padding: 150px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Calibre';
+  align-items: center;
+
+  h4 {
+    font-size: var(--fontSizesH3);
+    color: var(--lightestSlate);
+  }
+
+  .otherProjectsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+
+    .project {
+      padding: 2rem 1.75rem;
+      background-color: var(--lightNavy);
+      box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+      border-radius: 3px;
+      height: 400px;
+
+      .projectBody {
+        .projectLink {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .linkIcon {
+            svg {
+              margin-left: 15px;
+            }
+          }
+        }
+        h5 {
+          font-size: var(--fontSizesXXL);
+          color: var(--lightestSlate);
+        }
+        p {
+          font-size: var(--fontSizesMD);
+          color: var(--slate);
+          a {
+            color: var(--purple);
+            font-family: 'SF Mono';
+            font-size: var(--fontSizesSM);
+            margin-left: 5px;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .projectFooter {
+        ul.techStack {
+          display: flex;
+          list-style: none;
+          justify-content: space-between;
+          text-align: right;
+          padding-left: 0;
+          color: var(--lightGrey);
+          font-size: 'SF Mono';
+          font-family: 'SF Mono';
+          font-size: var(--fontSizesXS);
+        }
+      }
+    }
+  }
+}
