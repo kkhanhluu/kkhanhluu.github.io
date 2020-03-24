@@ -1,11 +1,17 @@
 .about {
   padding: 150px 0;
   font-family: 'Calibre';
+  max-width: 1000px;
+  margin: 0 auto;
 
   h3 {
     font-size: var(--fontSizesH3);
     color: var(--lightestSlate);
     position: relative;
+
+    @media screen and (max-width: 48em) {
+      font-size: 24px;
+    }
 
     span {
       font-family: 'SF Mono';
@@ -22,6 +28,11 @@
       position: absolute;
       top: 15px;
       left: 200px;
+
+      @media screen and (max-width: 30em) {
+        left: 150px;
+        width: 180px;
+      }
     }
   }
 
@@ -30,10 +41,20 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (max-width: 30em) {
+      flex-direction: column;
+      align-items: center;
+      font-size: var(--fontSizesLG);
+    }
+
     .aboutText {
       font-size: var(--fontSizesXL);
-      color: var(--lightSlate);
+      color: var(--lightGrey);
       width: 60%;
+
+      @media screen and (max-width: 30em) {
+        width: 100%;
+      }
 
       ul {
         display: grid;
@@ -65,6 +86,16 @@
       width: 35%;
       height: fit-content;
       position: relative;
+
+      @media screen and (max-width: 30em) {
+        margin: 60px auto 0;
+        margin-left: 2.5rem;
+      }
+
+      @media screen and (max-width: 30em) {
+        width: 70%;
+        z-index: 0;
+      }
 
       img {
         display: block;

@@ -1,5 +1,10 @@
 .main {
-  max-width: 1000px;
-  padding: 150px 0px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 200px 150px;
   margin: 0 auto;
+
+  @media screen and (max-width: 30em) {
+    padding: 0 25px;
+  }
 }

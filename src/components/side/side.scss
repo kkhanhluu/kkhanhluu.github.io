@@ -3,6 +3,10 @@
   position: fixed;
   bottom: 0;
 
+  @media screen and (max-width: 48em) {
+    display: none;
+  }
+
   .wrapper {
     writing-mode: vertical-rl;
     font-family: 'SF Mono';

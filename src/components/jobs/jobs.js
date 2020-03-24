@@ -64,7 +64,7 @@ const Jobs = () => {
         </h3>
         <div class={styles.jobsBody}>
           <ul role='tablist' class={styles.listCompany}>
-            {jobs.map((job, i) => (
+            {jobs.reverse().map((job, i) => (
               <li key={job.company}>
                 <button
                   id={`tab-${i}`}

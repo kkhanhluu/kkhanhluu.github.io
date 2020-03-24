@@ -12,7 +12,7 @@ const Projects = () => {
         'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
       stack: ['Node.js', 'Mongodb', 'Angular'],
       link: 'https://cholon-9544f.firebaseapp.com/home',
-      image: '/assets/images/lukaloka.png/'
+      image: './assets/images/lukaloka.png'
     },
     {
       name: 'Moviee',
@@ -20,7 +20,7 @@ const Projects = () => {
         'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
       stack: ['Angular', 'Firebase', 'The Movie Database API'],
       link: 'https://kkhanhluu.github.io/movieapp/movies',
-      image: '/assets/images/movieapp.png/',
+      image: './assets/images/movieapp.png',
       github: 'https://github.com/kkhanhluu/movieapp'
     },
     {
@@ -29,7 +29,7 @@ const Projects = () => {
         'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
       stack: ['Node.js', 'Mongodb', 'Stripe API'],
       link: 'hhttps://hoa-ban-camp.herokuapp.com/',
-      image: '/assets/images/natours.png/',
+      image: './assets/images/natours.png',
       github: 'https://github.com/kkhanhluu/natours'
     }
   ];

@@ -32,7 +32,7 @@ const About = props => (
         </div>
 
         <div class={styles.profile}>
-          <img src='/assets/images/avatar.jpg/' />
+          <img src='./assets/images/avatar.jpg' />
         </div>
       </div>
     </section>

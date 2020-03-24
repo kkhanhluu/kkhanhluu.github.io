@@ -2,11 +2,16 @@
   padding: 150px 0;
   font-family: 'Calibre';
   max-width: 1000px;
+  margin: 0 auto;
 
   h3 {
     font-size: var(--fontSizesH3);
     color: var(--lightestSlate);
     position: relative;
+
+    @media screen and (max-width: 48em) {
+      font-size: 24px;
+    }
 
     span {
       font-family: 'SF Mono';
@@ -23,6 +28,11 @@
       position: absolute;
       top: 15px;
       left: 200px;
+
+      @media screen and (max-width: 30em) {
+        width: 60px;
+        left: 270px;
+      }
     }
   }
 
@@ -37,6 +47,11 @@
     .projectInformation {
       grid-row: 1 / -1;
       position: relative;
+      @media screen and (max-width: 30em) {
+        grid-column: 1/-1 !important;
+        background: rgba(#ae80ff, 0.4);
+        text-align: right !important;
+      }
 
       h5 {
         font-family: 'SF Mono';
@@ -60,6 +75,7 @@
         border-radius: 3px;
         padding: 25px;
         z-index: 2;
+        position: relative;
       }
 
       ul.stack {
@@ -70,6 +86,10 @@
         color: var(--lightGrey);
         font-size: var(--fontSizesSM);
         margin: 2rem 0;
+
+        @media screen and (max-width: 30em) {
+          color: var(--white);
+        }
 
         li {
           margin-left: 20px;
@@ -119,6 +139,11 @@
 
     .linkWrapper {
       grid-row: 1 / -1;
+      @media screen and (max-width: 30em) {
+        grid-column: 1/-1 !important;
+        opacity: 0.25;
+      }
+
       .imageWrapper {
         width: 100%;
         height: 100%;
