@@ -1,4 +1,3 @@
-import { Link } from 'preact-router/match';
 import { Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
@@ -21,46 +20,49 @@ const Header = () => {
       <GlobalFonts />
       <header class={`${style.header}`}>
         <nav>
-          <Link
+          <a
+            href='#about'
             style={{ transitionDelay: '100ms' }}
             class={`${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
-            activeClassName={style.active}
-            href='/'
           >
             <span>01.</span> About
-          </Link>
-          <Link
+          </a>
+
+          <a
+            href='#jobs'
             style={{ transitionDelay: '200ms' }}
             class={`${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
-            activeClassName={style.active}
-            href='/'
           >
             <span>02.</span> Experience
-          </Link>
-          <Link
+          </a>
+
+          <a
+            href='#projects'
             style={{ transitionDelay: '300ms' }}
             class={`${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
-            activeClassName={style.active}
-            href='/'
           >
             <span>03.</span> Work
-          </Link>
-          <Link
+          </a>
+
+          <a
+            href='#contact'
             style={{ transitionDelay: '400ms' }}
             class={`${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
             activeClassName={style.active}
-            href='/'
           >
             <span>04.</span> Contact
-          </Link>
-          <Link
+          </a>
+
+          <a
+            href='https://kkhanhluu.github.io/assets/Resume.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+            className={style.resume}
             style={{ transitionDelay: '500ms' }}
             class={`${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
-            activeClassName={style.active}
-            href='/'
           >
             <button>Resume</button>
-          </Link>
+          </a>
         </nav>
       </header>
     </Fragment>

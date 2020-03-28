@@ -1,10 +1,22 @@
 import { Fragment } from 'preact';
+import { useRef, useEffect } from 'preact/hooks';
 
 import styles from './projects.scss';
 import GlobalFonts from '../../fonts/fonts';
 import Icon from '../icons/icon';
+import { sr, srConfig } from '../scrollReaveal/scrollRevealContainer';
 
 const Projects = () => {
+  const revealTitle = useRef(null);
+  const revealProjects = useRef([]);
+
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig(), []);
+    revealProjects.current.forEach((pro, i) =>
+      sr.reveal(pro, srConfig(i * 100))
+    );
+  });
+
   const projects = [
     {
       name: 'Lukaloka',
@@ -38,13 +50,17 @@ const Projects = () => {
     <Fragment>
       <GlobalFonts />
       <section id='projects' class={styles.projects}>
-        <h3>
+        <h3 ref={revealTitle}>
           <span>03.</span> Some Things I've built
         </h3>
         <div>
           {projects.map((p, i) => {
             return (
-              <div key={p.name} class={styles.project}>
+              <div
+                key={p.name}
+                ref={el => (revealProjects.current[i] = el)}
+                class={styles.project}
+              >
                 <div
                   class={`${styles.projectInformation} ${
                     styles[`information-${i}`]

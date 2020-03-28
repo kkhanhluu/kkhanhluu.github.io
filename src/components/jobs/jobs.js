@@ -1,10 +1,17 @@
 import { Fragment } from 'preact';
-import { useState, useRef } from 'preact/hooks';
+import { useState, useRef, useEffect } from 'preact/hooks';
 
 import styles from './jobs.scss';
 import GlobalFonts from '../../fonts/fonts';
+import { sr, srConfig } from '../scrollReaveal/scrollRevealContainer';
 
 const Jobs = () => {
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig(), []);
+  });
+
   const jobs = [
     {
       title: 'Junior frontend developer',
@@ -58,7 +65,7 @@ const Jobs = () => {
   return (
     <Fragment>
       <GlobalFonts />
-      <section id='jobs' class={styles.jobs}>
+      <section id='jobs' class={styles.jobs} ref={revealContainer}>
         <h3>
           <span>02.</span> Where I've worked
         </h3>
