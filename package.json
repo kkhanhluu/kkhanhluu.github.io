@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kkhanhluu.github.io/",
   "private": true,
   "name": "resume",
   "version": "0.0.0",
@@ -7,11 +8,13 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
+    "build": "preact build --no-prerender",
     "serve": "preact build --no-prerender && sirv build --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -24,6 +27,7 @@
     "enzyme-adapter-preact-pure": "^2.0.0",
     "eslint": "^6.0.1",
     "eslint-config-preact": "^1.1.0",
+    "gh-pages": "^2.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
