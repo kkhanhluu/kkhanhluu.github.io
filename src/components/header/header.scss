@@ -6,7 +6,6 @@
   height: 100px;
   padding: 0 2rem;
   background: var(--navy);
-  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-family: 'SF Mono';
   z-index: 50;
 
@@ -41,7 +40,7 @@
       background: rgba(255, 255, 255, 0);
       text-decoration: none;
       color: var(--offWhite);
-      will-change: background-color;
+
       &:hover,
       &:active {
         color: var(--purple);

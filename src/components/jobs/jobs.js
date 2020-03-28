@@ -73,6 +73,7 @@ const Jobs = () => {
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   class={activeTabId === i ? styles.active : ''}
                   ref={el => (tabs.current[i] = el)}
+                  // eslint-disable-next-line react/jsx-no-bind
                   onClick={() => setActiveTabId(i)}
                 >
                   {job.company}
