@@ -54,7 +54,7 @@ const Header = () => {
           </a>
 
           <a
-            href='https://kkhanhluu.github.io/assets/Resume.pdf'
+            href='/assets/Resume.pdf'
             target='_blank'
             rel='noopener noreferrer'
             className={style.resume}
