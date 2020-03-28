@@ -22,14 +22,14 @@ const About = props => {
         <div class={styles.body}>
           <div class={styles.aboutText}>
             <div class={styles.description}>
-              Hello! I'm Khanh Luu, a software engineer based in Boston, MA who
-              enjoys building things that live on the internet. I develop
+              Hello! I'm Khanh Luu, a web developer based in Darmstadt, Germany
+              who enjoys building things that live on the internet. I develop
               exceptional websites and web apps that provide intuitive,
               pixel-perfect user interfaces with efficient and modern backends.
-              Shortly after graduating from Northeastern University, I joined
-              the engineering team at Upstatement where I work on a wide variety
-              of interesting and meaningful projects on a daily basis. Here are
-              a few technologies I've been working with recently:
+              I'm considered as a team-player because I like to help others and
+              tend to work well within groups Learning new languages and
+              technologies is what I am passionate about. Here are a few
+              technologies I've been working with recently:
             </div>
             <ul class={styles.stack}>
               {props.technologies.map(tech => (

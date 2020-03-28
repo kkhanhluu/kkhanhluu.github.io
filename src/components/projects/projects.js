@@ -21,7 +21,7 @@ const Projects = () => {
     {
       name: 'Lukaloka',
       description:
-        'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
+        'A small online marketplace with mainly for Vietnamese. A place for buyers and sellers to come together and trade almost anything that you want to.',
       stack: ['Node.js', 'Mongodb', 'Angular'],
       link: 'https://cholon-9544f.firebaseapp.com/home',
       image: './assets/images/lukaloka.png'
@@ -29,7 +29,7 @@ const Projects = () => {
     {
       name: 'Moviee',
       description:
-        'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
+        'A better way to search your favorite moveies. Get full information about movies: casting, trailer, idmb score and so on',
       stack: ['Angular', 'Firebase', 'The Movie Database API'],
       link: 'https://kkhanhluu.github.io/movieapp/movies',
       image: './assets/images/movieapp.png',
@@ -38,7 +38,7 @@ const Projects = () => {
     {
       name: 'HoabanCamp',
       description:
-        'A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.',
+        'A nice look app to book your trip. A complete web app which is built with JAM Stack and integrated with Stripe Payments platform',
       stack: ['Node.js', 'Mongodb', 'Stripe API'],
       link: 'hhttps://hoa-ban-camp.herokuapp.com/',
       image: './assets/images/natours.png',
@@ -78,11 +78,21 @@ const Projects = () => {
                   </ul>
                   <div class={styles.projectLinks}>
                     {p.github ? (
-                      <a class={styles.linkGithub} href={p.github}>
+                      <a
+                        class={styles.linkGithub}
+                        href={p.github}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
                         <Icon type='github' />
                       </a>
                     ) : null}
-                    <a class={styles.link} href={p.link}>
+                    <a
+                      class={styles.link}
+                      href={p.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <Icon type='link' />
                     </a>
                   </div>
@@ -91,6 +101,8 @@ const Projects = () => {
                 <a
                   href={p.link}
                   class={`${styles.linkWrapper} ${styles[`linkWrapper-${i}`]}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   <div
                     class={styles.imageWrapper}

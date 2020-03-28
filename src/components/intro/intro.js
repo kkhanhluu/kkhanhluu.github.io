@@ -41,9 +41,8 @@ const Intro = () => {
           class={`${isMounted ? 'fadeup-enter-active' : 'fadeup-enter'}`}
           style={{ transitionDelay: '400ms' }}
         >
-          I'm a software engineer based in Boston, MA specializing in building
-          (and occasionally designing) exceptional, high-quality websites and
-          applications.
+          I'm a software engineer based in Darmstadt, Germany enjoying in
+          building high-quality websites and applications.
         </p>
 
         <div

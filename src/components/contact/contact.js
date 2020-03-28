@@ -20,13 +20,13 @@ const Contact = () => {
         <h1>Get In Touch</h1>
 
         <p>
-          Although I'm not currently looking for freelance opportunities, my
-          inbox is always open. Whether for a potential project or just to say
-          hi, I'll try my best to answer your email!
+          My inbox is always open for open source projects and freelance
+          opportunities. Whether for a potential project or just to say hi, I'll
+          try my best to reply your email!
         </p>
 
         <div>
-          <a href='/' class={style.email}>
+          <a href='mailto: luukhanh96@gmail.com' class={style.email}>
             Say hello
           </a>
         </div>

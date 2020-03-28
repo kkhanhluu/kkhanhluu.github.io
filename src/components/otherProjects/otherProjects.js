@@ -87,8 +87,23 @@ const OtherProjects = () => {
                         <Icon type='folder' />
                       </div>
                       <div class={styles.linkIcon}>
-                        <Icon type='link' />
-                        {p.github ? <Icon type='github' /> : null}
+                        <a
+                          href={p.link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          <Icon type='link' />
+                        </a>
+
+                        {p.github ? (
+                          <a
+                            href={p.github}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <Icon type='github' />
+                          </a>
+                        ) : null}
                       </div>
                     </div>
 
