@@ -21,10 +21,26 @@ const Projects = () => {
     {
       name: 'Lukaloka',
       description:
-        'A small online marketplace with mainly for Vietnamese. A place for buyers and sellers to come together and trade almost anything that you want to.',
+        'A small online marketplace mainly for oversea vietnamese people. A place for buyers and sellers to come together and trade almost anything that you want to.',
       stack: ['Node.js', 'Mongodb', 'Angular'],
       link: 'https://cholon-9544f.firebaseapp.com/home',
-      image: './assets/images/lukaloka.png'
+      image: './assets/images/lukaloka.png',
+    },
+    {
+      name: 'Covid 19',
+      description:
+        'A small web app to visualize covid 19 statistics. User can get information about total case, total deaths and recovered cases all around the world with a nicer visualization.',
+      stack: ['Parcel', 'Javascript'],
+      link: 'https://kkhanhluu.github.io/covid19/',
+      image: './assets/images/covid19.png',
+    },
+    {
+      name: 'Furniture App',
+      description:
+        'A small online furniture shop, where user can order and manage their products. This app was implemented from sratch with react native',
+      stack: ['React native', 'Firebase'],
+      link: 'https://github.com/kkhanhluu/react-native-shopping-app',
+      image: './assets/images/shoppingApp.png',
     },
     {
       name: 'Moviee',
@@ -33,17 +49,17 @@ const Projects = () => {
       stack: ['Angular', 'Firebase', 'The Movie Database API'],
       link: 'https://kkhanhluu.github.io/movieapp/movies',
       image: './assets/images/movieapp.png',
-      github: 'https://github.com/kkhanhluu/movieapp'
+      github: 'https://github.com/kkhanhluu/movieapp',
     },
     {
       name: 'HoabanCamp',
       description:
         'A nice look app to book your trip. A complete web app which is built with JAM Stack and integrated with Stripe Payments platform',
       stack: ['Node.js', 'Mongodb', 'Stripe API'],
-      link: 'hhttps://hoa-ban-camp.herokuapp.com/',
+      link: 'https://hoa-ban-camp.herokuapp.com/',
       image: './assets/images/natours.png',
-      github: 'https://github.com/kkhanhluu/natours'
-    }
+      github: 'https://github.com/kkhanhluu/natours',
+    },
   ];
 
   return (
@@ -58,7 +74,7 @@ const Projects = () => {
             return (
               <div
                 key={p.name}
-                ref={el => (revealProjects.current[i] = el)}
+                ref={(el) => (revealProjects.current[i] = el)}
                 class={styles.project}
               >
                 <div
@@ -70,7 +86,7 @@ const Projects = () => {
                   <h4>{p.name}</h4>
                   <div class={styles.projectDescription}>{p.description}</div>
                   <ul class={styles.stack}>
-                    {p.stack.map(tech => (
+                    {p.stack.map((tech) => (
                       <li class={styles.technology} key={tech}>
                         {tech}
                       </li>
@@ -106,7 +122,10 @@ const Projects = () => {
                 >
                   <div
                     class={styles.imageWrapper}
-                    style={{ backgroundImage: `url(${p.image})` }}
+                    style={{
+                      backgroundImage: `url(${p.image})`,
+                      backgroundSize: i === 2 ? 'contain' : '',
+                    }}
                   />
                 </a>
               </div>

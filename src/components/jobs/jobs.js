@@ -19,10 +19,9 @@ const Jobs = () => {
       start: 'April 2018',
       end: 'September 2018',
       tasks: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.s'
-      ]
+        'Develop HTML/CSS Templates in close collaboration with graphic designers and other developers',
+        'Learn to use React.js, Redux and implement unit tests for small component in a react app',
+      ],
     },
     {
       title: 'Fullstack developer',
@@ -30,10 +29,10 @@ const Jobs = () => {
       start: 'April 2018',
       end: 'January 2019',
       tasks: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.s'
-      ]
+        'Develop new backend and frontend components for the real-time online auction and customer management',
+        'Develop multilingual web app and build the landing page for the componay',
+        "Maintain and improve Web app 's design in close collaboration with graphic designers and CTO",
+      ],
     },
     {
       title: 'Web developer',
@@ -41,22 +40,30 @@ const Jobs = () => {
       start: 'Juni 2019',
       end: 'Oktober 2019',
       tasks: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.s'
-      ]
+        'Further development of new components for Geobox project [ionic/angular project]',
+        "App's Design and Usability maintenance and improvement",
+      ],
+    },
+    {
+      title: '1st Prize',
+      company: 'AngelHack',
+      start: 'April 2020',
+      end: 'April 2020',
+      tasks: [
+        'Win 1st Prize in track Ideation in an online hackathon "Hackcovy" with the app "Quanranhome". The App helps to improve the communication between quarantine area\'s manager and residents. <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://kkhanhluu.github.io/assets/images/HackCovyCertificate.pdf">Certificate</a>',
+      ],
     },
     {
       title: 'Fullstack developer',
       company: 'Aonic',
       start: 'Oktober 2019',
-      end: 'present',
+      end: 'June 2020',
       tasks: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris quam, porttitor nec lacinia a, ornare nec justo. Fusce laoreet mollis leo.s'
-      ]
-    }
+        'Plan, design system and develop Microsoft Teams App <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://appsource.microsoft.com/en-us/product/office/WA200001566?tab=Overview">We Decide</a>',
+        'Develop RESTful Backend Service with modern technologies like: nodejs, websocket,... and a React Frontend app',
+        "Develop and give technical support in other customer's project",
+      ],
+    },
   ];
 
   const [activeTabId, setActiveTabId] = useState(0);
@@ -67,7 +74,7 @@ const Jobs = () => {
       <GlobalFonts />
       <section id='jobs' class={styles.jobs} ref={revealContainer}>
         <h3>
-          <span>02.</span> Where I've worked
+          <span>02.</span> Work and Awards
         </h3>
         <div class={styles.jobsBody}>
           <ul role='tablist' class={styles.listCompany}>
@@ -79,7 +86,7 @@ const Jobs = () => {
                   aria-selected={i === 0 ? 'true' : 'false'}
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   class={activeTabId === i ? styles.active : ''}
-                  ref={el => (tabs.current[i] = el)}
+                  ref={(el) => (tabs.current[i] = el)}
                   // eslint-disable-next-line react/jsx-no-bind
                   onClick={() => setActiveTabId(i)}
                 >
@@ -106,7 +113,7 @@ const Jobs = () => {
               </h5>
               <ul class={styles.taskList}>
                 {job.tasks.map((task, idx) => (
-                  <li key={idx}>{task}</li>
+                  <li key={idx} dangerouslySetInnerHTML={{ __html: task }} />
                 ))}
               </ul>
             </div>

@@ -14,6 +14,7 @@ const Home = () => (
         'Javascript (ES6+)',
         'Angular',
         'React',
+        'React native',
         'Ionic',
         'Node.js',
         'Express',
@@ -21,7 +22,7 @@ const Home = () => (
         'HTML & (S)CSS',
         'Mongodb',
         'SQL Database',
-        'Azure'
+        'Azure',
       ]}
     />
     <Jobs />

@@ -5,7 +5,7 @@ import styles from './about.scss';
 import GlobalFonts from '../../fonts/fonts';
 import { sr, srConfig } from '../scrollReaveal/scrollRevealContainer';
 
-const About = props => {
+const About = (props) => {
   const revealContainer = useRef(null);
 
   useEffect(() => {
@@ -27,12 +27,12 @@ const About = props => {
               exceptional websites and web apps that provide intuitive,
               pixel-perfect user interfaces with efficient and modern backends.
               I'm considered as a team-player because I like to help others and
-              tend to work well within groups Learning new languages and
+              tend to work well within groups. Learning new languages and
               technologies is what I am passionate about. Here are a few
               technologies I've been working with recently:
             </div>
             <ul class={styles.stack}>
-              {props.technologies.map(tech => (
+              {props.technologies.map((tech) => (
                 <li key={tech} class={styles.technology}>
                   {tech}
                 </li>
