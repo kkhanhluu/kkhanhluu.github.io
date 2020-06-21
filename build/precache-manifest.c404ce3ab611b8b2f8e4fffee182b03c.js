@@ -48,19 +48,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/images/shoppingApp.png"
   },
   {
-    "revision": "356ae3c64ddf364403bc",
-    "url": "/bundle.62582.css"
+    "revision": "c880f694834de51ebca6",
+    "url": "/bundle.c880f.js"
   },
   {
-    "revision": "356ae3c64ddf364403bc",
-    "url": "/bundle.6af2a.esm.js"
+    "revision": "c880f694834de51ebca6",
+    "url": "/bundle.d09f5.css"
   },
   {
-    "revision": "b70e8b0b9c44c6a9ed52014acfd82ffd",
+    "revision": "f83c6b80993fe9edfb6b431992a4d6da",
     "url": "/index.html"
   },
   {
     "revision": "09446198657efe85c470",
-    "url": "/polyfills.a34c8.esm.js"
+    "url": "/polyfills.09446.js"
+  },
+  {
+    "revision": "144c6ff1323d2d15182a7d2af08d027e",
+    "url": "/sw-debug.js"
+  },
+  {
+    "revision": "53c064ade504c8d0b2af8d180c011a05",
+    "url": "/sw-esm.js"
+  },
+  {
+    "revision": "bfc5bd18885255982238f3628770f48d",
+    "url": "/sw.js"
   }
 ]);
