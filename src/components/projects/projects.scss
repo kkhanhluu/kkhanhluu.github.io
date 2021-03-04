@@ -108,13 +108,15 @@
     }
 
     .information-0,
-    .information-4 {
+    .information-4,
+    .information-6 {
       grid-column: 7 / -1;
       text-align: right;
     }
 
     .information-1,
-    .information-3 {
+    .information-3,
+    .information-5 {
       grid-column: 1 / 7;
       text-align: left;
       ul {
@@ -162,26 +164,17 @@
       }
     }
 
-    .linkWrapper-0 {
-      grid-column: 1 / 8;
-      text-align: left;
-    }
-
-    .linkWrapper-1 {
+    .linkWrapper-1,
+    .linkWrapper-3,
+    .linkWrapper-5 {
       grid-column: 6 / -1;
       text-align: right;
     }
 
-    .linkWrapper-2 {
-      grid-column: 1 / 8;
-      text-align: left;
-    }
-    .linkWrapper-3 {
-      grid-column: 6 / -1;
-      text-align: right;
-    }
-
-    .linkWrapper-4 {
+    .linkWrapper-0,
+    .linkWrapper-2,
+    .linkWrapper-4,
+    .linkWrapper-6 {
       grid-column: 1 / 8;
       text-align: left;
     }
