@@ -35,6 +35,20 @@ const Projects = () => {
       image: './assets/images/covid19.png',
     },
     {
+      name: 'Infinitown',
+      description: 'A 3D infinite town. The website is built with three.js',
+      stack: ['Javascript', 'Three.js'],
+      link: 'https://kkhanhluu.github.io/infinitown/',
+      image: './assets/images/infinitown.png',
+    },
+    {
+      name: 'CSS Challenges',
+      description: 'Some CSS Challenges I solved by myself',
+      stack: ['HTML', 'CSS'],
+      link: 'https://kkhanhluu.github.io/CSSChallenges/',
+      image: './assets/images/csschallenges.png',
+    },
+    {
       name: 'Furniture App',
       description:
         'A small online furniture shop, where user can order and manage their products. This app was implemented from sratch with react native',
