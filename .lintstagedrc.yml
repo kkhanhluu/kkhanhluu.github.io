@@ -1,0 +1,4 @@
+'*.{js,ts,tsx}':
+  - yarn lint
+'*.{js,ts,tsx,jsx,json,md}':
+  - yarn format:fix
