@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "kkhanhluu.github.io",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Writing and stuff from Khanh Luu",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Khanh Luu <luukhanh96@gmail.com>",
   "dependencies": {
     "gatsby": "^4.5.2",
     "gatsby-plugin-feed": "^4.5.0",
@@ -37,6 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
+    "@types/node": "^16.1.1",
     "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
@@ -50,15 +48,14 @@
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/kkhanhluu/kkhanhluu.github.io",
   "keywords": [
-    "gatsby"
+    "kkhanhluu", "khanh", "luu"
   ],
-  "license": "0BSD",
-  "main": "n/a",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/kkhanhluu/kkhanhluu.github.io"
   },
   "scripts": {
     "build": "gatsby build",
