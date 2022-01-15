@@ -1,15 +1,14 @@
 // If you don't want to use TypeScript you can delete this file!
-import * as React from "react"
-import { PageProps, Link, graphql } from "gatsby"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { graphql, Link, PageProps } from "gatsby";
+import * as React from "react";
+import { Layout } from "../components/Layout";
+import { Seo } from "../components/Seo";
 
 type DataProps = {
   site: {
-    buildTime: string
-  }
-}
+    buildTime: string;
+  };
+};
 
 const UsingTypescript: React.FC<PageProps<DataProps>> = ({
   data,
@@ -41,9 +40,9 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
     </p>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
-)
+);
 
-export default UsingTypescript
+export default UsingTypescript;
 
 export const query = graphql`
   {
@@ -51,4 +50,4 @@ export const query = graphql`
       buildTime(formatString: "YYYY-MM-DD hh:mm a z")
     }
   }
-`
+`;

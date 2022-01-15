@@ -1,15 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Kim Khanh Luu`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Kim Khanh Luu`,
+      summary: `Vietnamese guy who lives and works in Darmstadt, Germany building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Writing and stuff from Kim Khanh Luu`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    image: "https://kkhanhluu.github.io/assets/images/avatar.jpg",
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -82,8 +80,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `
               {
@@ -129,4 +127,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
