@@ -20,5 +20,3 @@ jobs:
         run: yarn run lint
       - name: Format
         run: yarn run format
-      - name: Check commits messages
-        uses: wagoid/commitlint-github-action@v4
