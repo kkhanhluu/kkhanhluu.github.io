@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from "gatsby";
-import * as React from "react";
-import { Helmet } from "react-helmet";
+import { graphql, useStaticQuery } from 'gatsby';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 interface SeoProps {
   description?: string;
@@ -13,9 +13,9 @@ interface SeoProps {
 
 export const Seo: React.FunctionComponent<SeoProps> = ({
   description,
-  lang = "",
+  lang = '',
   meta = [],
-  title = "",
+  title = '',
   image,
   url,
 }) => {
@@ -37,7 +37,7 @@ export const Seo: React.FunctionComponent<SeoProps> = ({
   );
 
   const imagePath = new URL(image ?? siteMetadata.image, siteMetadata.siteUrl);
-  const siteUrl = new URL(url ?? "/", siteMetadata.siteUrl);
+  const siteUrl = new URL(url ?? '/', siteMetadata.siteUrl);
 
   return (
     <Helmet
@@ -68,8 +68,8 @@ export const Seo: React.FunctionComponent<SeoProps> = ({
           content: `website`,
         },
         {
-          property: "keyword",
-          content: "Khanh Luu, Javascript, Typescript, Nodejs, Golang",
+          property: 'keyword',
+          content: 'Khanh Luu, Javascript, Typescript, Nodejs, Golang',
         },
       ].concat(meta)}
     >

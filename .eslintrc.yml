@@ -8,6 +8,7 @@ parserOptions:
   sourceType: 'module'
 plugins:
   - 'import'
+  - '@typescript-eslint/eslint-plugin'
 rules:
   '@typescript-eslint/no-unused-vars':
     - error
@@ -24,5 +25,8 @@ overrides:
       - '*.test.tsx'
     rules:
       '@typescript-eslint/no-empty-function': 0
+settings:
+  react:
+    version: 'detect'
 ignorePatterns:
   - 'src/generated/**'

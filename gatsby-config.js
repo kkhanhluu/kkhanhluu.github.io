@@ -7,7 +7,7 @@ module.exports = {
     },
     description: `Writing and stuff from Kim Khanh Luu`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    image: "https://kkhanhluu.github.io/assets/images/avatar.jpg",
+    image: 'https://kkhanhluu.github.io/assets/images/avatar.jpg',
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -79,7 +79,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{ 'content:encoded': node.html }],
                 });
               });
             },
@@ -102,8 +102,8 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            output: '/rss.xml',
+            title: 'Gatsby Starter Blog RSS Feed',
           },
         ],
       },

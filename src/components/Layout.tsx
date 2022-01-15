@@ -1,13 +1,15 @@
-import { Link, PageProps } from "gatsby";
-import * as React from "react";
+import { Link, PageProps } from 'gatsby';
+import * as React from 'react';
 
-type LayoutProps = Pick<PageProps, "location"> & {
+type LayoutProps = Pick<PageProps, 'location'> & {
   title: string;
 };
 
-export const Layout: React.FunctionComponent<
-  React.PropsWithChildren<LayoutProps>
-> = ({ location, title, children }) => {
+export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps>> = ({
+  location,
+  title,
+  children,
+}) => {
   // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;

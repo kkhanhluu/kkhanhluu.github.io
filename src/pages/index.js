@@ -1,8 +1,8 @@
-import { graphql, Link } from "gatsby";
-import * as React from "react";
-import Bio from "../components/bio";
-import { Layout } from "../components/Layout";
-import { Seo } from "../components/Seo";
+import { graphql, Link } from 'gatsby';
+import * as React from 'react';
+import Bio from '../components/bio';
+import { Layout } from '../components/Layout';
+import { Seo } from '../components/Seo';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -14,9 +14,8 @@ const BlogIndex = ({ data, location }) => {
         <Seo title="All posts" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No blog posts found. Add markdown posts to "content/blog" (or the directory you specified
+          for the "gatsby-source-filesystem" plugin in gatsby-config.js).
         </p>
       </Layout>
     );
@@ -32,11 +31,7 @@ const BlogIndex = ({ data, location }) => {
 
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
+              <article className="post-list-item" itemScope itemType="http://schema.org/Article">
                 <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
