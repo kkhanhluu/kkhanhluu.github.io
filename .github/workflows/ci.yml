@@ -1,5 +1,6 @@
 name: CI
 on: push
+branch: main
 jobs:
   lint:
     name: Lint & Format
@@ -17,7 +18,5 @@ jobs:
         run: yarn run lint
       - name: Format
         run: yarn run format
-      - name: Run tests
-        run: yarn test
       - name: Check commits messages
         uses: wagoid/commitlint-github-action@v4
