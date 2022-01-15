@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Kim Khanh Luu`,
     author: {
-      name: `Kim Khanh Luu`,
-      summary: `Vietnamese guy who lives and works in Darmstadt, Germany building useful things.`,
+      name: `Khanh Luu`,
+      summary: `guy who lives and works in Darmstadt, Germany building useful things.`,
     },
     description: `Writing and stuff from Kim Khanh Luu`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

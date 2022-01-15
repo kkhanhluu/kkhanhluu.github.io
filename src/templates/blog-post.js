@@ -1,7 +1,7 @@
+import { Layout } from 'components/Layout";';
 import { graphql, Link } from "gatsby";
 import * as React from "react";
 import Bio from "../components/bio";
-import Layout from "../components/Layout";
 import { Seo } from "../components/Seo";
 
 const BlogPostTemplate = ({ data, location }) => {
