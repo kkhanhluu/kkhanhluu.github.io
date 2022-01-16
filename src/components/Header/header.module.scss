@@ -1,0 +1,61 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 2rem;
+  background: var(--navy);
+  font-family: 'SF Mono';
+  z-index: 50;
+
+  @media screen and(max-width: 48em) {
+    display: none;
+  }
+
+  h1 {
+    float: left;
+    margin: 0;
+    padding: 0 15px;
+    font-size: 24px;
+    line-height: 100px;
+    font-weight: 400;
+    color: var(--purple);
+  }
+  nav {
+    float: right;
+    font-size: var(--fontSizesSmish);
+
+    span {
+      color: var(--purple);
+    }
+
+    a {
+      display: inline-block;
+      height: 100px;
+      line-height: 100px;
+      padding: 0 15px;
+      min-width: 50px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0);
+      text-decoration: none;
+      color: var(--offWhite);
+
+      &:hover,
+      &:active {
+        color: var(--purple);
+      }
+    }
+
+    button {
+      padding: 10px 1rem;
+      border: 1px solid var(--purple);
+      border-radius: 3px;
+      color: var(--purple);
+      background-color: transparent;
+      font-size: var(--fontSizesSmish);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

@@ -45,7 +45,7 @@ export const Seo: React.FunctionComponent<SeoProps> = ({
         lang,
       }}
       title={title}
-      titleTemplate={siteMetadata.title ? `%s | ${siteMetadata.title}` : null}
+      titleTemplate={siteMetadata.title ? `%s | ${siteMetadata.title}` : undefined}
       meta={[
         {
           name: `description`,

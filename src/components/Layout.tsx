@@ -1,5 +1,6 @@
 import { Link, PageProps } from 'gatsby';
 import * as React from 'react';
+import Header from './Header';
 
 type LayoutProps = Pick<PageProps, 'location'> & {
   title: string;
@@ -31,6 +32,7 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <Header />
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
