@@ -1,4 +1,6 @@
 import { Link, PageProps } from 'gatsby';
+// @ts-ignore
+import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
 import Header from './Header';
 
@@ -13,6 +15,8 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
 }) => {
   // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/`;
+  const { theme, switchTheme } = React.useContext(ThemeContext);
+
   const isRootPath = location.pathname === rootPath;
   let header;
 
@@ -29,12 +33,21 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
       </Link>
     );
   }
+  console.log({ theme });
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div className={theme} data-is-root-path={isRootPath}>
       <Header />
       <header className="global-header">{header}</header>
       <main>{children}</main>
+      <button
+        onClick={() => {
+          console.log('click');
+          switchTheme('theme-twitter');
+        }}
+      >
+        swtich
+      </button>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
