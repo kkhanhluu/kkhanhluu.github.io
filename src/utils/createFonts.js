@@ -81,7 +81,6 @@ const calibreItalic = createFontFaces(calibre, 'italic');
 
 const sfMonoNormal = createFontFaces(sfMono);
 const sfMonoItalic = createFontFaces(sfMono, 'italic');
-// console.log([calibreNormal, calibreItalic, sfMonoNormal, sfMonoItalic].join(''));
 fs.appendFileSync(
   './typography.css',
   [calibreNormal, calibreItalic, sfMonoNormal, sfMonoItalic].join('')
