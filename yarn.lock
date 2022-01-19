@@ -2150,7 +2150,7 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@types/scrollreveal@^0.0.7":
+"@types/scrollreveal@0.0.7":
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/@types/scrollreveal/-/scrollreveal-0.0.7.tgz#cca18ca13093fc0c9b5ba6defed7374e6189196a"
   integrity sha512-Bv/cBFpJE+WTUOViqT7y29n7Vpp+KAGF/UUx4DZx7JwAfHarBl/xGytum1+xMZBRjANcHHfDM9+7LQGilEj2gQ==
@@ -10465,7 +10465,7 @@ schema-utils@^3.0, schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
-scrollreveal@^4.0.9:
+scrollreveal@4.0.9:
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/scrollreveal/-/scrollreveal-4.0.9.tgz#47866e1967ff604e64bac28818fe0dcea44f2c8b"
   integrity sha512-fefGvzVS8YbXbDK1+T0kvy2yqxaiBJZeGUhPeqajf+7sGqtX4xikbKGAlzQuPCpswAMswx94ZwhDjXKnRIqW1w==
