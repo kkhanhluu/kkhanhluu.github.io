@@ -1,10 +1,35 @@
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import * as React from 'react';
-import Bio from '../components/bio';
+// import Bio from '../components/bio';
 import { Layout } from '../components/Layout';
 import { Seo } from '../components/Seo';
 
-const BlogPostTemplate = ({ data, location }) => {
+interface DataProps {
+  markdownRemark: {
+    frontmatter: {
+      title: string;
+      description: string;
+      date: string;
+    };
+    excerpt: string;
+    html: string;
+  };
+  site: {
+    siteMetadata?: {
+      title: string;
+    };
+  };
+  previous: {
+    fields: { slug: string };
+    frontmatter: { title: string };
+  };
+  next: {
+    fields: { slug: string };
+    frontmatter: { title: string };
+  };
+}
+
+const BlogPostTemplate: React.FunctionComponent<PageProps<DataProps>> = ({ data, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
@@ -22,9 +47,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
+        <footer>{/* <Bio /> */}</footer>
       </article>
       <nav className="blog-post-nav">
         <ul

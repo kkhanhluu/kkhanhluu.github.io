@@ -10,14 +10,11 @@ import * as styles from './header.module.scss';
 import { HeaderNavItem } from './NavItem';
 
 export const Header: React.FunctionComponent = () => {
-  const isMounted = React.useRef(false);
   const { theme, switchTheme } = React.useContext(ThemeContext);
+  const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
-    isMounted.current = true;
-    return () => {
-      isMounted.current = false;
-    };
+    setIsMounted(true);
   }, []);
 
   return (
@@ -45,20 +42,8 @@ export const Header: React.FunctionComponent = () => {
         }
       />
       <nav>
-        <HeaderNavItem
-          transitionDelay={100}
-          isMounted={isMounted.current}
-          index={1}
-          title="About"
-          to="/"
-        />
-        <HeaderNavItem
-          transitionDelay={200}
-          isMounted={isMounted.current}
-          index={2}
-          title="Blogs"
-          to="/new-beginnings"
-        />
+        <HeaderNavItem isMounted={isMounted} index={1} title="Blogs" to="/" />
+        <HeaderNavItem isMounted={isMounted} index={2} title="About" to="/about" />
 
         <a
           href="https://kkhanhluu.github.io/assets/Resume.pdf"
