@@ -4,6 +4,75 @@ module.exports = {
     author: {
       name: `Khanh Luu`,
       summary: `guy who lives and works in Darmstadt, Germany building useful things.`,
+      about: {
+        technologies: [
+          'Javascript (ES6+)',
+          'Angular',
+          'React',
+          'React native',
+          'Ionic',
+          'Node.js',
+          'Express',
+          'Typescript',
+          'HTML & (S)CSS',
+          'Mongodb',
+          'SQL Database',
+          'Azure',
+        ],
+        jobs: [
+          {
+            title: 'Junior frontend developer',
+            company: 'Ice cream',
+            start: 'April 2018',
+            end: 'September 2018',
+            tasks: [
+              'Develop HTML/CSS Templates in close collaboration with graphic designers and other developers',
+              'Learn to use React.js, Redux and implement unit tests for small component in a react app',
+            ],
+          },
+          {
+            title: 'Fullstack developer',
+            company: 'Mipio',
+            start: 'April 2018',
+            end: 'January 2019',
+            tasks: [
+              'Develop new backend and frontend components for the real-time online auction and customer management',
+              'Develop multilingual web app and build the landing page for the componay',
+              "Maintain and improve Web app 's design in close collaboration with graphic designers and CTO",
+            ],
+          },
+          {
+            title: 'Web developer',
+            company: 'Peasec',
+            start: 'Juni 2019',
+            end: 'Oktober 2019',
+            tasks: [
+              'Further development of new components for Geobox project [ionic/angular project]',
+              "App's Design and Usability maintenance and improvement",
+            ],
+          },
+          {
+            title: '1st Prize',
+            company: 'AngelHack',
+            start: 'April 2020',
+            end: 'April 2020',
+            tasks: [
+              'Win 1st Prize in track Ideation in an online hackathon "Hackcovy" with the app "Quanranhome". The App helps to improve the communication between quarantine area\'s manager and residents. <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://kkhanhluu.github.io/assets/HackCovyCertificate.pdf">Certificate</a>',
+            ],
+          },
+          {
+            title: 'Fullstack developer',
+            company: 'Aonic',
+            start: 'Oktober 2019',
+            end: 'June 2020',
+            tasks: [
+              'Plan, design system and develop Microsoft Teams App <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://appsource.microsoft.com/en-us/product/office/WA200001566?tab=Overview">We Decide</a>',
+              'Develop RESTful Backend Service with modern technologies like: nodejs, websocket,... and a React Frontend app',
+              "Develop and give technical support in other customer's project",
+            ],
+          },
+        ],
+      },
     },
     description: `Writing and stuff from Kim Khanh Luu`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

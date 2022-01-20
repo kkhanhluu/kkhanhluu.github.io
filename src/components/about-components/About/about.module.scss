@@ -1,7 +1,7 @@
 .about {
   padding: 150px 0;
   font-family: 'Calibre';
-  max-width: 1000px;
+  max-width: 120rem;
   margin: 0 auto;
 
   h3 {
@@ -56,19 +56,23 @@
         width: 100%;
       }
 
+      .description {
+        line-height: 3.3rem;
+      }
+
       ul {
         display: grid;
-        grid-template-columns: repeat(2, minmax(140px, 200px));
+        grid-template-columns: repeat(2, minmax(14rem, 20rem));
         overflow: hidden;
         padding: 0px;
-        margin: 20px 0px 0px;
+        margin: 2.5rem 0px 0px;
         list-style: none;
 
         li {
           position: relative;
           font-family: 'SF Mono';
-          margin-bottom: 10px;
-          padding-left: 20px;
+          margin-bottom: 1.5rem;
+          padding-left: 2rem;
           font-size: var(--fontSizesSmish);
           &:after {
             content: '▹';
@@ -76,7 +80,7 @@
             left: 0;
             color: var(--purple);
             font-size: var(--fontSizesSmish);
-            line-height: 12px;
+            line-height: 1.2rem;
           }
         }
       }

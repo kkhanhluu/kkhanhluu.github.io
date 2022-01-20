@@ -1,5 +1,6 @@
 import About from 'components/about-components/About';
 import { Intro } from 'components/about-components/Intro';
+import Jobs from 'components/about-components/Jobs';
 import { Layout } from 'components/Layout';
 import { Seo } from 'components/Seo';
 import { graphql, PageProps } from 'gatsby';
@@ -17,22 +18,8 @@ const AboutPage: React.FunctionComponent<PageProps<DataProps>> = ({ location }) 
       <Seo title="Using TypeScript" />
       <main className="main">
         <Intro />
-        <About
-          technologies={[
-            'Javascript (ES6+)',
-            'Angular',
-            'React',
-            'React native',
-            'Ionic',
-            'Node.js',
-            'Express',
-            'Typescript',
-            'HTML & (S)CSS',
-            'Mongodb',
-            'SQL Database',
-            'Azure',
-          ]}
-        />
+        <About />
+        <Jobs />
       </main>
     </Layout>
   );

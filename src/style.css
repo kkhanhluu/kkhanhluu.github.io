@@ -1,20 +1,31 @@
 @import url('./typography.css');
-/* #8645f9 */
-html,
-body {
-  /* height: 100%; */
-  /* width: 100%; */
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  color: #444;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  outline: none;
+
+html {
+  font-size: 62.5%;
 }
-* {
-  box-sizing: border-box;
+
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 #app {
@@ -22,14 +33,14 @@ body {
 }
 
 :root {
-  --fontSizesXS: 12px;
-  --fontSizesSmish: 13px;
-  --fontSizesSM: 14px;
-  --fontSizesMD: 16px;
-  --fontSizesLG: 18px;
-  --fontSizesXL: 20px;
-  --fontSizesXXL: 22px;
-  --fontSizesH3: 32px;
+  --fontSizesXS: 1.4rem;
+  --fontSizesSmish: 1.5rem;
+  --fontSizesSM: 1.6rem;
+  --fontSizesMD: 1.8rem;
+  --fontSizesLG: 2rem;
+  --fontSizesXL: 2.2rem;
+  --fontSizesXXL: 2.4rem;
+  --fontSizesH3: 3.4rem;
 
   --tablet: 48em;
   --phone: 30em;
@@ -59,6 +70,7 @@ body {
   --darkBlue: #1d7ffc;
   --color-link: #ae80ff;
   --color-link-light: #dce7ff;
+  --color-nav-item: #dce7ff;
   --highlight: rgba(41; 61; 90; 0.99);
   --transGreen: rgba(100; 255; 218; 0.07);
   --transNavy: rgba(10; 25; 47; 0.7);
@@ -88,8 +100,9 @@ body {
   --green: #64ffda;
   --blue: #71afff;
   --darkBlue: #1d7ffc;
-  --color-link: #6512f4;
+  --color-link: #874bef;
   --color-link-light: #ae80ff;
+  --color-nav-item: #000000;
   --highlight: rgba(41; 61; 90; 0.99);
   --transGreen: rgba(100; 255; 218; 0.07);
   --transNavy: rgba(10; 25; 47; 0.7);
