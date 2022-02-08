@@ -51,16 +51,16 @@ export const OtherProjects: React.FunctionComponent = () => {
   );
 
   return (
-    <section id="other-projects" className={styles.otherProjects} ref={revealTitle}>
+    <section id="other-projects" ref={revealTitle}>
       <h4>Other Projects</h4>
       <div className={styles.otherProjectsContainer}>
         {otherProjects.map((project: Project, i: number) => {
           return (
-            <div key={project.name} className={styles.projects} ref={revealProjects.current[i]}>
+            <div key={project.name} ref={revealProjects.current[i]}>
               <div className={styles.project}>
                 <div className={styles.projectBody}>
                   <div className={styles.projectLink}>
-                    <div className={styles.folderIcon}>
+                    <div>
                       <Icon name="folder" />
                     </div>
                     <div className={styles.linkIcon}>

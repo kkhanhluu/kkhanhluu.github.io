@@ -1,6 +1,8 @@
 import { About, Contact, Intro, Jobs, OtherProjects, Projects } from 'components/about-components';
 import { Layout } from 'components/Layout';
 import { Seo } from 'components/Seo';
+import { SideEmail } from 'components/SideEmail';
+import { SideIcon } from 'components/SideIcon';
 import { graphql, PageProps } from 'gatsby';
 import * as React from 'react';
 
@@ -21,6 +23,8 @@ const AboutPage: React.FunctionComponent<PageProps<DataProps>> = ({ location }) 
         <Projects />
         <OtherProjects />
         <Contact />
+        <SideEmail />
+        <SideIcon />
       </main>
     </Layout>
   );
