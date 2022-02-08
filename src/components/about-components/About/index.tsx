@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { sr, srConfig } from 'utils/scrollRevealContainer';
-// @ts-ignore
-import avatar from '../../../images/avatar.jpg';
 import * as styles from './about.module.scss';
 
 export const About: React.FunctionComponent = () => {
@@ -60,7 +59,7 @@ export const About: React.FunctionComponent = () => {
           </div>
 
           <div className={styles.profile}>
-            <img src={avatar} />
+            <StaticImage src="../../../images/avatar.png" alt="Avatar" placeholder="blurred" />
           </div>
         </div>
       </section>

@@ -23,12 +23,6 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
     <div className={theme} data-is-root-path={isRootPath}>
       <Header />
       <main>{children}</main>
-
-      {/* <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer> */}
       <Footer />
     </div>
   );

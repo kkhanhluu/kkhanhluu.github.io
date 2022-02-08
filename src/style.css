@@ -148,9 +148,8 @@ body {
 }
 
 .main {
-  max-width: 1600px;
-  width: 100%;
-  padding: 200px 150px;
+  max-width: 160rem;
+  padding: 20rem 15rem;
   margin: 0 auto;
 }
 

@@ -5,14 +5,14 @@ import * as style from './footer.module.scss';
 export const Footer: React.FunctionComponent = () => (
   <footer className={style.footer}>
     <div className={style.icons}>
-      <a href="/" className={style.link}>
-        <Icon name="github" className={style.icon} />
+      <a href="/">
+        <Icon name="github" />
       </a>
-      <a href="/" className={style.link}>
-        <Icon name="linkedin" className={style.icon} />
+      <a href="/">
+        <Icon name="linkedin" />
       </a>
-      <a href="/" className={style.link}>
-        <Icon name="facebook" className={style.icon} />
+      <a href="/">
+        <Icon name="facebook" />
       </a>
     </div>
     <div className={style.built}>

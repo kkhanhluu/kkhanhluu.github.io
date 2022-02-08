@@ -302,8 +302,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-theme-switcher',
       options: {
-        defaultDarkTheme: 'theme-twitter',
-        defaultLightTheme: 'theme-midnightgreen',
+        defaultLightTheme: 'theme-twitter',
+        defaultDarkTheme: 'theme-midnightgreen',
       },
     },
   ],
