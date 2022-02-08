@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { sr, srConfig } from 'utils/scrollRevealContainer';
 // @ts-ignore
-import avatar from '../../../../assets/avatar.jpg';
+import avatar from '../../../images/avatar.jpg';
 import * as styles from './about.module.scss';
 
 export const About: React.FunctionComponent = () => {

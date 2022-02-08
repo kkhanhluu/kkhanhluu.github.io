@@ -5,7 +5,7 @@ export const Folder: React.FunctionComponent = () => (
     xmlns="http://www.w3.org/2000/svg"
     role="img"
     viewBox="0 0 60 60"
-    style={{ width: '40px', height: '40x', fill: 'var(--purple)' }}
+    style={{ width: '40px', height: '40x', fill: 'var(--color-link)' }}
   >
     <title>Folder</title>
     <path

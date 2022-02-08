@@ -130,6 +130,51 @@ module.exports = {
             github: 'https://github.com/kkhanhluu/natours',
           },
         ],
+        otherProjects: [
+          {
+            name: 'Lukaloka mobile app',
+            description:
+              'Mobile App for the web application Lukaloka. A small online marketplace mainly for oversea vietnamese people. A place for buyers and sellers to come together and trade almost anything that you want to.',
+            stack: ['Node.js', 'Mongodb', 'Angular', 'Ionic'],
+            link: 'https://cholon-9544f.firebaseapp.com/home',
+          },
+          {
+            name: 'Covid19 Vietnam',
+            description:
+              'An app to collection information about COVID cases and news in Vietnam. User can get a better overview about COVID19 in Vietnam. In collaboration with <a href="https://hieudoan.herokuapp.com/">Hieu Doan</a>',
+            stack: ['Angular', 'Chart.js', 'Ionic'],
+            link: 'https://covid19vietnam.herokuapp.com/',
+            github: 'https://github.com/covid19vietnam',
+          },
+          {
+            name: 'Idol Recognition',
+            description:
+              "A web app to recognize japanes actress. User send the app an image and this app will recognize and give the user actree's information",
+            stack: ['MS Recognitive API', 'MS Bing Image'],
+            link: 'https://github.com/kkhanhluu/jav-idol-recoginze',
+          },
+          {
+            name: 'Travel app',
+            description:
+              'A mobile app to add favorite places. This is app was made in order to get familiar with ionic framework',
+            link: 'https://ionic-travel-app-773ae.firebaseapp.com/',
+            stack: ['Angular', 'Ionic', 'Firebase'],
+            github: 'https://github.com/kkhanhluu/BookingApp',
+          },
+          {
+            name: 'Saigon',
+            description: 'Landing page for the restaurant Saigon in Kaiserlautern, Germany.',
+            stack: ['HTML', 'Javascript', 'CSS'],
+            link: 'http://saigonkaiserslautern.de/',
+          },
+          {
+            name: 'Pizza Restaurant',
+            description:
+              'A HTMl/CSS Template for a landing page of a pizza restaurant. This was made for a customer in Frankfurt, Germany.',
+            stack: ['HTML', 'Javascript', 'CSS'],
+            link: 'https://kkhanhluu.github.io/FrontEndBootCamp/pizza-template/',
+          },
+        ],
       },
     },
     description: `Writing and stuff from Kim Khanh Luu`,
