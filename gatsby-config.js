@@ -72,6 +72,64 @@ module.exports = {
             ],
           },
         ],
+        projects: [
+          {
+            name: 'Lukaloka',
+            description:
+              'A small online marketplace mainly for oversea vietnamese people. A place for buyers and sellers to come together and trade almost anything that you want to.',
+            stack: ['Node.js', 'Mongodb', 'Angular'],
+            link: 'https://cholon-9544f.firebaseapp.com/home',
+            image: 'https://kkhanhluu.github.io/assets/images/lukaloka.png',
+          },
+          {
+            name: 'Covid 19',
+            description:
+              'A small web app to visualize covid 19 statistics. User can get information about total case, total deaths and recovered cases all around the world with a nicer visualization.',
+            stack: ['Parcel', 'Javascript'],
+            link: 'https://kkhanhluu.github.io/covid19/',
+            image: 'https://kkhanhluu.github.io/assets/images/covid19.png',
+          },
+          {
+            name: 'Infinitown',
+            description: 'A 3D infinite town. The website is built with three.js',
+            stack: ['Javascript', 'Three.js'],
+            link: 'https://kkhanhluu.github.io/infinitown/',
+            image: 'https://kkhanhluu.github.io/assets/images/infinitown.png',
+          },
+          {
+            name: 'CSS Challenges',
+            description: 'Some CSS Challenges I solved by myself',
+            stack: ['HTML', 'CSS'],
+            link: 'https://kkhanhluu.github.io/CSSChallenges/',
+            image: 'https://kkhanhluu.github.io/assets/images/csschallenges.png',
+          },
+          {
+            name: 'Furniture App',
+            description:
+              'A small online furniture shop, where user can order and manage their products. This app was implemented from sratch with react native',
+            stack: ['React native', 'Firebase'],
+            link: 'https://github.com/kkhanhluu/react-native-shopping-app',
+            image: 'https://kkhanhluu.github.io/assets/images/shoppingApp.png',
+          },
+          {
+            name: 'Moviee',
+            description:
+              'A better way to search your favorite moveies. Get full information about movies: casting, trailer, idmb score and so on',
+            stack: ['Angular', 'Firebase', 'The Movie Database API'],
+            link: 'https://kkhanhluu.github.io/movieapp/movies',
+            image: 'https://kkhanhluu.github.io/assets/images/movieapp.png',
+            github: 'https://github.com/kkhanhluu/movieapp',
+          },
+          {
+            name: 'HoabanCamp',
+            description:
+              'A nice look app to book your trip. A complete web app which is built with JAM Stack and integrated with Stripe Payments platform',
+            stack: ['Node.js', 'Mongodb', 'Stripe API'],
+            link: 'https://hoa-ban-camp.herokuapp.com/',
+            image: 'https://kkhanhluu.github.io/assets/images/natours.png',
+            github: 'https://github.com/kkhanhluu/natours',
+          },
+        ],
       },
     },
     description: `Writing and stuff from Kim Khanh Luu`,

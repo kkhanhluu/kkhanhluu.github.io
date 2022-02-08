@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { sr, srConfig } from 'utils/scrollRevealContainer';
 // @ts-ignore
-import avatar from '../../../images/avatar.jpg';
+import avatar from '../../../../assets/avatar.jpg';
 import * as styles from './about.module.scss';
 
 export const About: React.FunctionComponent = () => {
@@ -52,11 +52,9 @@ export const About: React.FunctionComponent = () => {
               to work well within groups. Learning new languages and technologies is what I am
               passionate about. Here are a few technologies I&apos;ve been working with recently:
             </div>
-            <ul className={styles.stack}>
+            <ul>
               {technologies.map((tech: string) => (
-                <li key={tech} className={styles.technology}>
-                  {tech}
-                </li>
+                <li key={tech}>{tech}</li>
               ))}
             </ul>
           </div>

@@ -7,7 +7,6 @@ interface ToggleProps
   CheckedIcon: ReactElement;
   UncheckedIcon: ReactElement;
   checked: boolean;
-  disabled?: boolean;
   className?: string;
   onFocus?: (e: React.FocusEvent<HTMLInputElement, Element>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement, Element>) => void;
@@ -19,7 +18,6 @@ export const Toggle: FunctionComponent<ToggleProps> = ({
   onFocus,
   onBlur,
   checked,
-  disabled = false,
   ...inputProps
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
@@ -53,7 +51,7 @@ export const Toggle: FunctionComponent<ToggleProps> = ({
 
   const classes = `${styles.reactToggle} ${isChecked ? styles.reactToggleChecked : ''} ${
     focus ? styles.reactToggleFocus : ''
-  } ${disabled ? styles.reactToggleDisabled : ''} ${className}`;
+  } ${className}`;
 
   return (
     <div className={classes} onClick={handleClick}>

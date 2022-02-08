@@ -1,6 +1,7 @@
 import About from 'components/about-components/About';
 import { Intro } from 'components/about-components/Intro';
 import Jobs from 'components/about-components/Jobs';
+import Projects from 'components/about-components/Projects';
 import { Layout } from 'components/Layout';
 import { Seo } from 'components/Seo';
 import { graphql, PageProps } from 'gatsby';
@@ -20,6 +21,7 @@ const AboutPage: React.FunctionComponent<PageProps<DataProps>> = ({ location }) 
         <Intro />
         <About />
         <Jobs />
+        <Projects />
       </main>
     </Layout>
   );

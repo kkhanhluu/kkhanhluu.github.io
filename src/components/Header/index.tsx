@@ -2,9 +2,9 @@
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
 // @ts-ignore
-import moon from '../../images/moon.png';
+import moon from '../../../assets/moon.png';
 // @ts-ignore
-import sun from '../../images/sun.png';
+import sun from '../../../assets/sun.png';
 import { Toggle } from '../Toggle';
 import * as styles from './header.module.scss';
 import { HeaderNavItem } from './NavItem';

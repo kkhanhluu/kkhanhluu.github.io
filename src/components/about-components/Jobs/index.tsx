@@ -57,11 +57,11 @@ export const Jobs: React.FunctionComponent = () => {
           <span>02.</span> Work and Awards
         </h3>
         <div className={styles.jobsBody}>
-          <ul role="tablist" className={styles.listCompany}>
+          <ul role="tablist">
             {jobs.reverse().map((job: Job, i: number) => (
               <li key={job.company}>
                 <button
-                  id={`tab-${i}`}
+                  id={`tab-${job.company}`}
                   role="tab"
                   aria-selected={i === 0 ? 'true' : 'false'}
                   tabIndex={activeTabId === i ? 0 : -1}
@@ -75,13 +75,13 @@ export const Jobs: React.FunctionComponent = () => {
             ))}
           </ul>
 
-          {jobs.map((job: Job, i: number) => (
+          {jobs.reverse().map((job: Job, i: number) => (
             <div
               key={job.company}
-              id={`panel-${i}`}
+              id={`panel-${job.company}`}
               role="tabpanel"
               className={styles.taskTab}
-              aria-labelledby={`tab-${i}`}
+              aria-labelledby={`tab-${job.company}`}
               hidden={activeTabId !== i}
             >
               <h4 className={styles.title}>
