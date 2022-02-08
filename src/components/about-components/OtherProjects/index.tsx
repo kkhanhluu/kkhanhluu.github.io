@@ -51,7 +51,7 @@ export const OtherProjects: React.FunctionComponent = () => {
   );
 
   return (
-    <section id="other-projects" ref={revealTitle}>
+    <section id="other-projects" className={styles.otherProjects} ref={revealTitle}>
       <h4>Other Projects</h4>
       <div className={styles.otherProjectsContainer}>
         {otherProjects.map((project: Project, i: number) => {

@@ -2,6 +2,7 @@ import { PageProps } from 'gatsby';
 // @ts-ignore
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 type LayoutProps = Pick<PageProps, 'location'> & {
@@ -23,11 +24,12 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
       <Header />
       <main>{children}</main>
 
-      <footer>
+      {/* <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 };

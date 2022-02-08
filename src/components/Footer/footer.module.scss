@@ -1,0 +1,40 @@
+.footer {
+  background-color: var(--darkNavy);
+  color: var(--slate);
+  text-align: center;
+  font-size: var(--fontSizesSM);
+  padding: 2rem;
+  font-family: 'SF Mono';
+  //   width: 100%;
+
+  .inspired {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    a {
+      color: var(--lightSlate);
+      text-decoration: none;
+    }
+  }
+
+  .built {
+    font-size: 1.2rem;
+    a {
+      color: var(--lightSlate);
+    }
+  }
+
+  .icons {
+    display: flex;
+    width: 15rem;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    @media screen and(max-width: 30em) {
+      a {
+        margin: 0 1rem;
+      }
+    }
+  }
+}
