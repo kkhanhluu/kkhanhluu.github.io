@@ -1,8 +1,4 @@
-import About from 'components/about-components/About';
-import { Intro } from 'components/about-components/Intro';
-import Jobs from 'components/about-components/Jobs';
-import { OtherProjects } from 'components/about-components/OtherProjects';
-import Projects from 'components/about-components/Projects';
+import { About, Contact, Intro, Jobs, OtherProjects, Projects } from 'components/about-components';
 import { Layout } from 'components/Layout';
 import { Seo } from 'components/Seo';
 import { graphql, PageProps } from 'gatsby';
@@ -24,6 +20,7 @@ const AboutPage: React.FunctionComponent<PageProps<DataProps>> = ({ location }) 
         <Jobs />
         <Projects />
         <OtherProjects />
+        <Contact />
       </main>
     </Layout>
   );

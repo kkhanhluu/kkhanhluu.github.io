@@ -102,5 +102,3 @@ export const Projects: React.FunctionComponent = () => {
     </section>
   );
 };
-
-export default Projects;

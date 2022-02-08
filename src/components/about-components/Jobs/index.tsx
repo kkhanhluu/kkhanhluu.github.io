@@ -102,5 +102,3 @@ export const Jobs: React.FunctionComponent = () => {
     </>
   );
 };
-
-export default Jobs;
