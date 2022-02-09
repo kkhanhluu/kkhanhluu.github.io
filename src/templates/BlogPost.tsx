@@ -1,4 +1,4 @@
-import Bio from 'components/Bio';
+import { Bio } from 'components/Bio';
 import { graphql, Link, PageProps } from 'gatsby';
 import * as React from 'react';
 import { Layout } from '../components/Layout';

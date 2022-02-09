@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Layout } from '../components/Layout';
 import { Seo } from '../components/Seo';
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (

@@ -2,8 +2,8 @@ import { PageProps } from 'gatsby';
 // @ts-ignore
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
-import Footer from './Footer';
-import Header from './Header';
+import { Footer } from './Footer';
+import { Header } from './Header';
 
 type LayoutProps = Pick<PageProps, 'location'> & {
   title: string;

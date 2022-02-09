@@ -109,7 +109,19 @@ exports.createSchemaCustomization = ({ actions }) => {
   `);
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-particle-animation/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
   actions.setWebpackConfig({
     resolve: {
       plugins: [new TsconfigPathsPlugin()],

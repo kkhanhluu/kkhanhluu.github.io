@@ -22,5 +22,3 @@ export const Bio: React.FunctionComponent = () => (
     </div>
   </div>
 );
-
-export default Bio;
