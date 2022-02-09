@@ -14,8 +14,8 @@ type DataProps = {
 
 const AboutPage: React.FunctionComponent<PageProps<DataProps>> = ({ location }) => {
   return (
-    <Layout title="Using TypeScript" location={location}>
-      <Seo title="Using TypeScript" />
+    <Layout title="Khanh Luu" location={location}>
+      <Seo title="A blog by Khanh Luu" />
       <main className="main">
         <Intro />
         <About />

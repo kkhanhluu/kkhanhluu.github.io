@@ -20,7 +20,7 @@ export const Header: React.FunctionComponent = () => {
   return (
     <header className={styles.header}>
       <Toggle
-        checked={theme === 'theme-twitter'}
+        checked={theme === 'theme-midnightgreen'}
         onChange={e => switchTheme(e.target.checked ? 'theme-twitter' : 'theme-midnightgreen')}
         CheckedIcon={
           <img

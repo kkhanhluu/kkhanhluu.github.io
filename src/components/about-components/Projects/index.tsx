@@ -2,6 +2,7 @@ import { Icon } from 'components/Icons';
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { sr, srConfig } from 'utils/scrollRevealContainer';
+import { ProjectImage } from './Image';
 import * as styles from './projects.module.scss';
 
 interface Project {
@@ -9,7 +10,6 @@ interface Project {
   description: string;
   link: string;
   stack: string[];
-  image: string;
   github?: string;
 }
 
@@ -42,7 +42,6 @@ export const Projects: React.FunctionComponent = () => {
                   description
                   stack
                   link
-                  image
                   github
                 }
               }
@@ -64,7 +63,10 @@ export const Projects: React.FunctionComponent = () => {
             <div className={`${styles.projectInformation} ${styles.information}`}>
               <h5>Featured Project</h5>
               <h4>{project.name}</h4>
-              <div className={styles.projectDescription}>{project.description}</div>
+              <div
+                className={styles.projectDescription}
+                dangerouslySetInnerHTML={{ __html: project.description }}
+              />
               <ul className={styles.stack}>
                 {project.stack.map(tech => (
                   <li key={tech}>{tech}</li>
@@ -90,11 +92,13 @@ export const Projects: React.FunctionComponent = () => {
             >
               <div
                 className={styles.imageWrapper}
-                style={{
-                  backgroundImage: `url(${project.image})`,
-                  backgroundSize: i === 2 ? 'contain' : '',
-                }}
-              />
+                // style={{
+                //   backgroundImage: `url(${project.image})`,
+                //   backgroundSize: i === 2 ? 'contain' : '',
+                // }}
+              >
+                <ProjectImage name={project.name} />
+              </div>
             </a>
           </div>
         ))}
