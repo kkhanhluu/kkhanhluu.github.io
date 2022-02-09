@@ -41,7 +41,7 @@ html {
   --fontSizesLG: 2rem;
   --fontSizesXL: 2.2rem;
   --fontSizesXXL: 2.4rem;
-  --fontSizesH3: 3.4rem;
+  --fontSizesH3: 2.8rem;
 
   --tablet: 48em;
   --phone: 30em;
@@ -153,8 +153,34 @@ body {
   margin: 0 auto;
 }
 
+.main-posts {
+  min-height: 76vh;
+}
+
 @media screen and (max-width: 30em) {
   .main {
     padding: 0 25px;
   }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ae80ff #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ae80ff;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
 }
