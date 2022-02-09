@@ -1,0 +1,34 @@
+.blogPost {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  line-height: var(--fontSizesH3);
+  font-family: 'Merriweather', 'Georgia', serif;
+  min-height: 75vh;
+
+  p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3.5rem;
+  }
+  article {
+    h1 {
+      color: #222;
+      font-family: 'Calibre';
+      margin-bottom: 0;
+    }
+    .date {
+      font-size: 1.5rem;
+      font-family: Merriweather, Georgia, serif;
+      line-height: 1.75rem;
+      display: block;
+      margin-bottom: 3rem;
+      margin-top: 1rem;
+    }
+  }
+  a {
+    box-shadow: 0 1px 0 0 currentColor;
+    color: var(--color-link);
+    text-decoration: none;
+  }
+}
