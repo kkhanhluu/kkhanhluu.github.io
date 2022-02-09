@@ -1,7 +1,6 @@
 import { Icon } from 'components/Icons';
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { sr, srConfig } from 'utils/scrollRevealContainer';
 import * as styles from './otherProjects.module.scss';
 
 interface Project {
@@ -12,14 +11,6 @@ interface Project {
   github?: string;
 }
 export const OtherProjects: React.FunctionComponent = () => {
-  const revealTitle = React.useRef(null);
-  const revealProjects = React.useRef([]);
-
-  React.useEffect(() => {
-    sr.reveal(revealTitle.current ?? '', srConfig());
-    revealProjects.current.forEach((pro, i) => sr.reveal(pro, srConfig(i * 100)));
-  }, []);
-
   const {
     site: {
       siteMetadata: {
@@ -51,12 +42,25 @@ export const OtherProjects: React.FunctionComponent = () => {
   );
 
   return (
-    <section id="other-projects" className={styles.otherProjects} ref={revealTitle}>
+    <section
+      id="other-projects"
+      className={styles.otherProjects}
+      data-sal="slide-up"
+      data-sal-duration="500"
+      data-sal-delay="200"
+      data-sal-easing="ease"
+    >
       <h4>Other Projects</h4>
       <div className={styles.otherProjectsContainer}>
-        {otherProjects.map((project: Project, i: number) => {
+        {otherProjects.map((project: Project) => {
           return (
-            <div key={project.name} ref={revealProjects.current[i]}>
+            <div
+              key={project.name}
+              data-sal="slide-up"
+              data-sal-duration="500"
+              data-sal-delay="200"
+              data-sal-easing="ease"
+            >
               <div className={styles.project}>
                 <div className={styles.projectBody}>
                   <div className={styles.projectLink}>

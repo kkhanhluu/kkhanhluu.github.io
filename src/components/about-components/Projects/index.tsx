@@ -1,7 +1,6 @@
 import { Icon } from 'components/Icons';
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { sr, srConfig } from 'utils/scrollRevealContainer';
 import { ProjectImage } from './Image';
 import * as styles from './projects.module.scss';
 
@@ -14,14 +13,6 @@ interface Project {
 }
 
 export const Projects: React.FunctionComponent = () => {
-  const revealTitle = React.useRef(null);
-  const revealProjects = React.useRef([]);
-
-  React.useEffect(() => {
-    sr.reveal(revealTitle.current ?? '', srConfig());
-    revealProjects.current.forEach((pro, i) => sr.reveal(pro, srConfig(i * 100)));
-  }, []);
-
   const {
     site: {
       siteMetadata: {
@@ -54,12 +45,19 @@ export const Projects: React.FunctionComponent = () => {
 
   return (
     <section id="projects" className={styles.projects}>
-      <h3 ref={revealTitle}>
+      <h3 data-sal="slide-up" data-sal-duration="500" data-sal-delay="200" data-sal-easing="ease">
         <span>03.</span> Some Things I&apos;ve built
       </h3>
       <div>
-        {projects.map((project: Project, i: number) => (
-          <div key={project.name} ref={revealProjects.current.at(i)} className={styles.project}>
+        {projects.map((project: Project) => (
+          <div
+            key={project.name}
+            className={styles.project}
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="200"
+            data-sal-easing="ease"
+          >
             <div className={`${styles.projectInformation} ${styles.information}`}>
               <h5>Featured Project</h5>
               <h4>{project.name}</h4>

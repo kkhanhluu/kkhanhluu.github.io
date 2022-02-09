@@ -18,7 +18,10 @@ const SFMonoSemiboldWoff = './fonts/SFMono/SFMono-Semibold.woff';
 const SFMonoSemiboldWoff2 = './fonts/SFMono/SFMono-Semibold.woff2';
 const SFMonoSemiboldItalicWoff = './fonts/SFMono/SFMono-SemiboldItalic.woff';
 const SFMonoSemiboldItalicWoff2 = './fonts/SFMono/SFMono-SemiboldItalic.woff2';
-const fs = require('fs');
+let fs;
+if (typeof window !== 'undefined') {
+  fs = require('fs');
+}
 
 const calibreNormalWeights = {
   400: [CalibreRegularWoff, CalibreRegularWoff2],

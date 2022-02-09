@@ -115,7 +115,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
       module: {
         rules: [
           {
-            test: /react-particle-animation/,
+            test: /scrollreveal/,
             use: loaders.null(),
           },
         ],

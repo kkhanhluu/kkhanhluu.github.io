@@ -53,7 +53,7 @@ const BlogPostTemplate: React.FunctionComponent<PageProps<DataProps>> = ({ data,
           </footer>
         </article>
 
-        <nav className="blog-post-nav">
+        <nav className={styles.nav}>
           <ul
             style={{
               display: `flex`,

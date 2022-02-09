@@ -5,6 +5,7 @@
   line-height: var(--fontSizesH3);
   font-family: 'Merriweather', 'Georgia', serif;
   min-height: 75vh;
+  color: var(--text);
 
   p {
     margin: 0;
@@ -13,7 +14,7 @@
   }
   article {
     h1 {
-      color: #222;
+      color: var(--dark);
       font-family: 'Calibre';
       margin-bottom: 0;
     }
@@ -26,9 +27,14 @@
       margin-top: 1rem;
     }
   }
+
   a {
     box-shadow: 0 1px 0 0 currentColor;
     color: var(--color-link);
     text-decoration: none;
+  }
+
+  .nav {
+    margin: 6rem 0;
   }
 }

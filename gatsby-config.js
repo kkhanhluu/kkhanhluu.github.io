@@ -243,7 +243,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-mdx',
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -329,5 +328,6 @@ module.exports = {
         defaultDarkTheme: 'theme-midnightgreen',
       },
     },
+    `gatsby-plugin-scroll-reveal`,
   ],
 };

@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import { sr, srConfig } from 'utils/scrollRevealContainer';
 import * as styles from './jobs.module.scss';
 
 interface Job {
@@ -11,12 +10,6 @@ interface Job {
   title: string;
 }
 export const Jobs: React.FunctionComponent = () => {
-  const revealContainer = React.useRef(null);
-
-  React.useEffect(() => {
-    sr.reveal(revealContainer.current ?? '', srConfig());
-  }, []);
-
   const {
     site: {
       siteMetadata: {
@@ -48,10 +41,16 @@ export const Jobs: React.FunctionComponent = () => {
   );
 
   const [activeTabId, setActiveTabId] = React.useState(0);
-  // const tabs = React.useRef([]);
 
   return (
-    <section id="jobs" className={styles.jobs} ref={revealContainer}>
+    <section
+      id="jobs"
+      className={styles.jobs}
+      data-sal="slide-up"
+      data-sal-duration="500"
+      data-sal-delay="200"
+      data-sal-easing="ease"
+    >
       <h3>
         <span>02.</span> Work and Awards
       </h3>
