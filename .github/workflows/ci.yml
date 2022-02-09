@@ -1,4 +1,4 @@
-name: CI
+name: CD
 on:
   push:
     branches:
@@ -20,3 +20,18 @@ jobs:
         run: yarn run lint
       - name: Format
         run: yarn run format
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: //npm.pkg.github.com/
+      - name: Install Packages
+        run: yarn install --frozen-lockfile
+      - name: Deploy
+        run: yarn run deploy
