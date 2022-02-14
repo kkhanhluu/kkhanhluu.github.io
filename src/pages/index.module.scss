@@ -1,0 +1,15 @@
+.mainPosts {
+  min-height: 75vh;
+  max-width: 40%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  color: var(--text);
+
+  .listPosts {
+    list-style: none;
+    padding-left: 0;
+    li:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+}

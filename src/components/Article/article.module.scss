@@ -1,0 +1,17 @@
+.post {
+  font-family: 'Merriweather', 'Georgia', serif;
+  h2 {
+    margin-bottom: 0.2rem;
+    font-size: var(--fontSizesH3);
+    .header {
+      font-family: 'Calibre';
+      text-decoration: none;
+      margin-bottom: 1rem;
+      color: var(--color-link);
+    }
+  }
+  .description {
+    font-size: var(--fontSizesSM);
+    letter-spacing: 0.5px;
+  }
+}
