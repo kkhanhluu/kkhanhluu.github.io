@@ -11,6 +11,7 @@ interface DataProps {
       title: string;
       description: string;
       date: string;
+      time: string;
     };
     excerpt: string;
     html: string;
@@ -45,7 +46,9 @@ const BlogPostTemplate: React.FunctionComponent<PageProps<DataProps>> = ({ data,
         <article itemScope itemType="http://schema.org/Article">
           <header>
             <h1 itemProp="headline">{post.frontmatter.title}</h1>
-            <p className={styles.date}>{post.frontmatter.date}</p>
+            <p className={styles.date}>
+              {post.frontmatter.date} - {post.frontmatter.time} minutes to read
+            </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
           <footer>
@@ -101,6 +104,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        time
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

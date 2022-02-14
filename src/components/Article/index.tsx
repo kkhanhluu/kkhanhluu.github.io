@@ -11,6 +11,7 @@ interface Post {
     date: string;
     title: string;
     description: string;
+    time: string;
   };
 }
 export const Article: React.FunctionComponent<{ post: Post }> = ({ post }) => {
@@ -25,7 +26,9 @@ export const Article: React.FunctionComponent<{ post: Post }> = ({ post }) => {
               <span itemProp="headline">{title}</span>
             </Link>
           </h2>
-          <small>{post.frontmatter.date}</small>
+          <small>
+            {post.frontmatter.date} - {post.frontmatter.time} minutes to read
+          </small>
         </header>
         <section>
           <p
