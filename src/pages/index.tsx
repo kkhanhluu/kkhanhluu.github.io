@@ -22,6 +22,7 @@ type DataProps = {
         date: string;
         title: string;
         description: string;
+        time: string;
       };
     }[];
   };
@@ -65,6 +66,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          time
         }
       }
     }
