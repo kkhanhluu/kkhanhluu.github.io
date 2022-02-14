@@ -33,5 +33,8 @@ jobs:
           registry-url: //npm.pkg.github.com/
       - name: Install Packages
         run: yarn install --frozen-lockfile
-      - name: Deploy
-        run: yarn run deploy
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          branch: main
+          folder: public

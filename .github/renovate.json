@@ -19,9 +19,9 @@
       "schedule": ["before 8am on Monday"]
     },
     {
-      "groupName": "devDependencies (ci-workflow)",
+      "groupName": "devDependencies (cd-workflow)",
       "addLabels": ["devDependencies"],
-      "matchFiles": ["ci.yml"],
+      "matchFiles": ["cidyml"],
       "matchUpdateTypes": ["major"],
       "automerge": false,
       "schedule": ["before 8am on Monday"]
