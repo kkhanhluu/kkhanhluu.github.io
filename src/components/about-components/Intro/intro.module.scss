@@ -1,0 +1,60 @@
+.intro {
+  font-family: 'Calibre';
+  min-height: 80vh;
+  max-width: 120rem;
+  margin: 0 auto;
+
+  h4 {
+    font-family: 'SF Mono';
+    font-weight: normal;
+    color: var(--color-link);
+    font-size: var(--fontSizesMD);
+    margin-bottom: 5rem;
+
+    @media screen and(max-width: 62.5em) {
+      font-size: var(--fontSizesSmish);
+    }
+
+    @media screen and(max-width: 48em) {
+      font-size: var(--fontSizesMD);
+    }
+  }
+
+  h1 {
+    font-size: 80px;
+    color: var(--lightestSlate);
+    margin: 2rem 0;
+    @media screen and(max-width: 30em) {
+      font-size: 40px;
+    }
+  }
+
+  h2 {
+    font-size: 8rem;
+    color: var(--lightSlate);
+    margin: -1.5rem 0;
+    @media screen and(max-width: 30em) {
+      font-size: 4rem;
+    }
+  }
+
+  p {
+    color: var(--color-link);
+    margin: 4rem 0;
+    max-width: 50rem;
+    line-height: 3rem;
+    font-size: var(--fontSizesXL);
+  }
+
+  .contact {
+    border: 1px solid var(--color-link);
+    border-radius: 3px;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1.45rem 1.75rem;
+    color: var(--color-link);
+    font-family: 'SF Mono';
+    font-size: var(--fontSizesXS);
+    margin-top: 2rem;
+  }
+}

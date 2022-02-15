@@ -1,0 +1,25 @@
+.side {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+
+  @media screen and (max-width: 48em) {
+    display: none;
+  }
+
+  .wrapper {
+    writing-mode: vertical-rl;
+    font-family: 'SF Mono';
+    font-size: var(--fontSizesSmish);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 90px;
+      background-color: var(--lightSlate);
+      display: block;
+    }
+  }
+}

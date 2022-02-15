@@ -1,0 +1,132 @@
+.about {
+  padding: 150px 0;
+  font-family: 'Calibre';
+  max-width: 120rem;
+  margin: 0 auto;
+
+  h3 {
+    font-size: var(--fontSizesH3);
+    color: var(--color-link-light);
+    position: relative;
+
+    @media screen and (max-width: 48em) {
+      font-size: 24px;
+    }
+
+    span {
+      font-family: 'SF Mono';
+      font-size: var(--fontSizesXL);
+      color: var(--color-link);
+    }
+
+    &:after {
+      content: '';
+      width: 300px;
+      height: 1px;
+      background-color: var(--mediumGrey);
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 200px;
+
+      @media screen and (max-width: 30em) {
+        left: 150px;
+        width: 180px;
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 30em) {
+      flex-direction: column;
+      align-items: center;
+      font-size: var(--fontSizesLG);
+    }
+
+    .aboutText {
+      font-size: var(--fontSizesXL);
+      color: var(--lightGrey);
+      width: 60%;
+
+      @media screen and (max-width: 30em) {
+        width: 100%;
+      }
+
+      .description {
+        line-height: 3.3rem;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(14rem, 20rem));
+        overflow: hidden;
+        padding: 0px;
+        margin: 2.5rem 0px 0px;
+        list-style: none;
+
+        li {
+          position: relative;
+          font-family: 'SF Mono';
+          margin-bottom: 1.5rem;
+          padding-left: 2rem;
+          font-size: var(--fontSizesSmish);
+          &:after {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-size: var(--fontSizesSmish);
+            line-height: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .profile {
+      width: 35%;
+      height: fit-content;
+      position: relative;
+
+      @media screen and (max-width: 30em) {
+        margin: 60px auto 0;
+        margin-left: 2.5rem;
+      }
+
+      @media screen and (max-width: 30em) {
+        width: 70%;
+        z-index: 0;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        border-radius: 3px;
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        border: 2px solid var(--color-link);
+        border-radius: 50%;
+        top: -7px;
+        left: -7px;
+        z-index: -1;
+        width: 103%;
+        height: 103%;
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &:after {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

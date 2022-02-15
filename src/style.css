@@ -1,0 +1,191 @@
+@import url('./typography.css');
+
+html {
+  font-size: 62.5%;
+  font-family: Matter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+#app {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --fontSizesXS: 1.4rem;
+  --fontSizesSmish: 1.5rem;
+  --fontSizesSM: 1.6rem;
+  --fontSizesMD: 1.8rem;
+  --fontSizesLG: 2rem;
+  --fontSizesXL: 2.2rem;
+  --fontSizesXXL: 2.4rem;
+  --fontSizesH3: 2.8rem;
+
+  --tablet: 48em;
+  --phone: 30em;
+  --desktop: 62.5em;
+}
+
+.theme-twitter {
+  --dark: #cdcdcd;
+  --darkestNavy: #01050b;
+  --darkNavy: #020c1b;
+  --color-bg-primary: #011627;
+  --color-bg-primary-light: #172a45;
+  --darkGrey: #333f58;
+  --mediumGrey: #2d3952;
+  --grey: #4c5772;
+  --lightGrey: #606a86;
+  --slate: #8892b0;
+  --lightSlate: #a8b2d1;
+  --lightestSlate: #ccd6f6;
+  --offWhite: #dce7ff;
+  --white: #e6f1ff;
+  --pink: #ff647f;
+  --yellow: #ffc464;
+  --orange: #ff9e64;
+  --green: #64ffda;
+  --blue: #71afff;
+  --darkBlue: #1d7ffc;
+  --color-link: #ae80ff;
+  --color-link-light: #dce7ff;
+  --color-nav-item: #dce7ff;
+  --highlight: rgba(41; 61; 90; 0.99);
+  --transGreen: rgba(100; 255; 218; 0.07);
+  --transNavy: rgba(10; 25; 47; 0.7);
+  --shadowNavy: rgba(2; 12; 27; 0.7);
+  --text: #ccd6f6;
+
+  background-color: var(--color-bg-primary);
+}
+
+.theme-midnightgreen {
+  --dark: #000007;
+  --darkestNavy: #01050b;
+  --darkNavy: #020c1b;
+  --color-pg-primary: #ffffff;
+  --color-bg-primary-light: #ffffff;
+  --darkGrey: #333f58;
+  --mediumGrey: #2d3952;
+  --grey: #4c5772;
+  --lightGrey: #606a86;
+  --slate: #8892b0;
+  --lightSlate: #9a78d6;
+  --lightestSlate: #ac8ae7;
+  --offWhite: #dce7ff;
+  --white: #e6f1ff;
+  --pink: #ff647f;
+  --yellow: #ffc464;
+  --orange: #ff9e64;
+  --green: #64ffda;
+  --blue: #71afff;
+  --darkBlue: #1d7ffc;
+  --color-link: #874bef;
+  --color-link-light: #ae80ff;
+  --color-nav-item: #000000;
+  --highlight: rgba(41; 61; 90; 0.99);
+  --transGreen: rgba(100; 255; 218; 0.07);
+  --transNavy: rgba(10; 25; 47; 0.7);
+  --shadowNavy: rgba(2; 12; 27; 0.7);
+  --text: #000007;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+}
+
+.fadeup-enter {
+  opacity: 0.01;
+  transform: translateY(20px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadeup-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadedown-enter {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadedown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fade-enter {
+  opacity: 0.01;
+  transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.main {
+  max-width: 160rem;
+  padding: 20rem 15rem;
+  margin: 0 auto;
+}
+
+.main-posts {
+  min-height: 76vh;
+}
+
+@media screen and (max-width: 30em) {
+  .main {
+    padding: 0 25px;
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ae80ff #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ae80ff;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

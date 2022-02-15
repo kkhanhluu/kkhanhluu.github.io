@@ -1,0 +1,43 @@
+.bio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+
+  .bioAvatar {
+    position: relative;
+    margin-right: 2rem;
+    overflow: inherit !important;
+
+    &:hover {
+      cursor: pointer;
+      &:after {
+        transform: scale(1.1);
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      border: 2px solid var(--color-link);
+      border-radius: 50%;
+      top: -5px;
+      left: -5px;
+      z-index: -1;
+      width: 110%;
+      height: 110%;
+      transition: all 0.5s;
+    }
+  }
+
+  .link {
+    margin-bottom: 1rem;
+    display: block;
+    a {
+      color: var(--color-link);
+      box-shadow: 0 1px 0 0 currentColor;
+      text-decoration: none;
+    }
+  }
+}

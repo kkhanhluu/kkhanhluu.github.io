@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  min-height: 80vh;
+
+  .image {
+    width: 50%;
+  }
+  .text {
+    flex-basis: 50%;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -10rem;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    .back {
+      text-decoration: none;
+      border: 1px solid var(--color-link);
+      color: var(--color-link);
+      font-family: 'SF Mono';
+      font-size: var(--fontSizesSM);
+      padding: 1.45rem 1.75rem;
+      border-radius: 3px;
+      margin-top: 2rem;
+      display: block;
+    }
+  }
+}
