@@ -1,5 +1,0 @@
-'*.{ts,tsx}':
-  - yarn lint
-  - yarn format:fix
-'*.{json,md}':
-  - yarn format:fix
