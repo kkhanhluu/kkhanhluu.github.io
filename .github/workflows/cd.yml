@@ -20,6 +20,8 @@ jobs:
         run: yarn run lint
       - name: Format
         run: yarn run format
+      - name: Build
+        run: yarn run build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
