@@ -7,11 +7,13 @@ import { Header } from './Header';
 
 type LayoutProps = Pick<PageProps, 'location'> & {
   title: string;
+  showFooter?: boolean;
 };
 
 export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps>> = ({
   location,
   children,
+  showFooter = true,
 }) => {
   // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -23,7 +25,7 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
     <div className={theme} data-is-root-path={isRootPath}>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 };

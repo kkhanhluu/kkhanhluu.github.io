@@ -1,16 +1,28 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { Layout } from '../components/Layout';
 import { Seo } from '../components/Seo';
+import * as styles from './404.module.scss';
 
 const NotFoundPage = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout showFooter={false} location={location} title={siteTitle}>
       <Seo title="404: Not Found" />
-      <h1>404: Not Found!</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <div className={styles.container}>
+        <StaticImage className={styles.image} src="../images/404.png" alt="404" />
+        <div className={styles.text}>
+          <h1>404</h1>
+          <p>Hey captain! Looks like you&apos;re heading to a wrong planet!</p>
+          <div>
+            <Link to="/" className={styles.back}>
+              Take me back
+            </Link>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

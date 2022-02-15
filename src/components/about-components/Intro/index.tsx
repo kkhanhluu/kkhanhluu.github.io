@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 import * as style from './intro.module.scss';
 
@@ -45,9 +46,9 @@ export const Intro: React.FunctionComponent = () => {
           className={`${isMounted ? 'fadeup-enter-active' : 'fadeup-enter'}`}
           style={{ transitionDelay: '500ms' }}
         >
-          <a href="/" className={style.contact}>
+          <Link to="/" className={style.contact}>
             Get in touch
-          </a>
+          </Link>
         </div>
       </section>
     </>
