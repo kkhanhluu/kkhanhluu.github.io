@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const Linkedin: React.FunctionComponent = () => (
   <svg
-    style={{ width: '18px', height: '18px', fill: 'var(--lightSlate)' }}
+    style={{ width: '18px', height: '18px', fill: '#8892b0' }}
     xmlns="http://www.w3.org/2000/svg"
     role="img"
     viewBox="0 0 430.117 430.117"
