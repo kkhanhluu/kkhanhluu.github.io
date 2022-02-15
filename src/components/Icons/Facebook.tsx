@@ -3,7 +3,7 @@ import * as React from 'react';
 export const Facebook: React.FunctionComponent = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    style={{ width: '18px', height: '18px', fill: 'var(--lightSlate)' }}
+    style={{ width: '18px', height: '18px', fill: '#8892b0' }}
     x="0px"
     y="0px"
     viewBox="0 0 50 50"
