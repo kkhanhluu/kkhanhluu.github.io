@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Khanh Luu <luukhanh96@gmail.com>",
   "dependencies": {
+    "convertkit-react": "^1.5.5",
     "gatsby": "4.7.2",
     "gatsby-plugin-feed": "4.7.0",
     "gatsby-plugin-gatsby-cloud": "4.7.0",
@@ -74,7 +75,7 @@
     "prepare": "husky install",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",  
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

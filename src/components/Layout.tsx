@@ -4,6 +4,7 @@ import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { SignupForm as SignUpForm } from './SignUpForm';
 
 type LayoutProps = Pick<PageProps, 'location'> & {
   title: string;
@@ -25,6 +26,7 @@ export const Layout: React.FunctionComponent<React.PropsWithChildren<LayoutProps
     <div className={theme} data-is-root-path={isRootPath}>
       <Header />
       <main>{children}</main>
+      <SignUpForm />
       {showFooter && <Footer />}
     </div>
   );
