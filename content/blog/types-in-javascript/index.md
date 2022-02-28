@@ -5,7 +5,7 @@ description: 'The type system and type coercion in javascript'
 time: 15
 ---
 
-![javascript meme](https://res.cloudinary.com/practicaldev/image/fetch/s--ZDtqrBOj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://github.com/damiancipolat/js_vs_memes/blob/master/doc/js_thanks.png%3Fraw%3Dtrue)
+![javascript meme](./meme.png)
 
 If you search for javascript memes in google, there will be 296.000.000 results and many of them are about corner cases in this language like the meme above. Those corner cases are weird, unpredictable and should be avoided, only when we do not know how javascript works and what’s going under the hood. When we encounter such confusions, it’s easier to make meme of them and blame the language than blaming ourself for our lack of understanding of the tool, which we use everyday. I used to be that type of developer until i saw the book series _You don’t know js_ of Kyle Simpson on github a few years ago. It completely changed my mind. After spending years poring over the series and watching Kyle’s courses, it turned out I didn’t know Javascript as much as i thought. On my journey to understand javascript better, i really want to note down the knowledge and the experience i gained and this series is the beginning of that adventure.
 

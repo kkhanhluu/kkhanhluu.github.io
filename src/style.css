@@ -201,3 +201,7 @@ code.language-text {
   font-size: 85%;
   padding: 0.2em 0.4em;
 }
+.gatsby-resp-image-link {
+  box-shadow: none !important;
+  margin-bottom: 1.5rem;
+}
