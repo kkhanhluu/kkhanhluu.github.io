@@ -25,12 +25,6 @@ html {
   }
 }
 
-@media screen and (max-width: 112.5em) {
-  html {
-    font-size: 75%;
-  }
-}
-
 #app {
   height: 100%;
   overflow-x: hidden;
@@ -82,6 +76,9 @@ html {
   --text: #ccd6f6;
 
   background-color: var(--color-bg-primary);
+}
+.theme-twitter aside {
+  color: var(--darkNavy) !important;
 }
 
 .theme-midnightgreen {
@@ -188,4 +185,19 @@ body {
   background-color: #ae80ff;
   border-radius: 10px;
   border: 3px solid #ffffff;
+}
+
+.gatsby-highlight {
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem 0;
+}
+
+code.language-text {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'PT Mono', 'Liberation Mono', Courier, monospace;
+  line-height: normal;
+  background: rgba(135, 131, 120, 0.15);
+  color: #eb5757;
+  border-radius: 3px;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
 }
