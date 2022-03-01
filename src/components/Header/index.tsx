@@ -1,3 +1,4 @@
+import { Menu } from 'components/Menu';
 // @ts-ignore
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
@@ -41,7 +42,8 @@ export const Header: React.FunctionComponent = () => {
           />
         }
       />
-      <nav>
+      <Menu />
+      <nav className={styles.desktopNav}>
         <HeaderNavItem isMounted={isMounted} index={1} title="Blogs" to="/" />
         <HeaderNavItem isMounted={isMounted} index={2} title="About" to="/about" />
 

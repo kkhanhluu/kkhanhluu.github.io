@@ -116,6 +116,14 @@ body {
   background-color: var(--color-bg-primary);
 }
 
+.blur {
+  overflow: hidden;
+}
+
+.blur main {
+  filter: blur(4px);
+}
+
 .fadeup-enter {
   opacity: 0.01;
   transform: translateY(20px);

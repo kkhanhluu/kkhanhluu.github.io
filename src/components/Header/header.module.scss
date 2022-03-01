@@ -6,11 +6,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media screen and(max-width: 48em) {
-    display: none;
-  }
-
-  nav {
+  .desktopNav {
     float: right;
     font-size: var(--fontSizesXS);
 
@@ -45,5 +41,15 @@
       outline: none;
       cursor: pointer;
     }
+  }
+}
+
+@media screen and(max-width: 48em) {
+  .desktopNav {
+    display: none;
+  }
+  .header {
+    margin: 2rem 0;
+    padding-right: 1.5rem;
   }
 }
