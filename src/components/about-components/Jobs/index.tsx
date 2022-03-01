@@ -55,7 +55,7 @@ export const Jobs: React.FunctionComponent = () => {
         <span>02.</span> Work and Awards
       </h3>
       <div className={styles.jobsBody}>
-        <ul role="tablist">
+        <ul className={styles.listCompany} role="tablist">
           {jobs.map((job: Job, i: number) => (
             <li key={job.company}>
               <button
