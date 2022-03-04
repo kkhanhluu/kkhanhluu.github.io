@@ -1,5 +1,5 @@
 ---
-title: 'The first javascript’s pillar: Types'
+title: '📚 Javascript foundation: Types'
 date: '2022-02-27T00:00:00.000Z'
 description: 'The type system and type coercion in javascript'
 time: 15
