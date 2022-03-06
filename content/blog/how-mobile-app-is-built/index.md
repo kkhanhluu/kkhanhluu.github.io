@@ -2,7 +2,7 @@
 title: '💡 How a cross platform mobile app is built'
 date: '2022-01-15T00:00:00.000Z'
 description: 'My story after building a cross platform mobile app'
-time: 15
+time: 8
 ---
 
 ![Application example](./introduction.jpeg)
