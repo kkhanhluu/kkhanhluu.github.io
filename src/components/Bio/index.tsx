@@ -13,6 +13,7 @@ export const Bio: React.FunctionComponent = () => (
       height={60}
       quality={95}
       alt="Profile picture"
+      placeholder="blurred"
     />
     <div>
       <span className={styles.link}>

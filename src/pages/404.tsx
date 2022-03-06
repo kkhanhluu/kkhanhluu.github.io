@@ -12,7 +12,12 @@ const NotFoundPage = ({ data, location }: any) => {
     <Layout showFooter={false} location={location} title={siteTitle}>
       <Seo title="404: Not Found" />
       <div className={styles.container}>
-        <StaticImage className={styles.image} src="../images/404.png" alt="404" />
+        <StaticImage
+          className={styles.image}
+          src="../images/404.png"
+          alt="404"
+          placeholder="blurred"
+        />
         <div className={styles.text}>
           <h1>404</h1>
           <p>Hey captain! Looks like you&apos;re heading to a wrong planet!</p>
