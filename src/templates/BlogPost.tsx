@@ -39,7 +39,7 @@ const BlogPostTemplate: React.FunctionComponent<PageProps<DataProps>> = ({ data,
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
-        title={post.frontmatter.title}
+        title={post.frontmatter.title.substring(3)}
         description={post.frontmatter.description || post.excerpt}
       />
       <div className={styles.blogPost}>
