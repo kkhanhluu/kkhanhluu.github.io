@@ -29,7 +29,6 @@ module.exports = {
               'Involving in planing, designing and implementing a microservices application to help digitalizing the accounting process',
               'Develop own backend services with GraphQL/REST, Node.js, Postgres, Mongodb, Apollo federation, Express,... and integrating external APIs (Hubspot, Easybill,...)',
               'Designing and implementing communication between microservices using RabbitMQ (amqpblib/rascal)',
-              'Implementing authentication system for backend services with Keycloak and Apollo federation',
               'Developing modern, multilingual web app with React, typescript, Apollo client and ant design',
             ],
           },
@@ -61,15 +60,6 @@ module.exports = {
             ],
           },
           {
-            title: '1st Prize',
-            company: 'AngelHack',
-            start: 'April 2020',
-            end: 'April 2020',
-            tasks: [
-              'Win 1st Prize in track Ideation in an online hackathon "Hackcovy" with the app "Quanranhome". The App helps to improve the communication between quarantine area\'s manager and residents. <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://kkhanhluu.github.io/assets/HackCovyCertificate.pdf">Certificate</a>',
-            ],
-          },
-          {
             title: 'Web developer',
             company: 'Peasec',
             start: 'Juni 2019',
@@ -98,6 +88,16 @@ module.exports = {
             tasks: [
               'Develop HTML/CSS Templates in close collaboration with graphic designers and other developers',
               'Learn to use React.js, Redux and implement unit tests for small component in a react app',
+            ],
+          },
+          {
+            title: '',
+            company: 'Achievements',
+            start: 'April 2020',
+            end: 'present',
+            tasks: [
+              'Win 1st Prize in track Ideation in an online hackathon "Hackcovy" with the app "Quanranhome". The App helps to improve the communication between quarantine area\'s manager and residents. <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="/hackathon.pdf">Certificate</a>',
+              '<a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://www.credly.com/users/kim-khanh-luu/badges">Microsoft Certified: Azure Fundamentals</a>. The certification validates basic knowledge of cloud services and how those services are provided with Azure',
             ],
           },
         ],
