@@ -3,6 +3,8 @@ import { Menu } from 'components/Menu';
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
 // @ts-ignore
+import resume from '../../assets/resume.pdf';
+// @ts-ignore
 import moon from '../../images/moon.png';
 // @ts-ignore
 import sun from '../../images/sun.png';
@@ -48,7 +50,7 @@ export const Header: React.FunctionComponent = () => {
         <HeaderNavItem isMounted={isMounted} index={2} title="About" to="/about" />
 
         <a
-          href="https://kkhanhluu.github.io/assets/Resume.pdf"
+          href={resume}
           target="_blank"
           rel="noopener noreferrer"
           style={{ transitionDelay: '500ms' }}

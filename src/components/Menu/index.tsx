@@ -1,5 +1,7 @@
 import { HeaderNavItem } from 'components/Header/NavItem';
 import * as React from 'react';
+// @ts-ignore
+import resume from '../../assets/resume.pdf';
 import * as styles from './menu.module.scss';
 
 export const Menu: React.FunctionComponent = () => {
@@ -31,7 +33,7 @@ export const Menu: React.FunctionComponent = () => {
             <HeaderNavItem isMounted index={1} title="Blogs" to="/" />
             <HeaderNavItem isMounted index={2} title="About" to="/about" />
             <a
-              href="https://kkhanhluu.github.io/assets/Resume.pdf"
+              href={resume}
               target="_blank"
               rel="noopener noreferrer"
               style={{ transitionDelay: '500ms' }}
