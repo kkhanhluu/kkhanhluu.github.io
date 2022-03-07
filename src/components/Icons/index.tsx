@@ -4,9 +4,12 @@ import { Folder } from './Folder';
 import { Github } from './Github';
 import { Link } from './Link';
 import { Linkedin } from './Linkedin';
+import { Medium } from './Medium';
 
 export const Icon: React.FunctionComponent<
-  React.SVGProps<SVGAElement> & { name: 'github' | 'linkedin' | 'link' | 'folder' | 'facebook' }
+  React.SVGProps<SVGAElement> & {
+    name: 'github' | 'linkedin' | 'link' | 'folder' | 'facebook' | 'medium';
+  }
 > = ({ name, ...props }) => {
   switch (name) {
     case 'folder':
@@ -19,6 +22,8 @@ export const Icon: React.FunctionComponent<
       return <Linkedin {...props} />;
     case 'facebook':
       return <Facebook {...props} />;
+    case 'medium':
+      return <Medium {...props} />;
     default:
       return null;
   }
