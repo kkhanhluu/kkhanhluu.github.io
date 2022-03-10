@@ -5,7 +5,7 @@ description: 'Loose equality and strict equality in javascript'
 time: 10
 ---
 
-> In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you make JavaScript a better language, and yourself a better programmer.
+> In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you make JavaScript a better language, and yourself a better programmer:
 > **== (loose equality)**
 
 That’s how the great Douglas Crockford in his excellent _[Javascript: The Good Parts](https://www.amazon.de/-/en/Douglas-Crockford/dp/0596517742)_ introduced the bad parts in javascript and listed the loose equality aka `==` operator as the first bad part of this programming language. It’s a very common advice for javascript newcomers to completely abandon `==` and use his twin `===` operator instead. There's also an eslint rule [eqeqeq](https://eslint.org/docs/rules/eqeqeq) to force developer completely get rid of `==`. What's really `==`, how does it work under the hood and how is it different to their twin `===`? If those questions intrigue you, this post can give you the answer.
@@ -45,7 +45,7 @@ In contrast to `===`, `==` **allows coercion** in the equality comparison. Take 
 
 - If two values have the same type, `==` behaves exactly like `===`
 - If both of them are `null` or `undefined`, it returns `true`
-- If either or both of them are not **primitive**, they will be converted to primitive first by `ToPrimitive`
+- If either or both of them are **not primitive**, they will be converted to primitive first by `ToPrimitive`
 - If both of them are primitive, there are 2 possible scenarios:
   - If they have the same type, `===`’s algorithm is applied.
   - If they have different types, `ToNumber` is preferred to convert them to the same type.
@@ -69,7 +69,7 @@ if (num1 == num2) {
 
 Here’s what took place:
 
-- `[25]` is not primitive so it has to be converted to primitive. Take a look at this [post](https://kkhanhluu.github.io/types-in-javascript/) to understand how `ToPrimitive` works, the result of `ToPrimitive([25])` is `"25"`
+- `[25]` is not primitive so it has to be converted to primitive (Take a look at this [post](https://kkhanhluu.github.io/types-in-javascript/) to understand how `ToPrimitive` works), the result of `ToPrimitive([25])` is `"25"`
 - Both `25` and `"25"` are primitive but the have different type, `ToNumber` will come into play to convert `"25"` to number and the result is the number `25`
 - Because `25` is of course equals to `25`, the string `They are equal` is logged to the console.
 
@@ -89,7 +89,7 @@ Let’s do the comparison step by step:
 
 ---
 
-Let’s examine another edge case:
+### Another edge case
 
 ```jsx
 const emptyArray = [];
@@ -123,9 +123,9 @@ if (emptyArray == false) {
 
 After having some foundations of strict and loose equal, the next question is should we continue ignoring `==` and sticking to `===`? The ball is on your court.
 
-Personally, the only case i use `==` is for checking if the object is `null` or `undefined`. If both of 2 values is `null` or `undefined`, they are equal so only one `==` comparison is enough to check both cases. In comparison to `===`, the code is prettier and much more concise .
+Personally, the only case I use `==` is `obj == null` for checking if the object is `null` or `undefined`. If both of 2 values is `null` or `undefined`, they are equal so only one `==` comparison is enough to check both cases. In comparison to `===`, the code is prettier and much more concise .
 
-[Kyle Simpson has a controversial opinion that the usage of `==` should be preferred and `===` should only be a last option](https://levelup.gitconnected.com/kyle-simpson-ive-forgotten-more-javascript-than-most-people-ever-learn-3bddc6c13e93). Dr. Axel Rauschmayer also wrote a [blog post] (https://2ality.com/2011/12/strict-equality-exemptions.html) about possibles usage of `==` in javascript. Please checkout those resources, take the time and make a wise choice for yourself.
+[Kyle Simpson has a controversial opinion that the usage of `==` should be preferred and `===` should only be a last option](https://levelup.gitconnected.com/kyle-simpson-ive-forgotten-more-javascript-than-most-people-ever-learn-3bddc6c13e93). Dr. Axel Rauschmayer also wrote a [blog post](https://2ality.com/2011/12/strict-equality-exemptions.html) about possibles usage of `==` in javascript. Please checkout those resources, take the time and make a wise choice for yourself.
 
 ## Magic number - solution
 

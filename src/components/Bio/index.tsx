@@ -18,7 +18,7 @@ export const Bio: React.FunctionComponent = () => (
       <span className={styles.link}>
         Written by <a href="https://github.com/kkhanhluu">Khanh Luu</a>
       </span>
-      <span>My journey to become a better developer.</span>
+      <span>On my journey to become a better developer.</span>
     </div>
   </div>
 );
