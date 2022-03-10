@@ -17,7 +17,7 @@ That’s how the great Douglas Crockford in his excellent _[Javascript: The Good
 
 ### The quiz - magic number
 
-_To get started, i have a warm-up challenge for you. The answer and explanation can be found at the end of this post._
+_To get started, this's a warm-up challenge for you. The answer and explanation can be found at the end of this post._
 
 Can you define the variable `magicNumber` so that the string `"magic"` is printed to the console?
 
