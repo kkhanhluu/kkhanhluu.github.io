@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Mar 2022 12:02:25 GMT</lastBuildDate><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Mar 2022 12:04:07 GMT</lastBuildDate><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you make JavaScript a better language, and yourself a better programmer:
 &lt;strong&gt;== (loose equality)&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -278,4 +278,196 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;p&gt;In this post, we turn our attention to the types systems and how type conversions in javascript works. The implicit type coercion in javascript is handled by &lt;em&gt;abstract operations&lt;/em&gt;. Dynamic types is one of JS’s core features but on the other hand, it’s also controversial. In order to end this post, I’d like to take a quote of Kyle Simpson from his famous series &lt;em&gt;You don’t know JS&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Coercion gets a bad rap, but it’s actually quite useful in many cases. An important task for the responsible JS developer is to take the time to learn all the ins and outs of coercion to decide which parts will help improve their code, and which parts they really should avoid.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item></channel></rss>
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[💡 How a cross platform mobile app is built]]></title><description><![CDATA[For 1.5 years, I worked for pawtner as technical lead with other 5 developers. It has been a very long journey since scratching ideas to the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/how-mobile-app-is-built/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/how-mobile-app-is-built/</guid><pubDate>Sat, 15 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/50236e609c121b976cad0a11f3ace314/38a9e/introduction.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.45569620253164%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgT/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABbFdzKRQn/8QAGxAAAwACAwAAAAAAAAAAAAAAAAECAxEhIjH/2gAIAQEAAQUCq+ZVGkzN0PDI9V//xAAVEQEBAAAAAAAAAAAAAAAAAAAREP/aAAgBAwEBPwEZ/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8BqP/EAB8QAAIBAgcAAAAAAAAAAAAAAAABMQIDEBESQWFxkf/aAAgBAQAGPwLTTPJnOCuKULo39P/EABwQAAICAgMAAAAAAAAAAAAAAAERACExQVFhkf/aAAgBAQABPyE4NSBk6Rqx5vcADE7v+zRWRg6Eq1H/2gAMAwEAAgADAAAAEAfv/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAIAQMBAT8QIUL/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAIAQIBAT8QxCb/xAAdEAEAAgICAwAAAAAAAAAAAAABACERMUFhUXGB/9oACAEBAAE/EDpJFqDzjmBIY6PHwcdQUWR61BlQAejSMDXRYxdTAQiGgL51P//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Application example&quot;
+        title=&quot;Application example&quot;
+        src=&quot;/static/50236e609c121b976cad0a11f3ace314/828fb/introduction.jpg&quot;
+        srcset=&quot;/static/50236e609c121b976cad0a11f3ace314/ff44c/introduction.jpg 158w,
+/static/50236e609c121b976cad0a11f3ace314/a6688/introduction.jpg 315w,
+/static/50236e609c121b976cad0a11f3ace314/828fb/introduction.jpg 630w,
+/static/50236e609c121b976cad0a11f3ace314/0ede0/introduction.jpg 945w,
+/static/50236e609c121b976cad0a11f3ace314/3ac88/introduction.jpg 1260w,
+/static/50236e609c121b976cad0a11f3ace314/38a9e/introduction.jpg 1470w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;For 1.5 years, I worked for &lt;a href=&quot;https://pawtner.co/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;pawtner&lt;/a&gt; as technical lead with other 5 developers. It has been a very long journey since scratching ideas to the moment, that the app is officially available on &lt;a href=&quot;https://play.google.com/store/apps/details?id=co.pawtner.mobileapp&amp;#x26;hl=en&amp;#x26;gl=US&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;google play&lt;/a&gt; and &lt;a href=&quot;https://apps.apple.com/pk/app/pawtner/id1577467735&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;app store&lt;/a&gt;. This blog post isn’t about the app, but how we built it at pawtner. There’s too much to dive deep in a single post, so with this post, I just want to make a retrospection and give you the overview of technologies, programming languages or services that we used.&lt;/p&gt;
+&lt;h2&gt;Technology overview&lt;/h2&gt;
+&lt;p&gt;Here are the primary technologies used for this project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mongodb.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MongoDB&lt;/a&gt;: No SQL database&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://reactnative.dev/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native&lt;/a&gt;: for building cross platform app using react&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.typescriptlang.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Typescript&lt;/a&gt;: Typed javascript&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://react-query.tanstack.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Query&lt;/a&gt;: a powerful library for handling server state in react&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mswjs.io/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MSW&lt;/a&gt;: fantastic tool for mocking HTTP requests in the browser/node&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ASP.NET&lt;/a&gt;: web framework to build web app with C#&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Express&lt;/a&gt;: Node server framework&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.apollographql.com/docs/apollo-server/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Apollo serve&lt;/a&gt;r: for building graphql server&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://redis.io/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Redis&lt;/a&gt;: In-memory database–key/value store.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://graphql.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;GraphQL&lt;/a&gt;: A query language for API (GraphQL is not 100% used at pawtner)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Docker&lt;/a&gt;: to containerize your application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here are the primary services used at pawtner:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Azure&lt;/a&gt;: cloud services from microsoft&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://firebase.google.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Firebase&lt;/a&gt;: a platform developed by Google. Firebase is used for multiple important features: authentication, real time update, hosting,…&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.expo.dev/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Expo&lt;/a&gt;: a platform that makes app-development with react native easier&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/en-de&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Stripe&lt;/a&gt;: a financial service that offers online payment processing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sendgrid.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;SendGrid&lt;/a&gt;: an email delivery service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Database&lt;/h2&gt;
+&lt;p&gt;I’m not going into the battle between SQL and no-SQL databases. Both them have their advantages and trade-off. SQL databases is always my personal preference, but in pawtner &lt;code class=&quot;language-text&quot;&gt;MongoDB&lt;/code&gt; is the more suitable candidate because of its flexibility. We shipped out new features every month, the requirements change frequently so does the database schema, that’s why &lt;code class=&quot;language-text&quot;&gt;MongoDB&lt;/code&gt; is our primary database.&lt;/p&gt;
+&lt;p&gt;For the data, that we retrieve or check frequently such as session tokens and user permissions we also need an intermediary data store. For this purpose, we use Redis.&lt;/p&gt;
+&lt;h3&gt;Data visualization&lt;/h3&gt;
+&lt;p&gt;For a young and growing product, analyzing data and end’s user behavior plays an important role both in marketing and designing new features. Because I don’t have experience with any business intelligence tool like &lt;em&gt;PowerBI, Tableau&lt;/em&gt;,.. I need a simple, straightforward solution for developers, with that my database knowledge can be easily applied. &lt;a href=&quot;https://docs.mongodb.com/charts/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;MongoDB Charts&lt;/a&gt; proved to be the perfect solution for our use cas. With MongoDB Charts we can write your own queries or even aggregation pipelines and then generate multiple charts easily. Here’s a basic example how we used MongoDB Charts to visualize our data at pawtner.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.16455696202532%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB50lEQVQoz3VTXWsTQRTdPywKUopPPoiPiuTNL5BKX4r4YAlWA5ViEQSVajXRprUfoUna5qNp0t2dmXvPkTu7q0HoXQ7c2dlz99wzd5Kjo84P5/x75xxVlRYA5oEr8r8wiqjSe8/Eh3ApIpOgYpsZyVOSZyU8i0CJIgcGgA4A2LfjUgRUFYmKsAoAhwqsAlgD8BrAeE5ZoU5VQL4kWSNYE5X1UmUskaTjMVKf8/OozVJlbH0OqHJUzOmY3Yv2bqbStaWIqPdebTuhkqN0MnzQWfWpOELNDq2A8gdQkVjMvWlAFq/pSqvGhZ0lHqZ9EHR5ftm0BhJzZnh53nx0/HZaylZzqXw0WiMSpcn+PqY3rtO3d2ypr3of9PavJatjPB89hIKzPHV3DlbYGG6xddHhuZtxFjJmwVk71BCMAl+vk/dr/Gc6udh6wn4+ihXNlqRsSddH3zrL/Y3W8967j1uT3ycHs/5ZZ3b6KfP5too4Y4RmE41nd9kPk1hvc/gdt34+Ne/jFBQKi1MMJAcku+XY9Egaq0+wrkBWziiWTza40HrMe3sveLP5kF8ne7G4FIfGpDrFIMIgocIXEenZe+e99yGUZmpsc3d6zM3BNgd5odS4uV0MK/jfnOGKmxF9j/ZAOR+2nr81fwDOkEjYKBPjSwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Application example&quot;
+        title=&quot;Application example&quot;
+        src=&quot;/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/f058b/mongodb-charts.png&quot;
+        srcset=&quot;/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/c26ae/mongodb-charts.png 158w,
+/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/6bdcf/mongodb-charts.png 315w,
+/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/f058b/mongodb-charts.png 630w,
+/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/40601/mongodb-charts.png 945w,
+/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/78612/mongodb-charts.png 1260w,
+/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/60708/mongodb-charts.png 2872w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Frontend framework: React Native&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;React native + typescript&lt;/em&gt;&lt;/strong&gt; might be the wisest decision we made at pawtner. As a react developer, you will not have too much difficulties to get started with react native. All your valuable knowledge in react: &lt;code class=&quot;language-text&quot;&gt;jsx&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;components and props&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;hooks&lt;/code&gt;,… will be the same in react native. Instead of web api, you have to learn some new APIs for mobile devices and &lt;a href=&quot;https://reactnative.dev/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native’s documentation&lt;/a&gt; is a perfect resource to learn them.&lt;/p&gt;
+&lt;h3&gt;React query&lt;/h3&gt;
+&lt;p&gt;After a quite long time getting frustrated with the finding for the right tool for state management in react, &lt;code class=&quot;language-text&quot;&gt;react query&lt;/code&gt; will become my friend. It’s important to separate your application’s state into &lt;strong&gt;server state&lt;/strong&gt; and &lt;strong&gt;client state&lt;/strong&gt;. React query is a powerful library to handle fetching, caching, synchronizing and updating server state. With the help of this library, our client state can be handled with React’s &lt;code class=&quot;language-text&quot;&gt;Context&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt; without installing any other external library. The only minus point for this library is the usage with graphql is not straightforward as other graphql clients such as &lt;code class=&quot;language-text&quot;&gt;Apollo client&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;urql&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Mocking API with MSW&lt;/h3&gt;
+&lt;p&gt;When I’m developing locally, besides MongoDB and redis databases running with docker, I also have to interact with third-party APIs. Currently pawtner is working with a tons of external APIs, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/api/checkout/sessions&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Stripe checkout&lt;/a&gt;: to create payment flow&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Azure storage using shared access signature (SAS)&lt;/a&gt;: to handle uploading files.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://firebase.google.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Firebase&lt;/a&gt;: to implement real-time features: chat, notification,…&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sendgrid.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;SendGrid&lt;/a&gt;: send email to users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While developing the app locally and running the tests in CI/CD pipeline, I’d like to mock those APIs rather than calling to their real services and messing up our stripe dashboard or spamming an email’s inbox. Another problem I also usually encountered while working as technical lead for both backend and frontend team is that, after finishing building UI components, the frontend team wasted 1-2 days waiting for the backend teams finish their works and then the frontend guys can finally start working with data from server.
+&lt;br&gt;&lt;br&gt;
+Finally, I found the simple solution for both problems: mocking APIs with MSW!
+&lt;br&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;MSW&lt;/code&gt; is a fantastic tool for mocking network requests in both the browser and node and it supports both &lt;code class=&quot;language-text&quot;&gt;RESTful&lt;/code&gt; APIs and &lt;code class=&quot;language-text&quot;&gt;GraphQL&lt;/code&gt;. You’ll define our own server and the endpoints you need. The way defining request handler is pretty similar to &lt;code class=&quot;language-text&quot;&gt;express&lt;/code&gt; so it was so easy for node.js developers like me to use. To get started with &lt;code class=&quot;language-text&quot;&gt;MSW&lt;/code&gt;, their &lt;a href=&quot;https://mswjs.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;documentation&lt;/a&gt; is a great place to start.
+The selling point of &lt;code class=&quot;language-text&quot;&gt;MSW&lt;/code&gt; is that, &lt;a href=&quot;https://kentcdodds.com/blog/stop-mocking-fetch&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;you don’t mock the whole &lt;code class=&quot;language-text&quot;&gt;fetch&lt;/code&gt; API&lt;/a&gt;, you mock the server you’re calling to. That means, your application still send a real network request, but the data received was mocked by yourself. By doing that, we can simulate 90% what really happens in production in testing and developing environment.&lt;/p&gt;
+&lt;h2&gt;Backend framework: &lt;a href=&quot;http://ASP.NET&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ASP.NET&lt;/a&gt; core&lt;/h2&gt;
+&lt;p&gt;Before joining pawtner, I was a full-time &lt;em&gt;node.js&lt;/em&gt; developer with a little bit experience with C# but most of backend teams use C# as their primary programming language, so &lt;a href=&quot;http://ASP.NET&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ASP.NET&lt;/a&gt; and C# was chosen for our backend server. After a while working with it, i’m surprised how powerful is this framework. Every feature you need for a modern server: authentication, authorization, dependency injection, orm, logging,.. is already included in ASP.NET. On the other hand, with a traditional express server, you have to decide what to use and install tons of external library: should we use &lt;em&gt;passport,&lt;/em&gt; what kind of orm should be used: &lt;em&gt;mongoose, prisma or mikro-orm&lt;/em&gt;,…&lt;/p&gt;
+&lt;p&gt;I also experienced &lt;a href=&quot;https://chillicream.com/docs/hotchocolate&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Hot Chocolate&lt;/a&gt; to build a graphql server and this was so impressive. Every advanced features needed for a graphql server: schema-first, authentication, dataloader, offset-based pagination,… can be handled by &lt;em&gt;Hot Chocolate.&lt;/em&gt; In node.js ecosystem, you’ll need much more effort to achieve those things.&lt;/p&gt;
+&lt;p&gt;C# and &lt;a href=&quot;http://ASP.NET&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ASP.NET&lt;/a&gt; core are great and worth to learn. My only pain while working with C# is its combination with &lt;code class=&quot;language-text&quot;&gt;MongoDB&lt;/code&gt;. C# is a strictly typed language and &lt;code class=&quot;language-text&quot;&gt;MongoDB&lt;/code&gt; is famous for its flexibility, so in my opinion, this’s not a wise combination, especially when you have to write &lt;code class=&quot;language-text&quot;&gt;Aggregation&lt;/code&gt; in C#. At that moment, I really missed my beloved javascript and mongoose. Another drawback using ASP.NET core with &lt;code class=&quot;language-text&quot;&gt;MongoDB&lt;/code&gt; is that, you can’t make use of the awesome Entity Framework.&lt;/p&gt;
+&lt;h2&gt;GraphQL&lt;/h2&gt;
+&lt;p&gt;Since the first time I started learning graphql, it’s always my first choice when building a web server. At that time we began to build &lt;em&gt;pawtner server&lt;/em&gt;, &lt;code class=&quot;language-text&quot;&gt;graphQL&lt;/code&gt; is still a quite new concept to all of my team members, so I had to choose the traditional REST as the standard for the backend API. After around 7-8 months of development, we encountered such limitations with RESTful API:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lack of documentation: we used swagger to document our api. So far so good but we need a better way to map our documentation to types in frontend.&lt;/li&gt;
+&lt;li&gt;Overfetching data: in mobile devices, which have limitation of data usage, we certainly want to avoid fetching unnecessary data.&lt;/li&gt;
+&lt;li&gt;N+1 problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GraphQL seems to be a perfect solution for all above problems. However, after 8 months and multiple sprints, the app’s complexity is incredible and we couldn’t manage switching from RESTful to graphql due to the lack of time and human resources. Luckily we could still use &lt;code class=&quot;language-text&quot;&gt;graphQL&lt;/code&gt; for some internal apps at pawtner.&lt;/p&gt;
+&lt;h2&gt;Authentication&lt;/h2&gt;
+&lt;p&gt;Our backend API is protected by &lt;strong&gt;Firebase Authentication.&lt;/strong&gt; Here is the authentication flow with firebase&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2962396749f5c70d2d58799f45df8d92/e3051/authentication.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVQoz41SCY7EIAzr/z/a6UVboBw98MqZDTOqutJGihA5jOPQAEApBfu+4zgOnOcJ5xymaYIxRk7mUAAfA4xdsXqH67qk79vZ26AUXKUg2wGXH+G8F0BrbfWUEnLO8N5jNgbrugrg3Rhr9MIGa58LtfgpRlaaE0AC0ckixFgT36PcYzTK8Hq90Pc9xnFEjFFyzTzPWJZFAKnZMAxo2xaMa/MTIPVmDYFDCHIXwNpQiiR0SXdXQDXWUkuSoc7UV5byGSHDO4f/GFlt24au62QaAhP0DfimBLtFGJfgnBdN9XWelEI0/mWlk/y5ZbKMKSOkHVsIFZAa8eW6tBDqN1IAdf2HP1UmwSBrYgNuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Authentication flow&quot;
+        title=&quot;Authentication flow&quot;
+        src=&quot;/static/2962396749f5c70d2d58799f45df8d92/f058b/authentication.png&quot;
+        srcset=&quot;/static/2962396749f5c70d2d58799f45df8d92/c26ae/authentication.png 158w,
+/static/2962396749f5c70d2d58799f45df8d92/6bdcf/authentication.png 315w,
+/static/2962396749f5c70d2d58799f45df8d92/f058b/authentication.png 630w,
+/static/2962396749f5c70d2d58799f45df8d92/40601/authentication.png 945w,
+/static/2962396749f5c70d2d58799f45df8d92/78612/authentication.png 1260w,
+/static/2962396749f5c70d2d58799f45df8d92/e3051/authentication.png 5136w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Firebase Authentication&lt;/strong&gt; is a very powerful service, which offers you email authentication, social sign and authentication with mobile phone. Unfortunately the service doesn’t offer authorization, so our backend api has to handle authorization by itself.&lt;/p&gt;
+&lt;p&gt;At the beginning, we planed to use &lt;strong&gt;azure active directory (azure AD),&lt;/strong&gt; because we’re using &lt;strong&gt;azure&lt;/strong&gt; for cloud computing services and &lt;strong&gt;azure AD&lt;/strong&gt; also provides authorization. However, by using &lt;strong&gt;azure AD,&lt;/strong&gt; we didn’t have so much flexibility to customize the login page. It has to follow microsoft’s design strictly, so it didn’t fit with our requirements so well.&lt;/p&gt;
+&lt;h2&gt;Microsoft azure&lt;/h2&gt;
+&lt;p&gt;At pawtner, &lt;strong&gt;microsoft azure&lt;/strong&gt; is our cloud provider. We use multiple services from azure: blob storage, app services, cosmos db,… One lesson I learned after managing multiple resources at pawtner ist that: Don’t do it manually. As the app grows, you use more and more services and each services needs to be configured for different environment: staging, testing, production,… It’s very difficult to manage your cloud resources manually. We should better use infrastructure as code tool (&lt;a href=&quot;https://www.terraform.io/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Terraform&lt;/a&gt;) as soon as possible before your resources go out of control.&lt;/p&gt;
+&lt;h2&gt;CI/CD&lt;/h2&gt;
+&lt;p&gt;We use &lt;strong&gt;Git and Github&lt;/strong&gt; for code’s version control so we used &lt;a href=&quot;https://github.com/features/actions&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;github actions&lt;/a&gt; as the continuous integration and continuous deployment platform. So far, i’m quite happy with this tool, it fulfill most of our requirements and can be integrated quite well with azure.&lt;/p&gt;
+&lt;h2&gt;Online payment and subscription&lt;/h2&gt;
+&lt;p&gt;The last and the most important thing for a business is to accept payment. We chose stripe for the following reason:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;online payment in multiple countries (Singapore and Malaysia).&lt;/li&gt;
+&lt;li&gt;diverse payment methods. So far the following payment methods are acceptable in pawtner: visa card, master card and grabpay.&lt;/li&gt;
+&lt;li&gt;react native support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since expo sdk 41, stripe is officially supported by expo. With the release of &lt;a href=&quot;https://docs.expo.dev/versions/v42.0.0/sdk/stripe/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;stripe library&lt;/a&gt;, online payment can be enabled directly your native android or ios app. At pawtner, as we started to implementing the payment flow before expo sdk 41 was released, our setup is quite a little bit. We use &lt;a href=&quot;https://stripe.com/docs/payments/checkout&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Checkout&lt;/a&gt; from stripe to implement the online payment. Here’s how the payment flow works
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6UlEQVQoz32R6YqAMAyE+/6Pp+IfEQTF+z7xzPIFKrIsG5iWJtNkkpht22Tfd7muS+77luM4pCgKqapKmqaRsixlHEd5nkc5X5znKeu6KsgDjO/7kmWZzPOsjq7rJEkS9aVp+ia2H5ZlUcCfpknyPFc+qOtaDAEqWOMdx7ESuVFIot9GNwBDrc1hOGgZ/Ge0jJHccRwJw1CCINDCdBJFkRY3loj8v1TYuDXUMAYEEIMzDMPrexPaVqnStq0uwipj+JBZ2HeBgBiq7eLMtxXP88R1XZXPUth23/ca4+YTgwfMjOT4edM2W/4Ban8cRk5ip7kAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Stripe payment flow&quot;
+        title=&quot;Stripe payment flow&quot;
+        src=&quot;/static/d540d84c9c13566b10ea978076150705/f058b/payment-flow.png&quot;
+        srcset=&quot;/static/d540d84c9c13566b10ea978076150705/c26ae/payment-flow.png 158w,
+/static/d540d84c9c13566b10ea978076150705/6bdcf/payment-flow.png 315w,
+/static/d540d84c9c13566b10ea978076150705/f058b/payment-flow.png 630w,
+/static/d540d84c9c13566b10ea978076150705/40601/payment-flow.png 945w,
+/static/d540d84c9c13566b10ea978076150705/78612/payment-flow.png 1260w,
+/static/d540d84c9c13566b10ea978076150705/a8a01/payment-flow.png 2373w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;By going through this long journey, I’ve learned so many things and I’ve made a tons of mistakes too. However, it was so satisfying to see that more and more people gradually use our materialized ideas. Hope my story gives you a better overview of modern technologies and services, maybe that’s helpful for your next product.&lt;/p&gt;</content:encoded></item></channel></rss>
