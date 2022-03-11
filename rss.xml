@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Mar 2022 12:04:07 GMT</lastBuildDate><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Mar 2022 14:15:56 GMT</lastBuildDate><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you make JavaScript a better language, and yourself a better programmer:
 &lt;strong&gt;== (loose equality)&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -352,13 +352,13 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Application example&quot;
         title=&quot;Application example&quot;
-        src=&quot;/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/f058b/mongodb-charts.png&quot;
-        srcset=&quot;/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/c26ae/mongodb-charts.png 158w,
-/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/6bdcf/mongodb-charts.png 315w,
-/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/f058b/mongodb-charts.png 630w,
-/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/40601/mongodb-charts.png 945w,
-/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/78612/mongodb-charts.png 1260w,
-/static/6fd7443fa4fec5a8b706b2b7f2cdcd9c/60708/mongodb-charts.png 2872w&quot;
+        src=&quot;/static/1e0c4cd9532ee8eadca54ca35fa74c18/f058b/mongodb-charts.png&quot;
+        srcset=&quot;/static/1e0c4cd9532ee8eadca54ca35fa74c18/c26ae/mongodb-charts.png 158w,
+/static/1e0c4cd9532ee8eadca54ca35fa74c18/6bdcf/mongodb-charts.png 315w,
+/static/1e0c4cd9532ee8eadca54ca35fa74c18/f058b/mongodb-charts.png 630w,
+/static/1e0c4cd9532ee8eadca54ca35fa74c18/40601/mongodb-charts.png 945w,
+/static/1e0c4cd9532ee8eadca54ca35fa74c18/78612/mongodb-charts.png 1260w,
+/static/1e0c4cd9532ee8eadca54ca35fa74c18/60708/mongodb-charts.png 2872w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -403,26 +403,26 @@ The selling point of &lt;code class=&quot;language-text&quot;&gt;MSW&lt;/code&gt
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2962396749f5c70d2d58799f45df8d92/e3051/authentication.png&quot;
+    href=&quot;/static/55612acb91b5ab9701fe9d99426866b4/e3051/authentication.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 47.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVQoz41SCY7EIAzr/z/a6UVboBw98MqZDTOqutJGihA5jOPQAEApBfu+4zgOnOcJ5xymaYIxRk7mUAAfA4xdsXqH67qk79vZ26AUXKUg2wGXH+G8F0BrbfWUEnLO8N5jNgbrugrg3Rhr9MIGa58LtfgpRlaaE0AC0ckixFgT36PcYzTK8Hq90Pc9xnFEjFFyzTzPWJZFAKnZMAxo2xaMa/MTIPVmDYFDCHIXwNpQiiR0SXdXQDXWUkuSoc7UV5byGSHDO4f/GFlt24au62QaAhP0DfimBLtFGJfgnBdN9XWelEI0/mWlk/y5ZbKMKSOkHVsIFZAa8eW6tBDqN1IAdf2HP1UmwSBrYgNuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 47.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVQoz22QW5YDIQgFe/8r7TeCooKKMxOTPj1J6s8DJXCn3ruZqWqttbUWQjiOAwDO8yyl9N45xZMQg2/2j9ba9JC7+q3xER7Qi5yzqnIIAICIZtZvPOXeu4p4orfy6Hh7jgWfsqqKSM45pTROuH9xl1V1WZZt2/Z9TymZ2eScQ0QRAYB93+d5BoCvcikFAFQ1xlhK+ZNHodYaY+wf3OUYIxE557z3zFxrna6VOIRP+TqhlMLM67rO8zzifMlmxOn0OYSgIkSEiEQEADnnMXAk8iVtM0tZYlbmqKqI6JwjoitI772IXHEOfif/ANkbDo/8qhrFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Authentication flow&quot;
         title=&quot;Authentication flow&quot;
-        src=&quot;/static/2962396749f5c70d2d58799f45df8d92/f058b/authentication.png&quot;
-        srcset=&quot;/static/2962396749f5c70d2d58799f45df8d92/c26ae/authentication.png 158w,
-/static/2962396749f5c70d2d58799f45df8d92/6bdcf/authentication.png 315w,
-/static/2962396749f5c70d2d58799f45df8d92/f058b/authentication.png 630w,
-/static/2962396749f5c70d2d58799f45df8d92/40601/authentication.png 945w,
-/static/2962396749f5c70d2d58799f45df8d92/78612/authentication.png 1260w,
-/static/2962396749f5c70d2d58799f45df8d92/e3051/authentication.png 5136w&quot;
+        src=&quot;/static/55612acb91b5ab9701fe9d99426866b4/f058b/authentication.png&quot;
+        srcset=&quot;/static/55612acb91b5ab9701fe9d99426866b4/c26ae/authentication.png 158w,
+/static/55612acb91b5ab9701fe9d99426866b4/6bdcf/authentication.png 315w,
+/static/55612acb91b5ab9701fe9d99426866b4/f058b/authentication.png 630w,
+/static/55612acb91b5ab9701fe9d99426866b4/40601/authentication.png 945w,
+/static/55612acb91b5ab9701fe9d99426866b4/78612/authentication.png 1260w,
+/static/55612acb91b5ab9701fe9d99426866b4/e3051/authentication.png 5136w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -450,19 +450,19 @@ The selling point of &lt;code class=&quot;language-text&quot;&gt;MSW&lt;/code&gt
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 33.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6UlEQVQoz32R6YqAMAyE+/6Pp+IfEQTF+z7xzPIFKrIsG5iWJtNkkpht22Tfd7muS+77luM4pCgKqapKmqaRsixlHEd5nkc5X5znKeu6KsgDjO/7kmWZzPOsjq7rJEkS9aVp+ia2H5ZlUcCfpknyPFc+qOtaDAEqWOMdx7ESuVFIot9GNwBDrc1hOGgZ/Ge0jJHccRwJw1CCINDCdBJFkRY3loj8v1TYuDXUMAYEEIMzDMPrexPaVqnStq0uwipj+JBZ2HeBgBiq7eLMtxXP88R1XZXPUth23/ca4+YTgwfMjOT4edM2W/4Ban8cRk5ip7kAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 33.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7klEQVQY023Qy46FIAwGYN//9bxsjAuCERQIIkgrIEwCc05mMd+upKXN3yHi8zwppZxzjHHfdymlUkoIYa0tpbxV+vDeAwAiAkA3TRNjzDnnvddar+vKKiGEUgoq7/193845ay3nfK2klF0bK5W1llLKOaeUHscBAOUjV+/7llJCCG2kK6U8z4OIraP8BxH7vl+WZZ7nfd8ZY4QQIUT33dl+/bvnW6aUpJQhhPZ+XVcru9bknGunaq1bTi2/EEKMsSXakosxAsB1XTnn32EAGMdxGAZCCGPsOI7zPAHAGGOtVZX3PoRgjFFKbduGiD+pgJEyutysQQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Stripe payment flow&quot;
         title=&quot;Stripe payment flow&quot;
-        src=&quot;/static/d540d84c9c13566b10ea978076150705/f058b/payment-flow.png&quot;
-        srcset=&quot;/static/d540d84c9c13566b10ea978076150705/c26ae/payment-flow.png 158w,
-/static/d540d84c9c13566b10ea978076150705/6bdcf/payment-flow.png 315w,
-/static/d540d84c9c13566b10ea978076150705/f058b/payment-flow.png 630w,
-/static/d540d84c9c13566b10ea978076150705/40601/payment-flow.png 945w,
-/static/d540d84c9c13566b10ea978076150705/78612/payment-flow.png 1260w,
-/static/d540d84c9c13566b10ea978076150705/a8a01/payment-flow.png 2373w&quot;
+        src=&quot;/static/477d59dc8bf9745101303623b1030873/f058b/payment-flow.png&quot;
+        srcset=&quot;/static/477d59dc8bf9745101303623b1030873/c26ae/payment-flow.png 158w,
+/static/477d59dc8bf9745101303623b1030873/6bdcf/payment-flow.png 315w,
+/static/477d59dc8bf9745101303623b1030873/f058b/payment-flow.png 630w,
+/static/477d59dc8bf9745101303623b1030873/40601/payment-flow.png 945w,
+/static/477d59dc8bf9745101303623b1030873/78612/payment-flow.png 1260w,
+/static/477d59dc8bf9745101303623b1030873/a8a01/payment-flow.png 2373w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
