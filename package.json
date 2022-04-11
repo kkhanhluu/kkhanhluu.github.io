@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Khanh Luu <luukhanh96@gmail.com>",
   "dependencies": {
-    "gatsby": "4.11.1",
+    "gatsby": "4.11.2",
     "gatsby-plugin-feed": "4.11.1",
     "gatsby-plugin-gatsby-cloud": "4.11.1",
     "gatsby-plugin-google-analytics": "4.11.0",
