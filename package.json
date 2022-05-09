@@ -28,8 +28,8 @@
     "gatsby-transformer-remark": "5.13.0",
     "gatsby-transformer-sharp": "4.13.0",
     "prismjs": "1.28.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "react-helmet": "6.1.0",
     "tsconfig-paths-webpack-plugin": "3.5.2"
   },
