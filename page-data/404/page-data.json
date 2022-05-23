@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-404-tsx",
-    "path": "/404/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Kim Khanh Luu"}}},"pageContext":{}},
-    "staticQueryHashes": ["1642819152"]}
+{"componentChunkName":"component---src-pages-404-tsx","path":"/404/","result":{"data":{"site":{"siteMetadata":{"title":"Kim Khanh Luu"}}},"pageContext":{}},"staticQueryHashes":["1642819152"]}
