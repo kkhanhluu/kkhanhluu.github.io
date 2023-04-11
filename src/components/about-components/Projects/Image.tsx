@@ -13,8 +13,8 @@ export const ProjectImage: React.FunctionComponent<{ name: string }> = ({ name }
       return (
         <StaticImage src="../../../images/csschallenges.png" alt={name} placeholder="blurred" />
       );
-    case 'Moviee':
-      return <StaticImage src="../../../images/movieapp.png" alt={name} placeholder="blurred" />;
+    case 'E-shop':
+      return <StaticImage src="../../../images/e-shop.png" alt={name} placeholder="blurred" />;
     case 'Natours':
       return <StaticImage src="../../../images/natours.png" alt={name} placeholder="blurred" />;
     case 'Pawtner':

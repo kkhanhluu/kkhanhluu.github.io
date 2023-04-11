@@ -102,6 +102,14 @@ module.exports = {
         ],
         projects: [
           {
+            name: 'E-shop',
+            description:
+              'A practical microservices reference example for demonstrating the basic of Command Query Responsibility Segregation (CQRS), Event Sourcing and Saga pattern.',
+            stack: ['Java spring', 'Kubernetes', 'RabbitMQ', 'Eventstore', 'gRPC', 'tRPC'],
+            link: 'https://kkhanhluu.github.io/e-shop/',
+            github: 'https://github.com/kkhanhluu/e-shop',
+          },
+          {
             name: 'Pawtner',
             description: `A mobile for digitalizing pet adoption, connecting pet lovers and beyond. 
               Pawtner helps adopters and shelters to streamline the system from the start to the end of 
@@ -143,14 +151,6 @@ module.exports = {
             description: 'Some CSS Challenges I solved by myself',
             stack: ['HTML', 'CSS'],
             link: 'https://kkhanhluu.github.io/CSSChallenges/',
-          },
-          {
-            name: 'Moviee',
-            description:
-              'A better way to search your favorite moveies. Get full information about movies: casting, trailer, idmb score and so on',
-            stack: ['Angular', 'Firebase', 'The Movie Database API'],
-            link: 'https://kkhanhluu.github.io/movieapp/movies',
-            github: 'https://github.com/kkhanhluu/movieapp',
           },
         ],
         otherProjects: [
