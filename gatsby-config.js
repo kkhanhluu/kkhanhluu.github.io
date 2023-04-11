@@ -21,10 +21,19 @@ module.exports = {
         ],
         jobs: [
           {
+            title: 'Backend Engineer',
+            company: 'Strapi',
+            start: 'February 2023',
+            end: 'present',
+            tasks: [
+              'Developing cloud platform, which helps to deploy, monitor and manage strapi app in a cloud environment.',
+            ],
+          },
+          {
             title: 'Fullstack developer',
             company: 'Gastromatic',
             start: 'November 2020',
-            end: 'present',
+            end: 'November 2022',
             tasks: [
               'Involving in planing, designing and implementing a microservices application to help digitalizing the accounting process',
               'Develop own backend services with GraphQL/REST, Node.js, Postgres, Mongodb, Apollo federation, Express,... and integrating external APIs (Hubspot, Easybill,...)',
@@ -78,16 +87,6 @@ module.exports = {
               'Develop new backend and frontend components for the real-time online auction and customer management',
               'Develop multilingual web app and build the landing page for the componay',
               "Maintain and improve Web app 's design in close collaboration with graphic designers and CTO",
-            ],
-          },
-          {
-            title: 'Junior frontend developer',
-            company: 'Ice cream',
-            start: 'April 2018',
-            end: 'September 2018',
-            tasks: [
-              'Develop HTML/CSS Templates in close collaboration with graphic designers and other developers',
-              'Learn to use React.js, Redux and implement unit tests for small component in a react app',
             ],
           },
           {
