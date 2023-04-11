@@ -13,7 +13,7 @@ import * as styles from './header.module.scss';
 import { HeaderNavItem } from './NavItem';
 
 export const Header: React.FunctionComponent = () => {
-  const { theme, switchTheme } = React.useContext(ThemeContext);
+  const { theme, switchTheme } = React.useContext<any>(ThemeContext);
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
