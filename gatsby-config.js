@@ -45,7 +45,7 @@ module.exports = {
             title: 'Technical lead',
             company: 'Pawtner',
             start: 'September 2020',
-            end: 'present',
+            end: 'February 2022',
             tasks: [
               'Lead a tribe of 6 senior developers. I am responsible for technical planning, overseeing and make the decision on all aspects of architecture and development',
               'Work closely with the team and stakeholders to define technical debt, gathered requirements from stakeholders and ensuring smooth communication between engineering team and stakeholders',
