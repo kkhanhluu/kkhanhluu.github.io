@@ -64,7 +64,7 @@ module.exports = {
             end: 'June 2020',
             tasks: [
               'Plan, design system and develop Microsoft Teams App <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://appsource.microsoft.com/en-us/product/office/WA200001566?tab=Overview">We Decide</a>',
-              'Develop RESTful Backend Service with modern technologies like: nodejs, websocket,... and a React Frontend app',
+              'Develop RESTful Backend Service with modern technologies like: Java Spring, Nodejs, websocket,... and a React Frontend app',
               "Develop and give technical support in other customer's project",
             ],
           },
@@ -76,6 +76,7 @@ module.exports = {
             tasks: [
               'Further development of new components for Geobox project [ionic/angular project]',
               "App's Design and Usability maintenance and improvement",
+              'Develop an API gateway with Java Spring to aggregate data from multiple services and forward request to client',
             ],
           },
           {
