@@ -46,6 +46,6 @@ In an **event sourcing** system, each change that took place in the system is re
 
 If you to look at a example of event sourcing, you can visit my [e-shop project](https://kkhanhluu.github.io/e-shop/explore/code/event-sourcing).
 
-# Conclusion
+# Summary
 
 **Event driven architecture** is about using events to implement communication between services asynchronously. **Event sourcing** is pattern for storing data as events. We can use both solutions next to each other but conflate those two concepts.
