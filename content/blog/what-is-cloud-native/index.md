@@ -29,9 +29,9 @@ Gone are the days that we only have PC and laptop connected to internet. Nowaday
 
 In order to fulfill all above mentioned requirements, a modern application need to have following characteristics:
 
-- \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***Redundancy:\***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\*** In order to ensure the system to be up 24/7, we need to have a system with redundant nodes to compensate for inevitable failures.
-- \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***Modularity:\***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\*** The goal here is to release code frequenetly. A monolith application with many closely interrelated modules doesn’t allow this. In recent time, it’s been proven that software made up of smaller, loosely coupled and indepently deployable components enables more flexible release model. This architecture is often called \***\*\*\*\*\*\***microservices.\***\*\*\*\*\*\***
-- **\*\*\*\***\*\*\*\***\*\*\*\***\*\***\*\*\*\***\*\*\*\***\*\*\*\***Dynamic scalability:**\*\*\*\***\*\*\*\***\*\*\*\***\*\***\*\*\*\***\*\*\*\***\*\*\*\*** As a result of tidal waves of requests and data volumes, the software is required to be scaled dynamically. The resources need to be scaled up in rush hours and scaled down in other circumstances.
+- **_Redundancy:_** In order to ensure the system to be up 24/7, we need to have a system with redundant nodes to compensate for inevitable failures.
+- **_Modularity:_** The goal here is to release code frequenetly. A monolith application with many closely interrelated modules doesn’t allow this. In recent time, it’s been proven that software made up of smaller, loosely coupled and indepently deployable components enables more flexible release model. This architecture is often called **microservices.**
+- **Dynamic scalability:** As a result of tidal waves of requests and data volumes, the software is required to be scaled dynamically. The resources need to be scaled up in rush hours and scaled down in other circumstances.
 
 The picture below was taken from the book “Cloud native patterns”, depicts the core characteristics of a cloud-native software based on its requirements
 
@@ -39,7 +39,7 @@ The picture below was taken from the book “Cloud native patterns”, depicts t
 
 ## Definition of cloud-native
 
-All those requirements, characteristics along with the availability of new platform on which you can run the software, lead to a new architectural style for software: \***\*\*\*\***cloud-navtive\***\*\*\*\***
+All those requirements, characteristics along with the availability of new platform on which you can run the software, lead to a new architectural style for software: **cloud-navtive**
 
 > **Cloud-native software is highly distributed, must operate in a constantly changing environment, and is itself constantly changing.**
 
