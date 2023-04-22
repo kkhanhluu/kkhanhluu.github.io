@@ -1,4 +1,151 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 22 Apr 2023 14:01:21 GMT</lastBuildDate><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 22 Apr 2023 14:24:39 GMT</lastBuildDate><item><title><![CDATA[📩 Event sourcing vs Event Driven architecture]]></title><description><![CDATA[Event sourcing vs Event Driven architecture In the previous post, we already clarified the difference between “cloud-native” and…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/event-sourcing-vs-event-driven-architecture/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/event-sourcing-vs-event-driven-architecture/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Event sourcing vs Event Driven architecture&lt;/h1&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://kkhanhluu.github.io/what-is-cloud-native/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;previous post&lt;/a&gt;, we already clarified the difference between “cloud-native” and “microservices architecture”. In this post, we will clarify the difference between two popular concepts that people often conflate with each other: ”&lt;strong&gt;Event sourcing&lt;/strong&gt;” and ”&lt;strong&gt;Event Driven architecture&lt;/strong&gt;“.&lt;/p&gt;
+&lt;h1&gt;Event Driven Architecture&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Event driven architecture&lt;/strong&gt; is about using events to implement communication between services asynchronously. &lt;strong&gt;Using events&lt;/strong&gt; and &lt;strong&gt;asynchronous communication&lt;/strong&gt; are two main characteristics of this architecture&lt;/p&gt;
+&lt;h3&gt;Communication via events&lt;/h3&gt;
+&lt;p&gt;In an &lt;strong&gt;event driven architecture&lt;/strong&gt;, an “event” is an occurrence of something (a state change). A “Publisher” publishes events describing something happened within the service (User logged in, Order was checked out). A “Consumer” subscribes to published events and react to them (Update database, sending email when order was checked out).&lt;/p&gt;
+&lt;h3&gt;Event driven architecture communicate asynchronously&lt;/h3&gt;
+&lt;p&gt;In a normal case, the client calls the service via REST API, GraphQL or RPC. This is a common pattern for synchronous communication called &lt;strong&gt;Request-Response pattern&lt;/strong&gt;, where the client has to wait for a full response from the service.&lt;/p&gt;
+&lt;p&gt;In an &lt;strong&gt;event driven architecture&lt;/strong&gt;, publishers publish events and subscribers react to those events and ublishers don’t expect any immediate response after publishing events. This picture below, taken from the book &lt;a href=&quot;https://www.manning.com/books/cloud-native-patterns&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;“Cloud native patterns”&lt;/a&gt; depicts the contrast between the primitive request/response and event-driven invocation styles&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/51e9eecaf508169117e4d068d036ad18/13a9a/request-response-event-driven.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY0z2QS07DQBBEff+TsAMWgLgBQmJBPnaIwiIQMJ5vxrEd2+PxQ/EkaanU3dW1aL0k+CMwACH28TSPcR99VOjx/fGcGWPmcuOShzB0JHVTscj3zHLHIncYd6B0DmUdmWrIdMtS1Niyoq5rrDH87GuWsiFVLRvhMFphrMX3LYmrDjytJTevK543muxzSzqfMf/Y8LgquJ3veFgVCFtSVxVWK953hrtlzn36x8tWY5RESEnXNvHDtT6SiopUHPjOC5QU5EKRyYq16chk/PBSv/uGty89aWubqz8GTzIxnFgEhq5BK4E1atLo28jozDAMfZRvKa2iNJLh5Ad/9f8BW0B8hc93ZCcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/51e9eecaf508169117e4d068d036ad18/f058b/request-response-event-driven.png&quot;
+        srcset=&quot;/static/51e9eecaf508169117e4d068d036ad18/c26ae/request-response-event-driven.png 158w,
+/static/51e9eecaf508169117e4d068d036ad18/6bdcf/request-response-event-driven.png 315w,
+/static/51e9eecaf508169117e4d068d036ad18/f058b/request-response-event-driven.png 630w,
+/static/51e9eecaf508169117e4d068d036ad18/13a9a/request-response-event-driven.png 637w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;There are two interesting points to note in the diagram:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In &lt;strong&gt;event driven architecture&lt;/strong&gt;, the client and the service itself are loosely coupled. The service executes as a result of an event, but it doesn’t care who triggered that event&lt;/li&gt;
+&lt;li&gt;The event and the outcome are totaly disconnected. In the primitive request/response, there’s a couping between request and response.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Event sourcing&lt;/h1&gt;
+&lt;p&gt;In many cases, we don’t just want to see the current state of data, but also want to track the complete series of action taken of that data. A real-world example is a bank system, where as an end-user, we may need to replay the complete history of transactions that happened within our account, besides just seeing the current balance.&lt;/p&gt;
+&lt;p&gt;In a tradditonal database, we usually only save the final state of data, business operation context is usually lost. Event sourcing is an alternative pattern for storing data as events. In the context of event sourcing, an event represents a change that took place within your business. Every change made is stored in the event database. An entity’s current state can be created by replaying all the events in the order of occurrence.&lt;/p&gt;
+&lt;p&gt;Here’s an &lt;a href=&quot;https://www.eventstore.com/event-sourcing&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;example&lt;/a&gt; of events in an event sourcing system&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bc445042a245919f3063d5395ab1181a/3a737/event-sourcing-example.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPUlEQVQY01WR604bMRSE9/2fqD+o2ogkUAJVIU2ISKHKhiRLoPWa9W1tr7/KplLLSEdnjkYaz8iV8h1d/2+0V9hg6WNfxgVXbhcdIfnC3+nRlW2DwceeqlEH9t2OJ91Qv2446icyUkoMaSh8SJHLh2+MV19oTftXH4qetTekYl5l8j9iGvBDoM8vDz025oQaYQS7tkG6FhM0Ohhyu9xIB410siStjLO8/JZYb3gUkultw2z9zPetYXS9Z7rcM7tvOV89M1lkLpiuGkY3NfNac7FuObs9cF0LrHdvhpvtEaklDy+/GC+OjJcN5z8UHy63nM53TO4Un+YNH79umNx1fJ4fObn6ydlaMloKJosDN3WH8ZYqV0tEwuDxMdBZg9AdfXAoZxFalfTKGVptsN6ieo3QuhgYb5DG8Gp1+ZQ/EBXHYNPYteoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/bc445042a245919f3063d5395ab1181a/f058b/event-sourcing-example.png&quot;
+        srcset=&quot;/static/bc445042a245919f3063d5395ab1181a/c26ae/event-sourcing-example.png 158w,
+/static/bc445042a245919f3063d5395ab1181a/6bdcf/event-sourcing-example.png 315w,
+/static/bc445042a245919f3063d5395ab1181a/f058b/event-sourcing-example.png 630w,
+/static/bc445042a245919f3063d5395ab1181a/3a737/event-sourcing-example.png 897w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Projection&lt;/h3&gt;
+&lt;p&gt;In an &lt;strong&gt;event sourcing&lt;/strong&gt; system, each change that took place in the system is recorded in the database and this event store is the signle source of truth. However, in many cases, developers need a way to view or query the data like the powerful queries in SQL or NoSQL database. A &lt;code class=&quot;language-text&quot;&gt;projection&lt;/code&gt; provides a view of underlying event-based data model. Often, the present the logic of translating the event-based data into a read model. This read model can be stored in any databases (SQL, NoSQL,…) and used for queries.&lt;/p&gt;
+&lt;p&gt;If you to look at a example of event sourcing, you can visit my &lt;a href=&quot;https://kkhanhluu.github.io/e-shop/explore/code/event-sourcing&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;e-shop project&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Event driven architecture&lt;/strong&gt; is about using events to implement communication between services asynchronously. &lt;strong&gt;Event sourcing&lt;/strong&gt; is pattern for storing data as events. We can use both solutions next to each other but conflate those two concepts.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🌥️ What is cloud native]]></title><description><![CDATA[What is cloud native “Cloud-native” is one the most popular buzzwords that you can come across as a software engineer. This articles will…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/what-is-cloud-native/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/what-is-cloud-native/</guid><pubDate>Sun, 16 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;What is cloud native&lt;/h1&gt;
+&lt;p&gt;“Cloud-native” is one the most popular buzzwords that you can come across as a software engineer. This articles will discuss some key takeaways to know about “cloud-native” term, why does it matter and how is it different from “microservices architecture”.&lt;/p&gt;
+&lt;h2&gt;Today’s application requirements&lt;/h2&gt;
+&lt;p&gt;The ubiquity of internet has pushed the boundaries of user’s expectation to the application that they use daily. Here are some key requirements for any popular applications:&lt;/p&gt;
+&lt;h3&gt;Zero downtime&lt;/h3&gt;
+&lt;p&gt;Gone are the days when even short maintenance windows during which applications are unavailable are tolerated. Nowadays, applications are expected to be available 24/7 without any downtime.&lt;/p&gt;
+&lt;h3&gt;Frequent software releases&lt;/h3&gt;
+&lt;p&gt;Users are excited for whizzbang new features. Developers want to release a feature as soon as possible and get a quick feedback. In order to do release software more frequently, we need an architecture that enables agility and helps us to build the software more robustly.&lt;/p&gt;
+&lt;h3&gt;Great number of connected devices&lt;/h3&gt;
+&lt;p&gt;Gone are the days that we only have PC and laptop connected to internet. Nowadays, apart from PC and laptop, an application must be support at least two mobile device platforms, iOS and Android, desktop app, tablet,… In some cases, sensors and devices such as cameras, thermostats,… must also be supported. That means two requirements. First, the number of requests sent to the system increase so the system must adapt to expanding demands. Second, the volume of data flowing over internet has significantly increased.&lt;/p&gt;
+&lt;h2&gt;Characteristics of a modern application&lt;/h2&gt;
+&lt;p&gt;In order to fulfill all above mentioned requirements, a modern application need to have following characteristics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Redundancy:&lt;/em&gt;&lt;/strong&gt; In order to ensure the system to be up 24/7, we need to have a system with redundant nodes to compensate for inevitable failures.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Modularity:&lt;/em&gt;&lt;/strong&gt; The goal here is to release code frequenetly. A monolith application with many closely interrelated modules doesn’t allow this. In recent time, it’s been proven that software made up of smaller, loosely coupled and indepently deployable components enables more flexible release model. This architecture is often called &lt;strong&gt;microservices.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic scalability:&lt;/strong&gt; As a result of tidal waves of requests and data volumes, the software is required to be scaled dynamically. The resources need to be scaled up in rush hours and scaled down in other circumstances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The picture below was taken from the book “Cloud native patterns”, depicts the core characteristics of a cloud-native software based on its requirements&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/78c160bf36798390bf26702cba5eca3f/34e70/characteristics.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA80lEQVQoz22S1wqFQAxE9/8/UvDJ3rBgz+UEInGvgYCbOpkxXNcl27bJcRyC3fetjk3TJF3XyTAM0ve9nOepcXratpW6rqWqKnXy1AeSJMZx/BvIEuIUspRaq2FRURRSlqVkWSbrump9oGBZFonNDzX0Pm627/uzCHsGWqEhtDcNuB/m8yADvcV1oAXiJhvoG+KFDLSFipAEpJL4QgiH8PVlXAZ/aIBIiBbgB3KbpnlxYcNRGOebPG68AmKeZ73ARAu+2TfYqXz7Ifb2ir9E8QGQpGkqSZLoCX5JrK5xn+e5/jrQAogQKwoCuIjP/+LXI7eTfx3iEe/d1+/WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/78c160bf36798390bf26702cba5eca3f/f058b/characteristics.png&quot;
+        srcset=&quot;/static/78c160bf36798390bf26702cba5eca3f/c26ae/characteristics.png 158w,
+/static/78c160bf36798390bf26702cba5eca3f/6bdcf/characteristics.png 315w,
+/static/78c160bf36798390bf26702cba5eca3f/f058b/characteristics.png 630w,
+/static/78c160bf36798390bf26702cba5eca3f/40601/characteristics.png 945w,
+/static/78c160bf36798390bf26702cba5eca3f/34e70/characteristics.png 1053w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Definition of cloud-native&lt;/h2&gt;
+&lt;p&gt;All those requirements, characteristics along with the availability of new platform on which you can run the software, lead to a new architectural style for software: &lt;strong&gt;cloud-navtive&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Cloud-native software is highly distributed, must operate in a constantly changing environment, and is itself constantly changing.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Cloud vs cloud-native&lt;/h2&gt;
+&lt;p&gt;Let’s take a closer look at “cloud-native” definition. The software must operate in a constantly changing environment and &lt;code class=&quot;language-text&quot;&gt;cloud&lt;/code&gt; is a constantly changing environment. When you have a “cloud-native” software, your software will run well in &lt;code class=&quot;language-text&quot;&gt;cloud&lt;/code&gt;. You might say that this software feels quite at home in the cloud. It’s native of that land.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cloud&lt;/code&gt; is about &lt;em&gt;where&lt;/em&gt; we’re computing. &lt;code class=&quot;language-text&quot;&gt;Cloud-native&lt;/code&gt; is about &lt;em&gt;how&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Cloud vs microservices&lt;/h2&gt;
+&lt;p&gt;One of the requirements for cloud-native software is the modularity. Microservices architecture allows for the creation of modular, independently deployable components by breaking a monolithic application into smaller components. Therefore, cloud native and microservices are very related concepts. They should go hand-in-hand, but it is possible to have a microservices-based application that is not cloud native&lt;/p&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;The key requirements for modern applications call for enabling rapid iteration and frequent releases, zero downtime, and a massive increase in the volume and variety of the devices connected to it. Cloud-native applications can remain stable, even when the infrastructure they’re running on is constantly changing or even experiencing difficulties. &lt;em&gt;Cloud&lt;/em&gt; is about where software runs and &lt;em&gt;cloud-native&lt;/em&gt; is about how it runs.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[📚 Javascript foundation: Loose Equality vs Strict Equality ]]></title><description><![CDATA[In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/loose-equality-vs-strict-equality/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;In this appendix, I present some of the problematic features of JavaScript that are easily avoided. By simply avoiding these features, you make JavaScript a better language, and yourself a better programmer:
 &lt;strong&gt;== (loose equality)&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
