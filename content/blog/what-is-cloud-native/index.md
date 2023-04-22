@@ -1,6 +1,6 @@
 ---
 title: '🌥️ What is cloud native'
-date: '2023-04-16T00:00:00.000Z'
+date: '2023-03-25T00:00:00.000Z'
 description: 'What is cloud native'
 time: 10
 ---
