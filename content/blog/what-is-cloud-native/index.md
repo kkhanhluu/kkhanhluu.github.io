@@ -52,3 +52,7 @@ Let’s take a closer look at “cloud-native” definition. The software must o
 ## Cloud vs microservices
 
 One of the requirements for cloud-native software is the modularity. Microservices architecture allows for the creation of modular, independently deployable components by breaking a monolithic application into smaller components. Therefore, cloud native and microservices are very related concepts. They should go hand-in-hand, but it is possible to have a microservices-based application that is not cloud native
+
+# Summary
+
+The key requirements for modern applications call for enabling rapid iteration and frequent releases, zero downtime, and a massive increase in the volume and variety of the devices connected to it. Cloud-native applications can remain stable, even when the infrastructure they’re running on is constantly changing or even experiencing difficulties. _Cloud_ is about where software runs and _cloud-native_ is about how it runs.
