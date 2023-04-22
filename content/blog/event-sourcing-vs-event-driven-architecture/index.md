@@ -1,6 +1,6 @@
 ---
 title: '📩 Event sourcing vs Event Driven architecture'
-date: '2023-04-23T00:00:00.000Z'
+date: '2023-04-02T00:00:00.000Z'
 description: 'Introduction to event sourcing and event driven architecture'
 time: 10
 ---
