@@ -1,6 +1,6 @@
 ---
 title: '🚦 Saga pattern'
-date: '2023-04-016T00:00:00.000Z'
+date: '2023-04-16T00:00:00.000Z'
 description: 'Introduction to saga pattern'
 time: 10
 ---
