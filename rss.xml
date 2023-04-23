@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Apr 2023 15:49:24 GMT</lastBuildDate><item><title><![CDATA[📤 Transactional outbox pattern]]></title><description><![CDATA[Transactional outbox pattern Context and problem In context of a microservices architecture, a service typically needs to update data and…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transactional outbox pattern&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Apr 2023 18:13:08 GMT</lastBuildDate><item><title><![CDATA[📤 Transactional outbox pattern]]></title><description><![CDATA[Transactional outbox pattern Context and problem In context of a microservices architecture, a service typically needs to update data and…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transactional outbox pattern&lt;/h1&gt;
 &lt;h1&gt;Context and problem&lt;/h1&gt;
 &lt;p&gt;In context of a microservices architecture, a service typically needs to update data and database and then send message to message broker. For example, in saga pattern, which was discussed in &lt;a href=&quot;https://kkhanhluu.github.io/saga/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;the previous post&lt;/a&gt;, after updating database, a service sends message to the next participant in saga or to saga orchestrator. Because this action spans across two components: &lt;strong&gt;database&lt;/strong&gt; and &lt;strong&gt;message broker&lt;/strong&gt;, it’s possible that service cannot publish message to broker after updating its own database due to various reasons: network error, message broker is unavailable,…&lt;/p&gt;
 &lt;p&gt;The simplest approach for this problem is to send message in the middle of a local ACID database transaction. However, there’s no guarantee that the transaction will commit if sending messages always fail. Similarly, if a service sends a message after committing the transaction there’s no guarantee that it won’t crash before sending the message. As a result, we need a mechanism to update database and send message atomically in order to avoid bug and inconsistency.&lt;/p&gt;
@@ -10,26 +10,26 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/526ff165e67ff72a04679672cc608c8d/0c156/outbox_pattern.png&quot;
+    href=&quot;/static/242f22507b7a12212f2f8bcb6bdab50a/0c156/outbox_pattern.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 39.24050632911392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQoz42RAQqDMAxFe/9bjsFAoVOrVq3VP14hQ6YDCyVtmrzkp06S9n3HaJom9X1f7LZtOr7dXY4ES5rnWXVdaxxH5Zy/QHu/A3fHC5BhGLQsyynQwMd9VcTRFRJTSooxKoRQZANl4//X2VUR13WdmqYp3ZlUwMAIwK7r+gVQgLuN5CSZDtu2LVADk+S9LzNlBChg4acoTeDLWy6fN6VZz75SHd9yBCETGBAA+EhCOn6sKTAgKiiIgm4IeoSXqujlrAObJYH4SLTz8cdNso3hV/IHiz90XANs2UEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 39.24050632911392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwElEQVQY053P3WrDMAwFYL//Ww5GYQ2Jf+IjybJkjyakF2WD0u9KWBI6DvPCzLVWZnb3+Z7wrERkWRYAnyy7O4DW2nxbEBFmVlUi2g96GWP8tzbmoxdyzjFGMwNgZkTUWhtjqKqZPebG6L3b4Y/LKaUYY0rJzFR1XdfWGgARmXOqKoCcs4i4+/DB2r7r/U4xqOq+7zHGbdsA9N5LKedLrdXdiQhAKeUMpU0z9q9y+6E11FrlwswA6HD+4hn79BL7FwGC1ZMPWpqgAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;outbox pattern.png&quot;
         title=&quot;outbox pattern.png&quot;
-        src=&quot;/static/526ff165e67ff72a04679672cc608c8d/f058b/outbox_pattern.png&quot;
-        srcset=&quot;/static/526ff165e67ff72a04679672cc608c8d/c26ae/outbox_pattern.png 158w,
-/static/526ff165e67ff72a04679672cc608c8d/6bdcf/outbox_pattern.png 315w,
-/static/526ff165e67ff72a04679672cc608c8d/f058b/outbox_pattern.png 630w,
-/static/526ff165e67ff72a04679672cc608c8d/40601/outbox_pattern.png 945w,
-/static/526ff165e67ff72a04679672cc608c8d/78612/outbox_pattern.png 1260w,
-/static/526ff165e67ff72a04679672cc608c8d/0c156/outbox_pattern.png 1473w&quot;
+        src=&quot;/static/242f22507b7a12212f2f8bcb6bdab50a/f058b/outbox_pattern.png&quot;
+        srcset=&quot;/static/242f22507b7a12212f2f8bcb6bdab50a/c26ae/outbox_pattern.png 158w,
+/static/242f22507b7a12212f2f8bcb6bdab50a/6bdcf/outbox_pattern.png 315w,
+/static/242f22507b7a12212f2f8bcb6bdab50a/f058b/outbox_pattern.png 630w,
+/static/242f22507b7a12212f2f8bcb6bdab50a/40601/outbox_pattern.png 945w,
+/static/242f22507b7a12212f2f8bcb6bdab50a/78612/outbox_pattern.png 1260w,
+/static/242f22507b7a12212f2f8bcb6bdab50a/0c156/outbox_pattern.png 1473w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -69,26 +69,26 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9add247b74d4401232d018ddf66d665f/45cee/saga.png&quot;
+    href=&quot;/static/8ca571536333f51a80f0a0c16241c72c/45cee/saga.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 40.50632911392405%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVQoz3VRy07DMBDMd/EBSIgTH8A39YLKCU7c+AYQEhJCgnICSgWoTdU2zaN5OCWNH+tBa0gIqKy0Wu+MPV6PPa01hBBQSsEQwRjzK6mD0R/e9UQtzlpes7DWgqOpTXT7v5zWyiVrNOGxOgsmcYw0WUGU5dfthpwAT5+EMbI0g5SyM6VGngtEyxRFIVzvBLUhAAan1zkOT2Kk2RpRGGARBEhXCVZ5hYPjEOe3BawUmC+WmC8ClFmEq5cN9vsRnvwKsAr8gG9Bhd5FiL3+rL2NyIKMRpIJ7PSmOLuJAapgyLqErnA5TLF75OPZzwBSYEM8Vi0/CowmDxiO7zAL39C1arZ8x3Byj5E/QLkuWlwqifH8Ea/TgatsW+she6WkRF1vWoMZ4+SNsq6dfw32wxnUm9rV5ozXKP/3s9u4bTxjPMwn/BRnPw9aHgQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 40.50632911392405%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVQY052QTU4CQRCFOZcHcGHceADPpBtxpTtX3kEWJsbEvxUgJGQyCswMPUzT3fxMd/0ZaCAYd36bqrzk5dWrBiJaawGANiAi/QE3EBEzE3EUAaARBzPLb/bK4QIACIEIo7I1l0pV5dQ5t09w1qpCaa299/t8Y1yRV8ZYxLW/AUgidPs4O79RlV5MJnmW5boqp7Pl2XVx/2wkuHFWjLN8PlOtz+Vpc9JJV8KBd2a4fChOmkNjLCEQCyOU2h5dfN89KeElEiOxwKrVrY6v0k6qhcI6WUTmC9tLPzrJy7AYbAuyDItBN3ntpe9ubmJDH3wyave/3pJRe3t2bBhCqOs6ShFA8L723h/+EgDr2gPsHgYA8i8Q8QdClMhWXqrfUAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Untitled-2023-04-23-0231.png&quot;
         title=&quot;Untitled-2023-04-23-0231.png&quot;
-        src=&quot;/static/9add247b74d4401232d018ddf66d665f/f058b/saga.png&quot;
-        srcset=&quot;/static/9add247b74d4401232d018ddf66d665f/c26ae/saga.png 158w,
-/static/9add247b74d4401232d018ddf66d665f/6bdcf/saga.png 315w,
-/static/9add247b74d4401232d018ddf66d665f/f058b/saga.png 630w,
-/static/9add247b74d4401232d018ddf66d665f/40601/saga.png 945w,
-/static/9add247b74d4401232d018ddf66d665f/78612/saga.png 1260w,
-/static/9add247b74d4401232d018ddf66d665f/45cee/saga.png 3630w&quot;
+        src=&quot;/static/8ca571536333f51a80f0a0c16241c72c/f058b/saga.png&quot;
+        srcset=&quot;/static/8ca571536333f51a80f0a0c16241c72c/c26ae/saga.png 158w,
+/static/8ca571536333f51a80f0a0c16241c72c/6bdcf/saga.png 315w,
+/static/8ca571536333f51a80f0a0c16241c72c/f058b/saga.png 630w,
+/static/8ca571536333f51a80f0a0c16241c72c/40601/saga.png 945w,
+/static/8ca571536333f51a80f0a0c16241c72c/78612/saga.png 1260w,
+/static/8ca571536333f51a80f0a0c16241c72c/45cee/saga.png 3630w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -105,24 +105,24 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f6386/choreography.png&quot;
+    href=&quot;/static/8dfe5a087bb50e20d0c1f3d6adcdf466/f6386/choreography.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 81.0126582278481%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVQ4y5WUW2vCQBCF9///oj71pdCHQp/aBrSINCSmmhDNRXP3lG9hRdNY7YRhdjczZ85MJmv6vlee56qqyuput1PXdUKOx6PG4s7wybLMxhwOB223W4FlAOCgrmu1bWsdSDAMwwUA1q0JTNPU+jZNY/esOTNkYRHHsZIksQogTmOgc8D1em11s9mcNIoiGdgBQCbWMCbbuORz4KIoNJ/PraV0F7vf72VwoFw2MPU8z4KOgXgcGMxgU5al3WMBRcy48WSEPuCubCdlXth3VDQlYJkLFme9opcfM09hFiuuM31+f+l9MVOeFxrHnMeaqcY7zrNkqYfgWU/Rqx5XL3pLFmq6/urXPzEcz5iz+67WKo/lLWfyk1BFV12M09ScmmuD62xT1dqlWw1t7xwmgSYBp8qgl2EYXk14N0PLrmkUBIF83/817HczdM7MFsPqhFll5m6BTpZMEMPN78gQY1EuAJfkX4BYSoQRfxClY2/dRH/20F1PAKG0gNvoVg9/ALgi5Ur3Z2MNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 81.0126582278481%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZElEQVQoz42TzU7DMBCE8/5vxIkLEgckbg0iIKgCaePacWyvfzd2jJpAkZoGOvLBB3/a8exuEWMEAD9JSomIeUXDMEgpvffWWiFEjLEQQlhrQwiI6JxTSo3juCRTSpxz5xwippScc5zzQkrZ9z1jrOs6xphSKqW0hGOMlFJCCJ10OBzati2ccwAwl5VSWmvPsNkIAFRVpbWOMSLibL7IOc83znlZlkKIbyaP85lJQsh+v9daA4DWOoSQcy7OIqGUcs5jjD91swaglIJSy78UZ/ZSSh1jZfW0U5R59UrqzfuLAjg9uAyf3Oacn7vtzef9Xft4u3/YdG9+GC42bwkfpdHtFC231Ue304NLabwKPtk7RtjxiENe1yrMGGt2zcWe/wOHEJqmqetaKfWb/DWwMcZaO9f03gPAWv1iOYZCCMYYIYRN6vt+OXYraY+jmmSMQURjjBBiuLJVp9Wz1hpjtNZ/LOkXghSngSv0p7sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Untitled-2023-04-23-0303.png&quot;
         title=&quot;Untitled-2023-04-23-0303.png&quot;
-        src=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f058b/choreography.png&quot;
-        srcset=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/c26ae/choreography.png 158w,
-/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/6bdcf/choreography.png 315w,
-/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f058b/choreography.png 630w,
-/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f6386/choreography.png 686w&quot;
+        src=&quot;/static/8dfe5a087bb50e20d0c1f3d6adcdf466/f058b/choreography.png&quot;
+        srcset=&quot;/static/8dfe5a087bb50e20d0c1f3d6adcdf466/c26ae/choreography.png 158w,
+/static/8dfe5a087bb50e20d0c1f3d6adcdf466/6bdcf/choreography.png 315w,
+/static/8dfe5a087bb50e20d0c1f3d6adcdf466/f058b/choreography.png 630w,
+/static/8dfe5a087bb50e20d0c1f3d6adcdf466/f6386/choreography.png 686w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -148,25 +148,25 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/47aef/orchestration-based_saga.png&quot;
+    href=&quot;/static/7ce9217ff68aad2e9877a836e9976941/47aef/orchestration-based_saga.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.9620253164557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKElEQVQoz6VSa0vDQBC8///TQsWKon6whUqLNc2j8ZJ7X0Z248UkRBRcGG6zuZ2bfQitNYwxDPLJ+r5nLP30PY0vIYqiQF3XaJoGeZ7DWjtLXuLrz+yRqQlSJaVE27ZMRkq7roP3fjVhShxjj+DjCFa4VlaMEUopJnfBQzoFaTv2k2kdsXv1jD2fAadzgHDOcTKpopOIiZDispHY7h6wKR5xc3nC+aOE7jSUanE8VtjcO2R3FtmtQba1eN57iOv1yj1MJ5XPyohQSrxfcrjoYYNDiHGsxJg4KDsMeDl4nN780MNUHvmkjiwpX+ki5vOYD0ekZCL8ft2MZOtTnsbnd0QIYZwuESd/bR//souChkE7SIrKshz38Cey34x7WFUVD4V28T9kRPgJ2W5eQssco1YAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.9620253164557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQoz5VS0WrDMAz0///aSlhHGWXQFBpawpI5dWzLkmw5I3E3usFWcgi/nI6TTlYhBCLCBdNKqL7vh2EYx7HrOma+5/KU85T/EyOitdZ7Twu89ymlv7pFsqRb5ZzVzSTnL1oAABFZomWwDCyxUAGlbuLhlOomHZp0aZNiZlgQQijiGKMb7bZ+rfp91e3b8SNAAHDni652vHnhp2fabOntmJQx5nq9ltc5h4iz2Lr3vmOJlFiyFGeifJydY32a/c9tmncGgBK4yNzHzGWKx2mXbiIqaxMRANyn8CP/Jf3vUiJSco4xFv8VdwYAYwwAaK1/3fmxGBG11sYY59zaH/YJbzCEPT0JT24AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;orchestration-based saga.png&quot;
         title=&quot;orchestration-based saga.png&quot;
-        src=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/f058b/orchestration-based_saga.png&quot;
-        srcset=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/c26ae/orchestration-based_saga.png 158w,
-/static/4eed03e11d95bd712d7f1dd35f7a73ec/6bdcf/orchestration-based_saga.png 315w,
-/static/4eed03e11d95bd712d7f1dd35f7a73ec/f058b/orchestration-based_saga.png 630w,
-/static/4eed03e11d95bd712d7f1dd35f7a73ec/40601/orchestration-based_saga.png 945w,
-/static/4eed03e11d95bd712d7f1dd35f7a73ec/47aef/orchestration-based_saga.png 1063w&quot;
+        src=&quot;/static/7ce9217ff68aad2e9877a836e9976941/f058b/orchestration-based_saga.png&quot;
+        srcset=&quot;/static/7ce9217ff68aad2e9877a836e9976941/c26ae/orchestration-based_saga.png 158w,
+/static/7ce9217ff68aad2e9877a836e9976941/6bdcf/orchestration-based_saga.png 315w,
+/static/7ce9217ff68aad2e9877a836e9976941/f058b/orchestration-based_saga.png 630w,
+/static/7ce9217ff68aad2e9877a836e9976941/40601/orchestration-based_saga.png 945w,
+/static/7ce9217ff68aad2e9877a836e9976941/47aef/orchestration-based_saga.png 1063w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -223,24 +223,24 @@ Status: Done 🍀&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/51e9eecaf508169117e4d068d036ad18/13a9a/request-response-event-driven.png&quot;
+    href=&quot;/static/d26ff8db7e02169c6ed0dc667940de40/13a9a/request-response-event-driven.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY0z2QS07DQBBEff+TsAMWgLgBQmJBPnaIwiIQMJ5vxrEd2+PxQ/EkaanU3dW1aL0k+CMwACH28TSPcR99VOjx/fGcGWPmcuOShzB0JHVTscj3zHLHIncYd6B0DmUdmWrIdMtS1Niyoq5rrDH87GuWsiFVLRvhMFphrMX3LYmrDjytJTevK543muxzSzqfMf/Y8LgquJ3veFgVCFtSVxVWK953hrtlzn36x8tWY5RESEnXNvHDtT6SiopUHPjOC5QU5EKRyYq16chk/PBSv/uGty89aWubqz8GTzIxnFgEhq5BK4E1atLo28jozDAMfZRvKa2iNJLh5Ad/9f8BW0B8hc93ZCcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 26.58227848101266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVQY002PSU7DQBREff+bsAMWDDdAQtkksR2bgISF46T792T3b7tn5IQFT7Uo1epVkcKSc/yXdI3P2afkvFtyinkl3MZrWUnBFmhwP6jtSe2HkY96Ugqkqulcgy0JylEjohS8l6akpoLlSEbBmRDSu6VQqF8+4O69fT2yw1dXl7t9+/ncXO53P08NoXJC1JKzbc8fquGxPr99M8GAAjhrCjNjy+aKYEV0fyaM0oHAgWLDbU1RTvomeZJm07FNxzth/rSjK9bPyeccvTUciOAgOQS/5BxSXD/H4GL0wdtRwCgguDlFv47B/gLgBBlPH7EWIAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Untitled&quot;
         title=&quot;Untitled&quot;
-        src=&quot;/static/51e9eecaf508169117e4d068d036ad18/f058b/request-response-event-driven.png&quot;
-        srcset=&quot;/static/51e9eecaf508169117e4d068d036ad18/c26ae/request-response-event-driven.png 158w,
-/static/51e9eecaf508169117e4d068d036ad18/6bdcf/request-response-event-driven.png 315w,
-/static/51e9eecaf508169117e4d068d036ad18/f058b/request-response-event-driven.png 630w,
-/static/51e9eecaf508169117e4d068d036ad18/13a9a/request-response-event-driven.png 637w&quot;
+        src=&quot;/static/d26ff8db7e02169c6ed0dc667940de40/f058b/request-response-event-driven.png&quot;
+        srcset=&quot;/static/d26ff8db7e02169c6ed0dc667940de40/c26ae/request-response-event-driven.png 158w,
+/static/d26ff8db7e02169c6ed0dc667940de40/6bdcf/request-response-event-driven.png 315w,
+/static/d26ff8db7e02169c6ed0dc667940de40/f058b/request-response-event-driven.png 630w,
+/static/d26ff8db7e02169c6ed0dc667940de40/13a9a/request-response-event-driven.png 637w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -263,24 +263,24 @@ Status: Done 🍀&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/bc445042a245919f3063d5395ab1181a/3a737/event-sourcing-example.png&quot;
+    href=&quot;/static/13c76b7a30ac911bec7ddaf7c33b377c/3a737/event-sourcing-example.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPUlEQVQY01WR604bMRSE9/2fqD+o2ogkUAJVIU2ISKHKhiRLoPWa9W1tr7/KplLLSEdnjkYaz8iV8h1d/2+0V9hg6WNfxgVXbhcdIfnC3+nRlW2DwceeqlEH9t2OJ91Qv2446icyUkoMaSh8SJHLh2+MV19oTftXH4qetTekYl5l8j9iGvBDoM8vDz025oQaYQS7tkG6FhM0Ohhyu9xIB410siStjLO8/JZYb3gUkultw2z9zPetYXS9Z7rcM7tvOV89M1lkLpiuGkY3NfNac7FuObs9cF0LrHdvhpvtEaklDy+/GC+OjJcN5z8UHy63nM53TO4Un+YNH79umNx1fJ4fObn6ydlaMloKJosDN3WH8ZYqV0tEwuDxMdBZg9AdfXAoZxFalfTKGVptsN6ieo3QuhgYb5DG8Gp1+ZQ/EBXHYNPYteoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 29.11392405063291%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVQY0z2QTVPCQBBE8/9/kRcVS5JC8AvBSIFYEiQkgCQbsjOzs7O7Gg5U9eW9vnR11HJ7ibaaBNkxOyYhFDRC4pkskj17MUYMC+MZo1IX2zbfQbluVnsoQwg+eO99CMF6fvx67c8eKqg6773zzgcXQhAvJBQ538GlY2dZyDhGIbJQQ5WroqEaBUBQd+tabUFRY8REYPBwVMS4qVSSbkeLw3QNvXGepPloWQ9m+/g9Hy6rZFbcjbNJpoeLOknzcXYkayIgWq13Sqvl4TdOd/20GHzqq6ef++kmnre3k/LmZZXMT71Jef38PViou48qTrdv2QkYIyPGBbHestgTQqVPxhptsNYtMrQGFQAytkbXWgMjcGca1P+H/QE+2VAtFVVwSQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Untitled&quot;
         title=&quot;Untitled&quot;
-        src=&quot;/static/bc445042a245919f3063d5395ab1181a/f058b/event-sourcing-example.png&quot;
-        srcset=&quot;/static/bc445042a245919f3063d5395ab1181a/c26ae/event-sourcing-example.png 158w,
-/static/bc445042a245919f3063d5395ab1181a/6bdcf/event-sourcing-example.png 315w,
-/static/bc445042a245919f3063d5395ab1181a/f058b/event-sourcing-example.png 630w,
-/static/bc445042a245919f3063d5395ab1181a/3a737/event-sourcing-example.png 897w&quot;
+        src=&quot;/static/13c76b7a30ac911bec7ddaf7c33b377c/f058b/event-sourcing-example.png&quot;
+        srcset=&quot;/static/13c76b7a30ac911bec7ddaf7c33b377c/c26ae/event-sourcing-example.png 158w,
+/static/13c76b7a30ac911bec7ddaf7c33b377c/6bdcf/event-sourcing-example.png 315w,
+/static/13c76b7a30ac911bec7ddaf7c33b377c/f058b/event-sourcing-example.png 630w,
+/static/13c76b7a30ac911bec7ddaf7c33b377c/3a737/event-sourcing-example.png 897w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -316,25 +316,25 @@ Status: Done 🍀&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/78c160bf36798390bf26702cba5eca3f/34e70/characteristics.png&quot;
+    href=&quot;/static/4f762d0f163a6aca05fcd3688cee8e19/34e70/characteristics.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA80lEQVQoz22S1wqFQAxE9/8/UvDJ3rBgz+UEInGvgYCbOpkxXNcl27bJcRyC3fetjk3TJF3XyTAM0ve9nOepcXratpW6rqWqKnXy1AeSJMZx/BvIEuIUspRaq2FRURRSlqVkWSbrump9oGBZFonNDzX0Pm627/uzCHsGWqEhtDcNuB/m8yADvcV1oAXiJhvoG+KFDLSFipAEpJL4QgiH8PVlXAZ/aIBIiBbgB3KbpnlxYcNRGOebPG68AmKeZ73ARAu+2TfYqXz7Ifb2ir9E8QGQpGkqSZLoCX5JrK5xn+e5/jrQAogQKwoCuIjP/+LXI7eTfx3iEe/d1+/WAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA40lEQVQoz22Ry46FIAxA+f+PNHGlCEIZFCi0MBlJuN4wZwfp6VMwMyISUXtx37e11jkHAMzcWmNmY4zWWil1HAcAXNclmFlr7b1/y0R0PSBil1trAHA8bNuWUiIi0VoLIdRa2zellJxzm0DE8f8nxxj/lUsps5xSQsSPjIiznHMeQW9ijF+yUuod1xN57wFgNvd9P8/TWsvMgoiklMaYsZgu/zzUB2buU6SUQgj4UGsVQ+AHIiql9OONJxH1LP0Qo4wYpZxz67ouy2KMGQXnVUsp+51zzuK9oZ51dga9fyLqbf8Cvx5LVpT7esQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Untitled&quot;
         title=&quot;Untitled&quot;
-        src=&quot;/static/78c160bf36798390bf26702cba5eca3f/f058b/characteristics.png&quot;
-        srcset=&quot;/static/78c160bf36798390bf26702cba5eca3f/c26ae/characteristics.png 158w,
-/static/78c160bf36798390bf26702cba5eca3f/6bdcf/characteristics.png 315w,
-/static/78c160bf36798390bf26702cba5eca3f/f058b/characteristics.png 630w,
-/static/78c160bf36798390bf26702cba5eca3f/40601/characteristics.png 945w,
-/static/78c160bf36798390bf26702cba5eca3f/34e70/characteristics.png 1053w&quot;
+        src=&quot;/static/4f762d0f163a6aca05fcd3688cee8e19/f058b/characteristics.png&quot;
+        srcset=&quot;/static/4f762d0f163a6aca05fcd3688cee8e19/c26ae/characteristics.png 158w,
+/static/4f762d0f163a6aca05fcd3688cee8e19/6bdcf/characteristics.png 315w,
+/static/4f762d0f163a6aca05fcd3688cee8e19/f058b/characteristics.png 630w,
+/static/4f762d0f163a6aca05fcd3688cee8e19/40601/characteristics.png 945w,
+/static/4f762d0f163a6aca05fcd3688cee8e19/34e70/characteristics.png 1053w&quot;
         sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
