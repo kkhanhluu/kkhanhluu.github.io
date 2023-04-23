@@ -4,17 +4,18 @@ date: '2023-04-16T00:00:00.000Z'
 description: 'Introduction to saga pattern'
 time: 10
 ---
+
 # Saga pattern
 
 In this [blog post](https://kkhanhluu.github.io/what-is-cloud-native/), we already mentioned **microservices architecture** as a solution for building software by spiliting the system into more smaller and loosely coupled components. One of the most challenging problems while building such highly distributed system is managing transactions across multiple services. One approach that has gained popularity in recent years is the Saga Pattern. In this blog post, we will explore what the Saga Pattern is, how it works, and its benefits and drawbacks.
 
 # Context and problem
 
-In a traditional architectures, local ACID transactions are used to ensure data consistency. Implementing the same operation in a **microservices architecture** is much more complicated because the data is scattered around various services. In the example of my [e-shop demo](https://kkhanhluu.github.io/e-shop), the `createOrder` operation accesses data in numerous services. It reads data from `User Service` , `Product Service` and updates data in `Inventory Service`, `Order Service` and `Payment Service`. Local ACID transaction can’t be used because we have multiple databases, therefore we need a mechanism to maintain data consistency across those databases. **Saga pattern** is one of good approaches for this problem. 
+In a traditional architectures, local ACID transactions are used to ensure data consistency. Implementing the same operation in a **microservices architecture** is much more complicated because the data is scattered around various services. In the example of my [e-shop demo](https://kkhanhluu.github.io/e-shop), the `createOrder` operation accesses data in numerous services. It reads data from `User Service` , `Product Service` and updates data in `Inventory Service`, `Order Service` and `Payment Service`. Local ACID transaction can’t be used because we have multiple databases, therefore we need a mechanism to maintain data consistency across those databases. **Saga pattern** is one of good approaches for this problem.
 
 # Saga pattern
 
-A saga is a sequence of transactions that update each service’s local database and publishes a message or event to trigger the next transaction step. If a step fails, the saga executes compensating transactions that counteract the preceding transactions. 
+A saga is a sequence of transactions that update each service’s local database and publishes a message or event to trigger the next transaction step. If a step fails, the saga executes compensating transactions that counteract the preceding transactions.
 
 ![Untitled-2023-04-23-0231.png](./saga.png)
 
@@ -38,7 +39,7 @@ There are two common was of coordination sagas: **choreography** and **orchestra
 
 ## Orchestration-based saga
 
-**Orchestration** is a way to coordinate sagas where participants exchange events **with** a centralized point of control. To execute a step, the orchestrator sends a command message to a participant. After the operation is executed, the participant sends a reply message to orchestrator. The orchestrator then processes message and send message to the next participant in case of success or executes compensating transaction in case of the operation failed. 
+**Orchestration** is a way to coordinate sagas where participants exchange events **with** a centralized point of control. To execute a step, the orchestrator sends a command message to a participant. After the operation is executed, the participant sends a reply message to orchestrator. The orchestrator then processes message and send message to the next participant in case of success or executes compensating transaction in case of the operation failed.
 
 ![orchestration-based saga.png](./orchestration-based_saga.png)
 
