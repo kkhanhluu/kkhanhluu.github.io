@@ -1,4 +1,191 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 22 Apr 2023 16:07:13 GMT</lastBuildDate><item><title><![CDATA[📚 Command Query Responsibility Segregation]]></title><description><![CDATA[Command Query Responsibility Segregation Date Created: February 24, 2023 6:09 PM
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Writing and stuff from Kim Khanh Luu]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 23 Apr 2023 15:49:24 GMT</lastBuildDate><item><title><![CDATA[📤 Transactional outbox pattern]]></title><description><![CDATA[Transactional outbox pattern Context and problem In context of a microservices architecture, a service typically needs to update data and…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/transactional-outbox/</guid><pubDate>Sun, 23 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transactional outbox pattern&lt;/h1&gt;
+&lt;h1&gt;Context and problem&lt;/h1&gt;
+&lt;p&gt;In context of a microservices architecture, a service typically needs to update data and database and then send message to message broker. For example, in saga pattern, which was discussed in &lt;a href=&quot;https://kkhanhluu.github.io/saga/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;the previous post&lt;/a&gt;, after updating database, a service sends message to the next participant in saga or to saga orchestrator. Because this action spans across two components: &lt;strong&gt;database&lt;/strong&gt; and &lt;strong&gt;message broker&lt;/strong&gt;, it’s possible that service cannot publish message to broker after updating its own database due to various reasons: network error, message broker is unavailable,…&lt;/p&gt;
+&lt;p&gt;The simplest approach for this problem is to send message in the middle of a local ACID database transaction. However, there’s no guarantee that the transaction will commit if sending messages always fail. Similarly, if a service sends a message after committing the transaction there’s no guarantee that it won’t crash before sending the message. As a result, we need a mechanism to update database and send message atomically in order to avoid bug and inconsistency.&lt;/p&gt;
+&lt;h1&gt;Transactional outbox pattern&lt;/h1&gt;
+&lt;p&gt;The transactional outbox pattern is a technique that writes the event to an outbox within the same database transaction that triggers the event. The outbox acts as a buffer that holds the events until they can be reliably published to the message broker or event bus. The event is then published asynchronously by a separate background process &lt;strong&gt;(message relay)&lt;/strong&gt; that reads from the outbox and publishes the events to the message broker or event bus.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/526ff165e67ff72a04679672cc608c8d/0c156/outbox_pattern.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.24050632911392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQoz42RAQqDMAxFe/9bjsFAoVOrVq3VP14hQ6YDCyVtmrzkp06S9n3HaJom9X1f7LZtOr7dXY4ES5rnWXVdaxxH5Zy/QHu/A3fHC5BhGLQsyynQwMd9VcTRFRJTSooxKoRQZANl4//X2VUR13WdmqYp3ZlUwMAIwK7r+gVQgLuN5CSZDtu2LVADk+S9LzNlBChg4acoTeDLWy6fN6VZz75SHd9yBCETGBAA+EhCOn6sKTAgKiiIgm4IeoSXqujlrAObJYH4SLTz8cdNso3hV/IHiz90XANs2UEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;outbox pattern.png&quot;
+        title=&quot;outbox pattern.png&quot;
+        src=&quot;/static/526ff165e67ff72a04679672cc608c8d/f058b/outbox_pattern.png&quot;
+        srcset=&quot;/static/526ff165e67ff72a04679672cc608c8d/c26ae/outbox_pattern.png 158w,
+/static/526ff165e67ff72a04679672cc608c8d/6bdcf/outbox_pattern.png 315w,
+/static/526ff165e67ff72a04679672cc608c8d/f058b/outbox_pattern.png 630w,
+/static/526ff165e67ff72a04679672cc608c8d/40601/outbox_pattern.png 945w,
+/static/526ff165e67ff72a04679672cc608c8d/78612/outbox_pattern.png 1260w,
+/static/526ff165e67ff72a04679672cc608c8d/0c156/outbox_pattern.png 1473w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The participants in this pattern are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sender&lt;/strong&gt;: the service that sends the message.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;: the sender’s database that stores business data and message outbox.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message outbox&lt;/strong&gt;: a table or any storage that stores the messages to be sent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message relay:&lt;/strong&gt; a component that is responsible for sending messages stored in &lt;strong&gt;outbox&lt;/strong&gt; to message broker.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Message outbox&lt;/h2&gt;
+&lt;p&gt;The implementation for the message outbox can be very different. It can be a separate table, that’s just responsible for storing messages to be sent. In some other cases, the outbox is just a property of each database record.&lt;/p&gt;
+&lt;h2&gt;Message relay&lt;/h2&gt;
+&lt;p&gt;There are two patterns for implementing message relay:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Polling publisher&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transaction log tailing&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Polling publisher&lt;/h3&gt;
+&lt;p&gt;It’s a component that keeps polling the outbox in database and publishes messages. Polling works quite well at low scale, however frequently polling the database does not fit well in a large scale. You can checkout an example of a polling publisher in my &lt;a href=&quot;https://kkhanhluu.github.io/e-shop/explore/code/transactional-outbox-pattern&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;e-shop project&lt;/a&gt;, which implement message relay as a cronjob that run at a scheduled pace.&lt;/p&gt;
+&lt;h3&gt;Transaction log tailing&lt;/h3&gt;
+&lt;p&gt;Every update made to database is represented as an entry in database’s transaction log. In this pattern, we implement the message replay as a transaction log miner, which reads the transaction log entities, converts those entities to corresponding message inserted to database and then sends those message to message broker. The mechanism for tailing the transaction log depends on the database: WAL for Postgres, binlog for MySQL,…&lt;/p&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;The transactional outbox pattern is a pattern where events are written to an outbox within the same database transaction as the business transaction. This decouples the transactional semantics from event publishing, ensuring reliable event delivery even in the face of failures. &lt;strong&gt;Message relay&lt;/strong&gt; is a important component in transactional outbox pattern and can be implemented by using &lt;strong&gt;polling publisher&lt;/strong&gt; or &lt;strong&gt;transaction log tailing.&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🚦 Saga pattern]]></title><description><![CDATA[Saga pattern In this blog post, we already mentioned microservices architecture as a solution for building software by spiliting the system…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/saga/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/saga/</guid><pubDate>Sun, 16 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Saga pattern&lt;/h1&gt;
+&lt;p&gt;In this &lt;a href=&quot;https://kkhanhluu.github.io/what-is-cloud-native/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;blog post&lt;/a&gt;, we already mentioned &lt;strong&gt;microservices architecture&lt;/strong&gt; as a solution for building software by spiliting the system into more smaller and loosely coupled components. One of the most challenging problems while building such highly distributed system is managing transactions across multiple services. One approach that has gained popularity in recent years is the Saga Pattern. In this blog post, we will explore what the Saga Pattern is, how it works, and its benefits and drawbacks.&lt;/p&gt;
+&lt;h1&gt;Context and problem&lt;/h1&gt;
+&lt;p&gt;In a traditional architectures, local ACID transactions are used to ensure data consistency. Implementing the same operation in a &lt;strong&gt;microservices architecture&lt;/strong&gt; is much more complicated because the data is scattered around various services. In the example of my &lt;a href=&quot;https://kkhanhluu.github.io/e-shop&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;e-shop demo&lt;/a&gt;, the &lt;code class=&quot;language-text&quot;&gt;createOrder&lt;/code&gt; operation accesses data in numerous services. It reads data from &lt;code class=&quot;language-text&quot;&gt;User Service&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;Product Service&lt;/code&gt; and updates data in &lt;code class=&quot;language-text&quot;&gt;Inventory Service&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Order Service&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Payment Service&lt;/code&gt;. Local ACID transaction can’t be used because we have multiple databases, therefore we need a mechanism to maintain data consistency across those databases. &lt;strong&gt;Saga pattern&lt;/strong&gt; is one of good approaches for this problem.&lt;/p&gt;
+&lt;h1&gt;Saga pattern&lt;/h1&gt;
+&lt;p&gt;A saga is a sequence of transactions that update each service’s local database and publishes a message or event to trigger the next transaction step. If a step fails, the saga executes compensating transactions that counteract the preceding transactions.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9add247b74d4401232d018ddf66d665f/45cee/saga.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 40.50632911392405%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVQoz3VRy07DMBDMd/EBSIgTH8A39YLKCU7c+AYQEhJCgnICSgWoTdU2zaN5OCWNH+tBa0gIqKy0Wu+MPV6PPa01hBBQSsEQwRjzK6mD0R/e9UQtzlpes7DWgqOpTXT7v5zWyiVrNOGxOgsmcYw0WUGU5dfthpwAT5+EMbI0g5SyM6VGngtEyxRFIVzvBLUhAAan1zkOT2Kk2RpRGGARBEhXCVZ5hYPjEOe3BawUmC+WmC8ClFmEq5cN9vsRnvwKsAr8gG9Bhd5FiL3+rL2NyIKMRpIJ7PSmOLuJAapgyLqErnA5TLF75OPZzwBSYEM8Vi0/CowmDxiO7zAL39C1arZ8x3Byj5E/QLkuWlwqifH8Ea/TgatsW+she6WkRF1vWoMZ4+SNsq6dfw32wxnUm9rV5ozXKP/3s9u4bTxjPMwn/BRnPw9aHgQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled-2023-04-23-0231.png&quot;
+        title=&quot;Untitled-2023-04-23-0231.png&quot;
+        src=&quot;/static/9add247b74d4401232d018ddf66d665f/f058b/saga.png&quot;
+        srcset=&quot;/static/9add247b74d4401232d018ddf66d665f/c26ae/saga.png 158w,
+/static/9add247b74d4401232d018ddf66d665f/6bdcf/saga.png 315w,
+/static/9add247b74d4401232d018ddf66d665f/f058b/saga.png 630w,
+/static/9add247b74d4401232d018ddf66d665f/40601/saga.png 945w,
+/static/9add247b74d4401232d018ddf66d665f/78612/saga.png 1260w,
+/static/9add247b74d4401232d018ddf66d665f/45cee/saga.png 3630w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;There are two common was of coordination sagas: &lt;strong&gt;choreography&lt;/strong&gt; and &lt;strong&gt;orchestration&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Choreography&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Choreography&lt;/strong&gt; is a way to coordinate sagas where participants exchange events &lt;strong&gt;without&lt;/strong&gt; a centralized point of control. Each local transaction publishes event or message that triggers local transaction in other services&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f6386/choreography.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 81.0126582278481%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVQ4y5WUW2vCQBCF9///oj71pdCHQp/aBrSINCSmmhDNRXP3lG9hRdNY7YRhdjczZ85MJmv6vlee56qqyuput1PXdUKOx6PG4s7wybLMxhwOB223W4FlAOCgrmu1bWsdSDAMwwUA1q0JTNPU+jZNY/esOTNkYRHHsZIksQogTmOgc8D1em11s9mcNIoiGdgBQCbWMCbbuORz4KIoNJ/PraV0F7vf72VwoFw2MPU8z4KOgXgcGMxgU5al3WMBRcy48WSEPuCubCdlXth3VDQlYJkLFme9opcfM09hFiuuM31+f+l9MVOeFxrHnMeaqcY7zrNkqYfgWU/Rqx5XL3pLFmq6/urXPzEcz5iz+67WKo/lLWfyk1BFV12M09ScmmuD62xT1dqlWw1t7xwmgSYBp8qgl2EYXk14N0PLrmkUBIF83/817HczdM7MFsPqhFll5m6BTpZMEMPN78gQY1EuAJfkX4BYSoQRfxClY2/dRH/20F1PAKG0gNvoVg9/ALgi5Ur3Z2MNAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled-2023-04-23-0303.png&quot;
+        title=&quot;Untitled-2023-04-23-0303.png&quot;
+        src=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f058b/choreography.png&quot;
+        srcset=&quot;/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/c26ae/choreography.png 158w,
+/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/6bdcf/choreography.png 315w,
+/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f058b/choreography.png 630w,
+/static/1ecaa3c13396d5e7ad845b5b0f1e03a6/f6386/choreography.png 686w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Benefits&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Simplicity:&lt;/strong&gt; Services publish events directly when they update data&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No single point of failure:&lt;/strong&gt; because the responsibilities are distributed across the participants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Drawbacks&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;More difficult to understand:&lt;/strong&gt; In a complicated workflow, it’s sometimes difficult to understand how a given saga works or add a new step to the existing saga because a centralized logic is missing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cyclic dependencies between services&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Orchestration-based saga&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Orchestration&lt;/strong&gt; is a way to coordinate sagas where participants exchange events &lt;strong&gt;with&lt;/strong&gt; a centralized point of control. To execute a step, the orchestrator sends a command message to a participant. After the operation is executed, the participant sends a reply message to orchestrator. The orchestrator then processes message and send message to the next participant in case of success or executes compensating transaction in case of the operation failed.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/47aef/orchestration-based_saga.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.9620253164557%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKElEQVQoz6VSa0vDQBC8///TQsWKon6whUqLNc2j8ZJ7X0Z248UkRBRcGG6zuZ2bfQitNYwxDPLJ+r5nLP30PY0vIYqiQF3XaJoGeZ7DWjtLXuLrz+yRqQlSJaVE27ZMRkq7roP3fjVhShxjj+DjCFa4VlaMEUopJnfBQzoFaTv2k2kdsXv1jD2fAadzgHDOcTKpopOIiZDispHY7h6wKR5xc3nC+aOE7jSUanE8VtjcO2R3FtmtQba1eN57iOv1yj1MJ5XPyohQSrxfcrjoYYNDiHGsxJg4KDsMeDl4nN780MNUHvmkjiwpX+ki5vOYD0ekZCL8ft2MZOtTnsbnd0QIYZwuESd/bR//souChkE7SIrKshz38Cey34x7WFUVD4V28T9kRPgJ2W5eQssco1YAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;orchestration-based saga.png&quot;
+        title=&quot;orchestration-based saga.png&quot;
+        src=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/f058b/orchestration-based_saga.png&quot;
+        srcset=&quot;/static/4eed03e11d95bd712d7f1dd35f7a73ec/c26ae/orchestration-based_saga.png 158w,
+/static/4eed03e11d95bd712d7f1dd35f7a73ec/6bdcf/orchestration-based_saga.png 315w,
+/static/4eed03e11d95bd712d7f1dd35f7a73ec/f058b/orchestration-based_saga.png 630w,
+/static/4eed03e11d95bd712d7f1dd35f7a73ec/40601/orchestration-based_saga.png 945w,
+/static/4eed03e11d95bd712d7f1dd35f7a73ec/47aef/orchestration-based_saga.png 1063w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Benefits&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Simpler dependencies&lt;/strong&gt;: The orchestrator invokes the participant but not vice versa. As a result, there are no cyclic dependencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improve separation of concerns and simplifies the business logic:&lt;/strong&gt; with the introduction of a centralized saga orchestrator, the services don’t have to care about the saga logic anymore. They just focus on business logic and therefore we are following the letter S in SOLID principle. It’s also easier for developers to understand the whole saga flow because we just have to look at the code of one single component.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Drawbacks&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Additional complexity:&lt;/strong&gt; Implementing saga orchestrator of course requires additional design complexity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Single point failure:&lt;/strong&gt; because the orchestrators manages the complete workflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;The Saga Pattern is a distributed transaction management pattern that provides an approach to handle long-lived transactions in a distributed environment. Simple sagas can use choreography, but orchestration is usually a better approach for complex sagas. If you want to have a real-world example of saga pattern, feel free to check out my &lt;a href=&quot;https://kkhanhluu.github.io/e-shop/explore/code/saga-pattern&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;e-shop project&lt;/a&gt;. It leverages &lt;a href=&quot;https://docs.spring.io/spring-statemachine/docs/current/reference/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;spring state machine&lt;/a&gt; to implement a orchestrator-based saga&lt;/p&gt;</content:encoded></item><item><title><![CDATA[📚 Command Query Responsibility Segregation]]></title><description><![CDATA[Command Query Responsibility Segregation Date Created: February 24, 2023 6:09 PM
 Status: Done 🍀 My previous post gave a very quick…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/cqrs/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/cqrs/</guid><pubDate>Sun, 09 Apr 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Command Query Responsibility Segregation&lt;/h1&gt;
 &lt;p&gt;Date Created: February 24, 2023 6:09 PM
 Status: Done 🍀&lt;/p&gt;
