@@ -98,6 +98,7 @@ module.exports = {
             tasks: [
               'Win 1st Prize in track Ideation in an online hackathon "Hackcovy" with the app "Quanranhome". The App helps to improve the communication between quarantine area\'s manager and residents. <a target="_blank" style="text-decoration: none; color: #ae80ff;" href="/hackathon.pdf">Certificate</a>',
               '<a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://www.credly.com/users/kim-khanh-luu/badges">Microsoft Certified: Azure Fundamentals</a>. The certification validates basic knowledge of cloud services and how those services are provided with Azure',
+              '<a target="_blank" style="text-decoration: none; color: #ae80ff;" href="https://learn.microsoft.com/en-us/users/khanhluu-0122/credentials/5a8b1e01b168ba3f">Microsoft Certified: Azure Developer Associate</a>. This certification is designed for individuals who want to demonstrate their expertise in developing applications on the Microsoft Azure cloud platform',
             ],
           },
         ],

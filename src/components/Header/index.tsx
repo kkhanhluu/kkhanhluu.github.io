@@ -3,7 +3,6 @@ import { Menu } from 'components/Menu';
 import { ThemeContext } from 'gatsby-plugin-theme-switcher';
 import * as React from 'react';
 // @ts-ignore
-import resume from '../../assets/resume.pdf';
 // @ts-ignore
 import moon from '../../images/moon.png';
 // @ts-ignore
@@ -49,7 +48,7 @@ export const Header: React.FunctionComponent = () => {
         <HeaderNavItem isMounted={isMounted} index={1} title="Blogs" to="/" />
         <HeaderNavItem isMounted={isMounted} index={2} title="About" to="/about" />
 
-        <a
+        {/* <a
           href={resume}
           target="_blank"
           rel="noopener noreferrer"
@@ -57,7 +56,7 @@ export const Header: React.FunctionComponent = () => {
           className={`resume ${isMounted ? 'fadedown-enter-active' : 'fadedown-enter'}`}
         >
           <button>Resume</button>
-        </a>
+        </a> */}
       </nav>
     </header>
   );

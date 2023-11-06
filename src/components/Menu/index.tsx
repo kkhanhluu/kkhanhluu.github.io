@@ -1,7 +1,5 @@
-import { HeaderNavItem } from 'components/Header/NavItem';
 import * as React from 'react';
 // @ts-ignore
-import resume from '../../assets/resume.pdf';
 import * as styles from './menu.module.scss';
 
 export const Menu: React.FunctionComponent = () => {
@@ -27,7 +25,7 @@ export const Menu: React.FunctionComponent = () => {
       <label htmlFor="navigation-toggle" className={styles.burgerButton}>
         <span className={styles.navigationIcon}></span>
       </label>
-      <aside>
+      {/* <aside>
         <nav className={styles.nav}>
           <ul className={styles.navigationList}>
             <HeaderNavItem isMounted index={1} title="Blogs" to="/" />
@@ -43,7 +41,7 @@ export const Menu: React.FunctionComponent = () => {
             </a>
           </ul>
         </nav>
-      </aside>
+      </aside> */}
     </div>
   );
 };
